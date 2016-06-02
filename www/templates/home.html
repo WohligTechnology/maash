@@ -1,0 +1,11 @@
+<ion-view>
+  <ion-content>
+    <div class="home-content">
+      <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true">
+        <ion-slide ng-repeat="slide in homeslider track by $index">
+          <img ng-src="{{slide}}" alt="Home Slider" width="100%">
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+  </ion-content>
+</ion-view>
