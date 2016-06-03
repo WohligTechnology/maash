@@ -78,12 +78,18 @@ angular.module('starter.controllers', [])
 .controller('SelectAvatarCtrl', function($scope, $stateParams) {
 
   })
-  .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup) {
+  .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup,$state) {
+    var ionicpop = "";
     $scope.oneTimepswd = function() {
-      $ionicPopup.show({
-        templateUrl: 'templates/modal/otp.html'
+      ionicpop = $ionicPopup.show({
+        templateUrl: 'templates/modal/otp.html',
+        scope: $scope
       });
     }
+    $scope.toAvatar = function() {
+      ionicpop.close();
+      $state.go("noheader.avatar")
+    };
 
   })
   .controller('NoHeaderCtrl', function($scope, $stateParams) {
