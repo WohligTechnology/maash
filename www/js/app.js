@@ -91,6 +91,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('noheader.avatar', {
+      url: '/avatar',
+      views: {
+        'content': {
+          templateUrl: 'templates/avatar.html',
+          controller: 'SelectAvatarCtrl'
+        }
+      }
+    })
 
   .state('app.single', {
     url: '/playlists/:playlistId',

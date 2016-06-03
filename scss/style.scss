@@ -9,6 +9,10 @@
 }
 // end fonts
 // classes
+.mt10 { margin-top: 10px; }
+.mr10 { margin-right: 10px; }
+.mb10 { margin-bottom: 10px; }
+.ml10 { margin-left: 10px; }
 .relate { position: relative; }
 .get-center {
   position: absolute;
@@ -16,6 +20,7 @@
   left: 50%;
   @include transform(translate(-50%,-50%));
 }
+.block { display: block; }
 .no-border {
   border: none !important;
 }
@@ -77,10 +82,10 @@
     padding: 20px;
     background: url('../img/bgblue.png') no-repeat;
     background-size: cover;
-    .city {
-      color: #fff;
-      text-shadow: -2px -2px #000, 2px 2px #000;
-    }
+  }
+  .city {
+    color: #fff;
+    text-shadow: -2px -2px #000, 2px 2px #000;
   }
   .choose-city {
     padding: 0px 5px;
@@ -114,6 +119,17 @@
   background-color: transparent;
 }
 // signup registration end
+// upload profile
+.choose-avatar {
+  padding: 20px;
+  background: url('../img/bgpurple.png') no-repeat;
+  background-size: cover;
+  span { font-size: 16px; }
+}
+.avatar-holder {
+  img { border: 2px solid #fff; }
+}
+// upload profile end
 // popups
 .popup-container .popup {
   width: 100%;

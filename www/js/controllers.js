@@ -75,6 +75,9 @@ angular.module('starter.controllers', [])
 .controller('SelectCityCtrl', function($scope, $stateParams) {
 
   })
+.controller('SelectAvatarCtrl', function($scope, $stateParams) {
+
+  })
   .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup) {
     $scope.oneTimepswd = function() {
       $ionicPopup.show({

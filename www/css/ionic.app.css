@@ -9823,6 +9823,18 @@ a.button {
   font-family: "GalanoGrotesque";
   src: url("../fonts/Galano Grotesque.otf"); }
 
+.mt10 {
+  margin-top: 10px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.mb10 {
+  margin-bottom: 10px; }
+
+.ml10 {
+  margin-left: 10px; }
+
 .relate {
   position: relative; }
 
@@ -9832,6 +9844,9 @@ a.button {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+.block {
+  display: block; }
 
 .no-border {
   border: none !important; }
@@ -9914,9 +9929,10 @@ a.button {
   padding: 20px;
   background: url("../img/bgblue.png") no-repeat;
   background-size: cover; }
-  .select-city .city {
-    color: #fff;
-    text-shadow: -2px -2px #000, 2px 2px #000; }
+
+.city {
+  color: #fff;
+  text-shadow: -2px -2px #000, 2px 2px #000; }
 
 .choose-city {
   padding: 0px 5px;
@@ -9943,6 +9959,16 @@ a.button {
 .go {
   border: none;
   background-color: transparent; }
+
+.choose-avatar {
+  padding: 20px;
+  background: url("../img/bgpurple.png") no-repeat;
+  background-size: cover; }
+  .choose-avatar span {
+    font-size: 16px; }
+
+.avatar-holder img {
+  border: 2px solid #fff; }
 
 .popup-container .popup {
   width: 100%;
