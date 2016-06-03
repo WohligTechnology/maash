@@ -174,3 +174,13 @@ h3.ion-ios-bell-outline {
 }
 // end otp
 // end popups
+.menu-open {
+.menu-left {
+    left: 0;
+  }
+.menu-right { right: 0; }
+}
+.menu-left {
+  left: -275px;
+}
+.menu-right { right: -275px; }

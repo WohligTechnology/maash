@@ -10005,3 +10005,15 @@ h3.ion-ios-bell-outline {
     padding: 0;
     border: none;
     background-color: transparent; }
+
+.menu-open .menu-left {
+  left: 0; }
+
+.menu-open .menu-right {
+  right: 0; }
+
+.menu-left {
+  left: -275px; }
+
+.menu-right {
+  right: -275px; }
