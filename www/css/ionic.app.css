@@ -9928,12 +9928,13 @@ a.button {
 h3.ion-ios-bell-outline {
   margin-top: 4px; }
 
-.bar-footer .tabs-striped .tabs {
-  border-bottom: none; }
-
-.bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
-  margin-top: 0px;
-  border: none; }
+.bar-footer {
+  padding: 0; }
+  .bar-footer .tabs-striped .tabs {
+    border-bottom: none; }
+  .bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
+    margin-top: 0px;
+    border: none; }
 
 .select-city {
   padding: 20px;
