@@ -9840,6 +9840,9 @@ a.button {
   max-width: 100%;
   height: auto; }
 
+.m-clear {
+  margin: 0; }
+
 .pointer {
   cursor: pointer; }
 
@@ -9955,10 +9958,12 @@ a.button {
   -webkit-transform: translate(-30%, -70%);
   transform: translate(-30%, -70%); }
   .otp-content p {
-    margin-bottom: 20px;
-    font-size: 15px; }
+    margin-bottom: 15px;
+    font-size: 14px; }
   .otp-content label {
-    margin-bottom: 10px; }
+    margin-bottom: 7px; }
+    .otp-content label input {
+      font-size: 13px; }
   .otp-content button {
     padding: 0;
     border: none;

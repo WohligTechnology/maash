@@ -23,6 +23,7 @@
   max-width: 100%;
   height: auto;
 }
+.m-clear { margin: 0; }
 .pointer { cursor: pointer; }
 .color-white { color: #fff; }
 .font-america { font-family: "American Purpose"; }
@@ -127,10 +128,13 @@
   left: 30%;
   @include transform(translate(-30%,-70%));
   p {
-    margin-bottom: 20px;
-    font-size: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
   }
-  label { margin-bottom: 10px; }
+  label {
+    margin-bottom: 7px;
+    input { font-size: 13px; }
+  }
   button {
     padding: 0;
     border: none;
