@@ -31,6 +31,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+    .state('noheader', {
+    url: '/no-header',
+    abstract: true,
+    templateUrl: 'templates/no-header.html',
+    controller: 'NoHeaderCtrl'
+  })
 
   .state('app.search', {
     url: '/search',
@@ -64,6 +70,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'menuContent': {
           templateUrl: 'templates/home.html',
           controller: 'HomeCtrl'
+        }
+      }
+    })
+    .state('noheader.selectcity', {
+      url: '/select-city',
+      views: {
+        'content': {
+          templateUrl: 'templates/select-city.html',
+          controller: 'SelectCityCtrl'
+        }
+      }
+    })
+    .state('noheader.signup', {
+      url: '/signup',
+      views: {
+        'content': {
+          templateUrl: 'templates/signup.html',
+          controller: 'SignupCtrl'
         }
       }
     })

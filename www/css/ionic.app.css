@@ -9819,6 +9819,34 @@ a.button {
   font-family: "American Purpose";
   src: url("../fonts/American Purpose.ttf"); }
 
+.no-border {
+  border: none !important; }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto; }
+
+.font-america {
+  font-family: "American Purpose"; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-lowercase {
+  text-transform: lowercase; }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.text-capitalize {
+  text-transform: capitalize; }
+
 .tab-item .foot-tab {
   height: 48px;
   background-repeat: no-repeat;
@@ -9846,3 +9874,18 @@ a.button {
 
 .header .logo {
   margin-top: 5px; }
+
+.select-city {
+  padding: 30px 20px;
+  background: url("../img/bgblue.png") no-repeat; }
+  .select-city .city {
+    color: #fff;
+    text-shadow: -2px -2px #000, 2px 2px #000; }
+
+.choose-city {
+  padding: 0px 5px;
+  margin: 10px 0; }
+
+.signup {
+  padding: 30px 20px;
+  background: url("../img/bggreen.png") no-repeat; }

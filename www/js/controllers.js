@@ -70,7 +70,16 @@ angular.module('starter.controllers', [])
     'img/banners/banner.jpg',
     'img/banners/banner.jpg'
   ];
-  $ionicSlideBoxDelegate.update();
+})
+
+.controller('SelectCityCtrl', function($scope, $stateParams) {
+
+})
+.controller('SignupCtrl', function($scope, $stateParams) {
+
+})
+.controller('NoHeaderCtrl', function($scope, $stateParams) {
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {});

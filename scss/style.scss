@@ -3,7 +3,25 @@
     font-family: "American Purpose";
     src: url("../fonts/American Purpose.ttf");
 }
+
+// classes
+.no-border {
+  border: none !important;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+.font-america { font-family: "American Purpose"; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+// end classes
 // start scss
+
 .tab-item {
   .foot-tab {
     height: 48px;
@@ -36,3 +54,23 @@
     margin-top: 5px;
   }
 }
+// select city
+  .select-city {
+    padding: 30px 20px;
+    background: url('../img/bgblue.png') no-repeat;
+    .city {
+      color: #fff;
+      text-shadow: -2px -2px #000, 2px 2px #000;
+    }
+  }
+  .choose-city {
+    padding: 0px 5px;
+    margin: 10px 0;
+  }
+// end select city
+// signup registration
+.signup {
+  padding: 30px 20px;
+  background: url('../img/bggreen.png') no-repeat;
+}
+// signup registration end
