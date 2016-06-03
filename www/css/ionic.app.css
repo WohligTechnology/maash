@@ -9908,7 +9908,7 @@ a.button {
   margin-top: 5px; }
 
 .select-city {
-  padding: 30px 20px;
+  padding: 20px;
   background: url("../img/bgblue.png") no-repeat;
   background-size: cover; }
   .select-city .city {
@@ -9920,7 +9920,7 @@ a.button {
   margin: 10px 0; }
 
 .signup {
-  padding: 30px 20px;
+  padding: 20px;
   background: url("../img/bggreen.png") no-repeat;
   background-size: cover; }
 
