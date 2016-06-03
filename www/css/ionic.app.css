@@ -9819,6 +9819,20 @@ a.button {
   font-family: "American Purpose";
   src: url("../fonts/American Purpose.ttf"); }
 
+@font-face {
+  font-family: "GalanoGrotesque";
+  src: url("../fonts/Galano Grotesque.otf"); }
+
+.relate {
+  position: relative; }
+
+.get-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 .no-border {
   border: none !important; }
 
@@ -9826,8 +9840,17 @@ a.button {
   max-width: 100%;
   height: auto; }
 
+.pointer {
+  cursor: pointer; }
+
+.color-white {
+  color: #fff; }
+
 .font-america {
   font-family: "American Purpose"; }
+
+.font-galano {
+  font-family: "GalanoGrotesque"; }
 
 .text-center {
   text-align: center; }
@@ -9846,6 +9869,15 @@ a.button {
 
 .text-capitalize {
   text-transform: capitalize; }
+
+.full-width {
+  width: 100%; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
 
 .tab-item .foot-tab {
   height: 48px;
@@ -9877,7 +9909,8 @@ a.button {
 
 .select-city {
   padding: 30px 20px;
-  background: url("../img/bgblue.png") no-repeat; }
+  background: url("../img/bgblue.png") no-repeat;
+  background-size: cover; }
   .select-city .city {
     color: #fff;
     text-shadow: -2px -2px #000, 2px 2px #000; }
@@ -9888,4 +9921,45 @@ a.button {
 
 .signup {
   padding: 30px 20px;
-  background: url("../img/bggreen.png") no-repeat; }
+  background: url("../img/bggreen.png") no-repeat;
+  background-size: cover; }
+
+.resgistration label {
+  padding: 0;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: -2px -3px 3px #7a837b; }
+  .resgistration label input {
+    height: 40px;
+    padding: 8px 16px; }
+
+.resgistration .calendar {
+  background: url("../img/arrow.png") no-repeat 95% 50%;
+  cursor: pointer; }
+
+.go {
+  border: none;
+  background-color: transparent; }
+
+.popup-container .popup {
+  width: 100%;
+  background-color: transparent; }
+
+.popup-head {
+  border: none; }
+
+.otp-content {
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  -webkit-transform: translate(-30%, -70%);
+  transform: translate(-30%, -70%); }
+  .otp-content p {
+    margin-bottom: 20px;
+    font-size: 15px; }
+  .otp-content label {
+    margin-bottom: 10px; }
+  .otp-content button {
+    padding: 0;
+    border: none;
+    background-color: transparent; }

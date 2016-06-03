@@ -1,38 +1,39 @@
 <ion-view>
   <ion-content class="signup">
-    <div class="">
+    <div class="resgistration">
       <div class="logo text-center">
-        <a href=""><img src="img/city-logo.png" width="180" alt="Smaash"></a>
+        <a href=""><img src="img/big-logo.png" width="180" class="img-responsive" alt="Smaash"></a>
       </div>
       <ion-list>
-        <form action="">
-          <label class="item item-input">
-            <input type="text" placeholder="Name">
-          </label>
-          <label class="item item-input">
-            <input type="date" placeholder="DOB">
-          </label>
-          <label class="item item-input">
-            <select name="" id="">
-              <option value="">Male</option>
-              <option value="">Female</option>
-            </select>
-          </label>
-          <label class="item item-input">
-            <input type="number" placeholder="Mobile Number">
-          </label>
-          <label class="item item-input">
-            <input type="email" placeholder="Email id">
-          </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Enter Pin Code">
-          </label>
-          <button type="submit" name="button"> Go
-            <!-- <img src="" alt="" class="img-responsive"> -->
-          </button>
-          <p>OR</p>
-          <span>Continue without Signing in</span>
-        </form>
+        <div class="row">
+          <div class="col-offset-10 col col-80">
+            <form>
+              <label class="item item-input">
+                <input type="text" placeholder="Name">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="DOB" class="calendar">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Gender">
+              </label>
+              <label class="item item-input">
+                <input type="number" placeholder="Mobile Number">
+              </label>
+              <label class="item item-input">
+                <input type="email" placeholder="Email id">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Enter Pin Code">
+              </label>
+              <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();">
+                <img src="img/go.png" alt="" class="img-responsive">
+              </button>
+              <p class="text-center color-white">OR</p>
+              <p class="text-center color-white">Continue without Signing in</p>
+            </form>
+          </div>
+        </div>
       </ion-list>
     </div>
   </ion-content>

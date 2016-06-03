@@ -3,8 +3,19 @@
     font-family: "American Purpose";
     src: url("../fonts/American Purpose.ttf");
 }
-
+@font-face {
+    font-family: "GalanoGrotesque";
+    src: url("../fonts/Galano Grotesque.otf");
+}
+// end fonts
 // classes
+.relate { position: relative; }
+.get-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+}
 .no-border {
   border: none !important;
 }
@@ -12,13 +23,19 @@
   max-width: 100%;
   height: auto;
 }
+.pointer { cursor: pointer; }
+.color-white { color: #fff; }
 .font-america { font-family: "American Purpose"; }
+.font-galano { font-family: "GalanoGrotesque"; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 .text-lowercase { text-transform: lowercase; }
 .text-uppercase { text-transform: uppercase; }
 .text-capitalize { text-transform: capitalize; }
+.full-width { width: 100%; }
+.pull-left { float: left; }
+.pull-right { float: right; }
 // end classes
 // start scss
 
@@ -58,6 +75,7 @@
   .select-city {
     padding: 30px 20px;
     background: url('../img/bgblue.png') no-repeat;
+    background-size: cover;
     .city {
       color: #fff;
       text-shadow: -2px -2px #000, 2px 2px #000;
@@ -71,6 +89,53 @@
 // signup registration
 .signup {
   padding: 30px 20px;
-  background: url('../img/bggreen.png') no-repeat;
+  background: url('../img/bggreen.png')  no-repeat;
+  background-size: cover;
+}
+.resgistration {
+  label {
+    padding: 0;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: -2px -3px 3px #7a837b;
+    input {
+      height: 40px;
+      padding: 8px 16px;
+    }
+  }
+  .calendar {
+    background: url('../img/arrow.png') no-repeat 95% 50%;
+    cursor: pointer;
+  }
+}
+.go {
+  border: none;
+  background-color: transparent;
 }
 // signup registration end
+// popups
+.popup-container .popup {
+  width: 100%;
+  background-color: transparent;
+}
+.popup-head { border: none; }
+
+// otp
+.otp-content {
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  @include transform(translate(-30%,-70%));
+  p {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  label { margin-bottom: 10px; }
+  button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+}
+// end otp
+// end popups
