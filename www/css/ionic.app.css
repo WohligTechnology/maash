@@ -10072,3 +10072,7 @@ h3.ion-ios-bell-outline {
     color: #fff;
     overflow: visible;
     white-space: normal; }
+
+.profile-strip {
+  background: url("../img/strip-bg.jpg") no-repeat;
+  background-size: 100%; }
