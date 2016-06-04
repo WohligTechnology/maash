@@ -227,11 +227,7 @@ h3.ion-ios-bell-outline {
 .notification {
   background-color: #000;
   .header-strip.bar-stable {
-    border-bottom: 2px solid #fff;
-  }
-  .header-item {
-    padding: 0;
-    background-color: #000;
+    border-bottom: 1px solid #fff;
   }
   .noti-icon {
     margin-right: 5px;
@@ -247,6 +243,7 @@ h3.ion-ios-bell-outline {
     margin: 0px 5px;
     background-color: transparent;
     p {
+      margin-bottom: 10px;
       color: #fff;
       overflow: visible;
       white-space: normal;
