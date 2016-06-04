@@ -17,37 +17,88 @@
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-stable">
+    <ion-header-bar class="bar-stable search-bar">
       <h1 class="title">
             <ion-item class="item-input">
-              <input type="text" placeholder="Search">
+              <input type="text" placeholder="Search"  class="ion-search">
             </ion-item>
           </h1>
     </ion-header-bar>
     <ion-content>
-      <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
-      </ion-list>
+      <div class="grid-menu">
+        <div class="row">
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/explore.jpg" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/events.jpg" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <div class="cart relate">
+              <img src="img/menu/cart.jpg" alt="Smaash Menu" class="img-responsive">
+              <div class="cart-badge badge">
+                <span>3</span>
+              </div>
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/points.jpg" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/directions.png" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/about.jpg" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/recharge.png" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/checkin.png" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/contactus.png" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="">
+              <img src="img/menu/logout.jpg" alt="Smaash Menu" class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div>
     </ion-content>
   </ion-side-menu>
-  <ion-side-menu side="right">
+  <ion-side-menu side="right" class="notification">
     <ion-header-bar class="bar-stable">
       <h1 class="title">
-            <ion-item class="item-input">
-              <input type="text" placeholder="Search">
-            </ion-item>
-          </h1>
+        <ion-item class="text-left header-item">
+          <span class="color-white"><i class="ion-android-notifications noti-icon"></i> Notification</span>
+        </ion-item>
+      </h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>

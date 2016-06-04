@@ -50,6 +50,7 @@
     height: 48px;
     background-repeat: no-repeat;
     background-position: 50% -4px;
+    background-size: 100%;
   }
   .explore {
     background-image: url('../img/explore.jpg');
@@ -174,6 +175,7 @@ h3.ion-ios-bell-outline {
 }
 // end otp
 // end popups
+// menu
 .menu-open {
 .menu-left {
     left: 0;
@@ -184,3 +186,51 @@ h3.ion-ios-bell-outline {
   left: -275px;
 }
 .menu-right { right: -275px; }
+.grid-menu {
+  .row {
+    padding: 0;
+    border-top: 2px solid #fff;
+  }
+  .col {
+    padding: 0;
+    border-right: 2px solid #fff;
+  }
+}
+.cart-badge {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 2px solid #000;
+  border-radius: 100%;
+  position: absolute;
+  top: 28px;
+  right: 8px;
+  background-color: #fff;
+  color : #ff1f1f;
+  font-size: 21px;
+  line-height: 25px;
+  text-align: center;
+}
+.search-bar.bar.bar-stable {
+  background-color: #000;
+  .item {
+    padding: 6px;
+    background-color: #000;
+    input {
+      padding-left: 24px;
+      border-bottom: 1px solid #fff;
+      background: url('../img/search-icon.png') no-repeat 0 7px #000;
+      color: #fff;
+    }
+  }
+}
+.notification {
+  background-color: #000;
+  .header-item {
+    padding: 0;
+    background-color: #000;
+  }
+  .noti-icon { margin-right: 5px; }
+}
+
+// menu end
