@@ -230,7 +230,10 @@ h3.ion-ios-bell-outline {
     padding: 0;
     background-color: #000;
   }
-  .noti-icon { margin-right: 5px; }
+  .noti-icon {
+    margin-right: 5px;
+    font-size: 21px; 
+  }
 }
 
 // menu end
