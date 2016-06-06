@@ -9935,11 +9935,16 @@ h3.ion-ios-bell-outline {
 .bar-footer {
   padding: 0; }
   .bar-footer .tabs-striped .tabs {
-    padding-top: 0;
     border-bottom: none; }
   .bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
     margin-top: 0px;
     border: none; }
+  .bar-footer .tabs {
+    border: 2px solid #fff; }
+    .bar-footer .tabs .tab-item {
+      border-right: 2px solid #fff; }
+      .bar-footer .tabs .tab-item:last-child {
+        border-right: none; }
 
 .select-city {
   padding: 20px;

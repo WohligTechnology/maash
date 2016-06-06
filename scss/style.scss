@@ -88,12 +88,18 @@ h3.ion-ios-bell-outline {
 .bar-footer {
   padding: 0;
   .tabs-striped .tabs {
-    padding-top: 0;
     border-bottom: none;
   }
   .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
     margin-top: 0px;
     border: none;
+  }
+  .tabs {
+    border: 2px solid #fff;
+    .tab-item {
+      border-right: 2px solid #fff;
+      &:last-child { border-right: none; }
+    }
   }
 }
 // footer end
