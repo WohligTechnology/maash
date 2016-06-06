@@ -90,9 +90,9 @@ h3.ion-ios-bell-outline {
   .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
     margin-top: 0px;
     border-top: none;
-    border-right: none;
+    border-right: 2px solid #fff;
+    border-bottom: none;
     border-left: none;
-    border-bottom: 2px solid #fff;
   }
   .tabs {
     border: 2px solid #fff;

@@ -9937,9 +9937,9 @@ h3.ion-ios-bell-outline {
   .bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
     margin-top: 0px;
     border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px solid #fff; }
+    border-right: 2px solid #fff;
+    border-bottom: none;
+    border-left: none; }
   .bar-footer .tabs {
     border: 2px solid #fff; }
     .bar-footer .tabs .tab-item {
