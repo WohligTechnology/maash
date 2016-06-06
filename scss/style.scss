@@ -43,16 +43,16 @@
 .pull-left { float: left; }
 .pull-right { float: right; }
 .shadow-text {
-  text-shadow: 3px 1px #000, -3px -1px #000;
+  text-shadow: 1px 1px #000, -1px -1px #000;
 }
 // end classes
 // start scss
 
 .tab-item {
   .foot-tab {
-    height: 48px;
+    height: 49px;
     background-repeat: no-repeat;
-    background-position: 50% -4px;
+    background-position: 50% 0px;
     background-size: 100%;
   }
   .explore {
@@ -88,6 +88,7 @@ h3.ion-ios-bell-outline {
 .bar-footer {
   padding: 0;
   .tabs-striped .tabs {
+    padding-top: 0;
     border-bottom: none;
   }
   .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
@@ -257,7 +258,7 @@ h3.ion-ios-bell-outline {
 
 // home
 .profile-strip {
-  margin-top: -5px;
+  margin-top: -6px;
   padding: 5px 10px 5px 0;
   background: url('../img/strip-bg.jpg') no-repeat;
   background-size: 100%;
