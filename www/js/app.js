@@ -74,6 +74,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.buy', {
+      url: '/buy',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/buy.html',
+          controller: 'BuyCtrl'
+        }
+      }
+    })
+    .state('app.recharge', {
+      url: '/recharge',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/recharge.html',
+          controller: 'RechargeCtrl'
+        }
+      }
+    })
     .state('noheader.selectcity', {
       url: '/select-city',
       views: {

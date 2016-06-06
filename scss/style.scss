@@ -87,12 +87,10 @@ h3.ion-ios-bell-outline {
 // footer
 .bar-footer {
   padding: 0;
-  .tabs-striped .tabs {
-    border-bottom: none;
-  }
   .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
     margin-top: 0px;
     border: none;
+    border-bottom: 2px solid #fff;
   }
   .tabs {
     border: 2px solid #fff;
@@ -109,7 +107,7 @@ h3.ion-ios-bell-outline {
     background: url('../img/bgblue.png') no-repeat;
     background-size: cover;
   }
-  .city {
+  .text-in-shadow {
     color: #fff;
     text-shadow: -2px -2px #000, 2px 2px #000;
   }
@@ -305,3 +303,38 @@ h3.ion-ios-bell-outline {
   right: 0;
 }
 // home end
+// buy
+.buy-recharge {
+  background: url('../img/bgpurple.png') no-repeat;
+  background-size: cover;
+}
+.recharge-list {
+  margin: 45px 0px 0px;
+  .img-holder {
+    margin-top: -5px;
+    &:first-child { margin-top: 0; }
+    img {
+      border: 2px solid #fff;
+      border-bottom: none;
+    }
+    &:last-child {
+      img { border-bottom: 2px solid #fff; }
+    }
+  }
+}
+// buy page end
+// recharge
+.recharge {
+  @extend .signup;
+}
+.recharge-main {
+  p { line-height: 18px; }
+  form { margin-top: 25px; }
+  .card-no {
+    background: url('../img/card-number.png') no-repeat 95% 50%;
+  }
+  .amount {
+    background: url('../img/rupee.png') no-repeat 3% 50%;
+  }
+}
+// recharge end

@@ -9934,11 +9934,10 @@ h3.ion-ios-bell-outline {
 
 .bar-footer {
   padding: 0; }
-  .bar-footer .tabs-striped .tabs {
-    border-bottom: none; }
   .bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
     margin-top: 0px;
-    border: none; }
+    border: none;
+    border-bottom: 2px solid #fff; }
   .bar-footer .tabs {
     border: 2px solid #fff; }
     .bar-footer .tabs .tab-item {
@@ -9951,7 +9950,7 @@ h3.ion-ios-bell-outline {
   background: url("../img/bgblue.png") no-repeat;
   background-size: cover; }
 
-.city {
+.text-in-shadow {
   color: #fff;
   text-shadow: -2px -2px #000, 2px 2px #000; }
 
@@ -9959,7 +9958,7 @@ h3.ion-ios-bell-outline {
   padding: 0px 5px;
   margin: 10px 0; }
 
-.signup {
+.signup, .recharge {
   padding: 20px;
   background: url("../img/bggreen.png") no-repeat;
   background-size: cover; }
@@ -10124,3 +10123,31 @@ h3.ion-ios-bell-outline {
   position: absolute;
   top: 33px;
   right: 0; }
+
+.buy-recharge {
+  background: url("../img/bgpurple.png") no-repeat;
+  background-size: cover; }
+
+.recharge-list {
+  margin: 45px 0px 0px; }
+  .recharge-list .img-holder {
+    margin-top: -5px; }
+    .recharge-list .img-holder:first-child {
+      margin-top: 0; }
+    .recharge-list .img-holder img {
+      border: 2px solid #fff;
+      border-bottom: none; }
+    .recharge-list .img-holder:last-child img {
+      border-bottom: 2px solid #fff; }
+
+.recharge-main p {
+  line-height: 18px; }
+
+.recharge-main form {
+  margin-top: 25px; }
+
+.recharge-main .card-no {
+  background: url("../img/card-number.png") no-repeat 95% 50%; }
+
+.recharge-main .amount {
+  background: url("../img/rupee.png") no-repeat 3% 50%; }

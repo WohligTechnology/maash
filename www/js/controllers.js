@@ -78,6 +78,12 @@ angular.module('starter.controllers', [])
 .controller('SelectAvatarCtrl', function($scope, $stateParams) {
 
   })
+.controller('BuyCtrl', function($scope, $stateParams) {
+
+  })
+.controller('RechargeCtrl', function($scope, $stateParams) {
+
+  })
   .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup,$state) {
     var ionicpop = "";
     $scope.oneTimepswd = function() {
