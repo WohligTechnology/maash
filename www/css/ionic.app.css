@@ -9897,6 +9897,9 @@ a.button {
 .pull-right {
   float: right; }
 
+.shadow-text {
+  text-shadow: 3px 1px #000, -3px -1px #000; }
+
 .tab-item .foot-tab {
   height: 48px;
   background-repeat: no-repeat;
@@ -10074,5 +10077,44 @@ h3.ion-ios-bell-outline {
     white-space: normal; }
 
 .profile-strip {
+  margin-top: -5px;
+  padding: 5px 10px 5px 0;
   background: url("../img/strip-bg.jpg") no-repeat;
   background-size: 100%; }
+
+.profile-strip .row,
+.smaash-details .row {
+  padding: 0; }
+
+.profile-strip .col,
+.smaash-details .col {
+  padding: 0; }
+
+.smaash-insider {
+  height: 275px;
+  position: relative;
+  background: url("../img/red-bg.jpg") no-repeat;
+  background-size: cover; }
+
+.insider {
+  position: absolute;
+  top: 50px;
+  right: -7px;
+  z-index: 1; }
+
+.get-points {
+  height: 275px;
+  position: relative;
+  background: url("../img/bg-strip.png") no-repeat -165px -10px #fff002; }
+
+.more {
+  position: absolute;
+  top: 50%;
+  left: -6%; }
+  .more img {
+    width: 70%; }
+
+.lady {
+  position: absolute;
+  top: 33px;
+  right: 0; }
