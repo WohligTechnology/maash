@@ -267,8 +267,7 @@ h3.ion-ios-bell-outline {
   position: absolute;
   left: 30% !important;
 }
-.bar.back-button.hide,
-.bar.buttons.hide { display: block; }
+.bar .back-button.hide, .bar .buttons .hide { display: block; }
 
 // menu end
 
