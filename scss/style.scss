@@ -184,6 +184,18 @@ h3.ion-ios-bell-outline {
   }
 }
 // end otp
+// headline pop
+.close {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+}
+.headline {
+  .popup-content {
+    padding: 20px;
+  }
+}
+// headline pop end
 // end popups
 // menu
 .menu-open {
@@ -348,4 +360,5 @@ h3.ion-ios-bell-outline {
     background: url('../img/rupee.png') no-repeat 3% 50%;
   }
 }
+
 // recharge end

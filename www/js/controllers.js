@@ -81,8 +81,15 @@ angular.module('starter.controllers', [])
 .controller('BuyCtrl', function($scope, $stateParams) {
 
   })
-.controller('RechargeCtrl', function($scope, $stateParams) {
-
+.controller('RechargeCtrl', function($scope, $stateParams, $ionicPopup) {
+  var headlinePop = "";
+  $scope.popHeadline = function() {
+    headlienPop = $ionicPopup.show({
+      templateUrl: 'templates/modal/headline.html',
+      scope: $scope
+    });
+    headlinePop.close();
+  }
   })
   .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup,$state) {
     var ionicpop = "";

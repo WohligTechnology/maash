@@ -10017,6 +10017,14 @@ h3.ion-ios-bell-outline {
     border: none;
     background-color: transparent; }
 
+.close {
+  position: absolute;
+  top: -15px;
+  right: -5px; }
+
+.headline .popup-content {
+  padding: 20px; }
+
 .menu-open .menu-left {
   left: 0; }
 
