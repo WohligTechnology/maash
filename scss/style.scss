@@ -263,7 +263,10 @@ h3.ion-ios-bell-outline {
   font-size: 15px;
   i:before { font-size: 20px; }
 }
-.inside-header .title.title-left { left: 4% !important; }
+.inside-header {
+  position: absolute;
+  left: 30% !important; 
+}
 
 // menu end
 

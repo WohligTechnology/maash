@@ -10088,8 +10088,9 @@ h3.ion-ios-bell-outline {
   .bar-stable .button.button-clear i:before {
     font-size: 20px; }
 
-.inside-header .title.title-left {
-  left: 4% !important; }
+.inside-header {
+  position: absolute;
+  left: 30% !important; }
 
 .profile-strip {
   margin-top: -6px;
