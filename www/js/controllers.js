@@ -75,23 +75,28 @@ angular.module('starter.controllers', [])
 .controller('SelectCityCtrl', function($scope, $stateParams) {
 
   })
-.controller('SelectAvatarCtrl', function($scope, $stateParams) {
+  .controller('SelectAvatarCtrl', function($scope, $stateParams) {
 
   })
-.controller('BuyCtrl', function($scope, $stateParams) {
+  .controller('BuyCtrl', function($scope, $stateParams) {
 
   })
-.controller('RechargeCtrl', function($scope, $stateParams, $ionicPopup) {
-  var headlinePop = "";
-  $scope.popHeadline = function() {
-    headlienPop = $ionicPopup.show({
-      templateUrl: 'templates/modal/headline.html',
-      scope: $scope
-    });
-    headlinePop.close();
-  }
+  .controller('EventCtrl', function($scope, $stateParams) {
+
   })
-  .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup,$state) {
+  .controller('RechargeCtrl', function($scope, $stateParams, $ionicPopup) {
+    $scope.popHeadline = function() {
+      $scope.headlienPop = $ionicPopup.show({
+        templateUrl: 'templates/modal/headline.html',
+        scope: $scope
+      });
+    }
+    $scope.closePopup = function() {
+      $scope.headlienPop.close();
+    }
+  })
+
+  .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state) {
     var ionicpop = "";
     $scope.oneTimepswd = function() {
       ionicpop = $ionicPopup.show({

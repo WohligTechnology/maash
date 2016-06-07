@@ -83,6 +83,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.event', {
+      url: '/event',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/event.html',
+          controller: 'EventCtrl'
+        }
+      }
+    })
     .state('app.recharge', {
       url: '/recharge',
       views: {

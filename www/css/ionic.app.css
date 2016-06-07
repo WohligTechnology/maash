@@ -10173,3 +10173,7 @@ h3.ion-ios-bell-outline {
 
 .recharge-main .amount {
   background: url("../img/rupee.png") no-repeat 3% 50%; }
+
+.event {
+  background: url("../img/bgdark-blue.jpg") no-repeat;
+  background-size: cover; }
