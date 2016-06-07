@@ -92,6 +92,24 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.direction', {
+      url: '/direction',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/direction.html',
+          controller: 'DirectionCtrl'
+        }
+      }
+    })
+    .state('app.payment', {
+      url: '/payment',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/payment.html',
+          controller: 'PaymentCtrl'
+        }
+      }
+    })
     .state('app.recharge', {
       url: '/recharge',
       views: {

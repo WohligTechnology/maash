@@ -84,6 +84,12 @@ angular.module('starter.controllers', [])
   .controller('EventCtrl', function($scope, $stateParams) {
 
   })
+  .controller('PaymentCtrl', function($scope, $stateParams) {
+
+  })
+  .controller('DirectionCtrl', function($scope, $stateParams) {
+
+  })
   .controller('RechargeCtrl', function($scope, $stateParams, $ionicPopup) {
     $scope.popHeadline = function() {
       $scope.headlienPop = $ionicPopup.show({

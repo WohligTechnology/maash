@@ -188,7 +188,7 @@ h3.ion-ios-bell-outline {
 .close {
   position: absolute;
   top: -15px;
-  right: -5px;
+  right: 10px;
 }
 .headline {
   .popup-content {
@@ -218,6 +218,15 @@ h3.ion-ios-bell-outline {
     border-right: 2px solid #fff;
   }
 }
+.bar.bar-light {
+  background-color: transparent !important;
+  border: none;
+}
+.scroll-content {
+  padding-top: 50px;
+  overflow: visible !important;
+}
+.has-header { top: 0; }
 .cart-badge {
   width: 30px;
   height: 30px;
@@ -271,19 +280,15 @@ h3.ion-ios-bell-outline {
     }
   }
 }
-.bar-stable .button.button-clear {
-  font-size: 15px;
-  i:before { font-size: 20px; }
-}
-.inside-header {
-  position: absolute;
-  left: 30% !important;
-}
+.bar-light .button.button-clear { color: #fff; }
 .bar .back-button.hide, .bar .buttons .hide { display: block; }
 
 // menu end
 
 // home
+.home {
+  padding: 0;
+}
 .profile-strip {
   margin-top: -6px;
   padding: 5px 10px 5px 0;
@@ -368,3 +373,33 @@ h3.ion-ios-bell-outline {
   background-size: cover;
 }
 // event end
+// direction
+.direction {
+  background: url('../img/bgdirection.png');
+  background-size: cover;
+}
+.see-map {
+  width: 300px;
+  height: 250px;
+  margin: 30px auto 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px #000, -2px -2px 3px #000;
+  background-color: #000;
+  iframe { @include transform(rotate(-3deg)); }
+  .gm-style .directions-card-medium-large { display: none!important; }
+}
+.direction-list {
+  .item {
+    padding: 16px 0;
+    border: none;
+    margin: 0px 30px;
+    background-color: transparent;
+    text-align: left;
+  }
+  .no-ellipsis {
+    overflow: visible;
+    white-space: normal;
+    color: #fff;
+  }
+}
+// direction end
