@@ -10092,6 +10092,10 @@ h3.ion-ios-bell-outline {
   position: absolute;
   left: 30% !important; }
 
+.bar.back-button.hide,
+.bar.buttons.hide {
+  display: block; }
+
 .profile-strip {
   margin-top: -6px;
   padding: 5px 10px 5px 0;
