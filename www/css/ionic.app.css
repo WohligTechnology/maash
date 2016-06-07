@@ -9929,6 +9929,10 @@ a.button {
 .header .logo {
   margin-top: 5px; }
 
+.scroll-content {
+  padding: 50px 0 0;
+  overflow: visible !important; }
+
 h3.ion-ios-bell-outline {
   margin-top: 4px; }
 
@@ -10048,10 +10052,6 @@ h3.ion-ios-bell-outline {
 .bar.bar-light {
   background-color: transparent !important;
   border: none; }
-
-.scroll-content {
-  padding-top: 50px;
-  overflow: visible !important; }
 
 .has-header {
   top: 0; }
@@ -10205,7 +10205,10 @@ h3.ion-ios-bell-outline {
 
 .direction-list .item {
   padding: 16px 0;
-  border: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+  border-left: none;
   margin: 0px 30px;
   background-color: transparent;
   text-align: left; }
