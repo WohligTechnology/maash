@@ -4,37 +4,41 @@
       <h3 class="text-center text-uppercase text-in-shadow">Payment Information</h3>
       <div class="accordion-main">
         <ion-list>
-          <ion-item class="item-stable points" ng-click="accordionOne();" ng-class="{'active' : showAccordion==true}">
+          <ion-item class="item points" ng-click="accordionOne();" ng-class="{'active' : showAccordion==true}">
             <span class="text-uppercase text-in-shadow accordion-heading">smaash points</span>
             <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
             <div ng-show="showAccordion" class="accordion-data">
               Jello
             </div>
           </ion-item>
-          <ion-item class="item-stable wallet" ng-click="accordionTwo();" ng-class="{'active' : showAccordionsec==true}">
+          <ion-item class="item wallet" ng-click="accordionTwo();" ng-class="{'active' : showAccordionsec==true}">
             <span class="text-uppercase text-in-shadow accordion-heading">wallet</span>
             <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
-            <div ng-show="showAccordionsec">
+            <div ng-show="showAccordionsec" class="accordion-data">
               Jello
             </div>
           </ion-item>
-          <ion-item class="item-stable credit-card" ng-click="accordionThree();" ng-class="{'active' : showAccordionthr==true}">
+          <ion-item class="item credit-card" ng-click="accordionThree();" ng-class="{'active' : showAccordionthr==true}">
             <span class="text-uppercase text-in-shadow accordion-heading">credit card</span>
             <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
-            <div ng-show="showAccordionthr">
+            <div ng-show="showAccordionthr" class="accordion-data">
               Jello
             </div>
           </ion-item>
-          <ion-item class="item-stable net-banking" ng-click="accordionFour();" ng-class="{'active' : showAccordionfor==true}">
+          <ion-item class="item net-banking" ng-click="accordionFour();" ng-class="{'active' : showAccordionfor==true}">
             <span class="text-uppercase text-in-shadow accordion-heading">net banking</span>
             <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
-            <div ng-show="showAccordionfor">
+            <div ng-show="showAccordionfor" class="accordion-data">
               Jello
             </div>
           </ion-item>
         </ion-list>
+        <div class="pull-right mt10">
+          <a href=""><img src="img/pay.png" alt="pay" class="img-responsive"></a>
+          <span class="color-white ml5 mr5">or</span>
+          <a href="" class="color-white">Cancel</a>
+        </div>
       </div>
     </div>
   </ion-content>
 </ion-view>
-<!-- ng-class="{active: isGroupShown(group)}" -->

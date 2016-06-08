@@ -9,6 +9,10 @@
 }
 // end fonts
 // classes
+.mt5 { margin-top: 5px; }
+.mr5 { margin-right: 5px; }
+.mb5 { margin-bottom: 5px; }
+.ml5 { margin-left: 5px; }
 .mt10 { margin-top: 10px; }
 .mr10 { margin-right: 10px; }
 .mb10 { margin-bottom: 10px; }
@@ -428,17 +432,11 @@ h3.ion-ios-bell-outline {
     @include transition(all 300ms linear);
     .accordion-heading { border-bottom: 2px solid #fff; }
   }
-  .points.active { background-color: #662d91; }
-  .wallet.active { background-color: #fc5626; }
-  .credit-card.active { background-color: #29a8df; }
-  .net-banking.active { background-color: #31b544; }
-  .item.active.item-stable {
-    border-color: #fff;
-  }
 }
 .accordion-data {
   padding: 8px 16px;
   color: #fff;
 }
+img[alt="pay"] { vertical-align: middle; }
 
 // payment end
