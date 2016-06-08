@@ -379,14 +379,7 @@ h3.ion-ios-bell-outline {
   background-size: cover;
 }
 .see-map {
-  width: 300px;
-  height: 250px;
-  margin: 30px auto 15px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 3px #000, -2px -2px 3px #000;
-  background-color: #000;
-  iframe { @include transform(rotate(-3deg)); }
-  .gm-style .directions-card-medium-large { display: none!important; }
+  margin: 10px;
 }
 .direction-list {
   .item {
