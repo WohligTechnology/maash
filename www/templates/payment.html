@@ -1,5 +1,40 @@
 <ion-view>
   <ion-content class="payment">
-
+    <div class="payment-main">
+      <h3 class="text-center text-uppercase text-in-shadow">Payment Information</h3>
+      <div class="accordion-main">
+        <ion-list>
+          <ion-item class="item-stable points" ng-click="accordionOne();" ng-class="{'active' : showAccordion==true}">
+            <span class="text-uppercase text-in-shadow accordion-heading">smaash points</span>
+            <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+            <div ng-show="showAccordion" class="accordion-data">
+              Jello
+            </div>
+          </ion-item>
+          <ion-item class="item-stable wallet" ng-click="accordionTwo();" ng-class="{'active' : showAccordionsec==true}">
+            <span class="text-uppercase text-in-shadow accordion-heading">wallet</span>
+            <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+            <div ng-show="showAccordionsec">
+              Jello
+            </div>
+          </ion-item>
+          <ion-item class="item-stable credit-card" ng-click="accordionThree();" ng-class="{'active' : showAccordionthr==true}">
+            <span class="text-uppercase text-in-shadow accordion-heading">credit card</span>
+            <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+            <div ng-show="showAccordionthr">
+              Jello
+            </div>
+          </ion-item>
+          <ion-item class="item-stable net-banking" ng-click="accordionFour();" ng-class="{'active' : showAccordionfor==true}">
+            <span class="text-uppercase text-in-shadow accordion-heading">net banking</span>
+            <!-- <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i> -->
+            <div ng-show="showAccordionfor">
+              Jello
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
+<!-- ng-class="{active: isGroupShown(group)}" -->

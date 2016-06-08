@@ -221,6 +221,9 @@ h3.ion-ios-bell-outline {
     border-right: 2px solid #fff;
   }
 }
+.get-menu {
+  padding: 44px 0px 0px;
+}
 .bar.bar-light {
   background-color: transparent !important;
   border: none;
@@ -354,6 +357,7 @@ h3.ion-ios-bell-outline {
 // recharge
 .recharge {
   @extend .signup;
+  padding: 50px 0px 0;
 }
 .recharge-main {
   p { line-height: 18px; }
@@ -399,3 +403,42 @@ h3.ion-ios-bell-outline {
   }
 }
 // direction end
+// payment
+.payment {
+  background: url('../img/bgred.jpg');
+  .points { background-color: #662d91; }
+  .wallet { background-color: #fc5626; }
+  .credit-card { background-color: #29a8df; }
+  .net-banking { background-color: #31b544; }
+}
+.accordion-heading {
+  padding: 16px;
+  display: block;
+}
+.accordion-main {
+  margin: 0px 20px;
+  .item {
+    padding: 0;
+    border-bottom: 2px solid #fff;
+    &:last-child { border-bottom: none; }
+  }
+  .item.item-stable { border-color: #fff; }
+  .list { border: 2px solid #fff; }
+  .active {
+    @include transition(all 300ms linear);
+    .accordion-heading { border-bottom: 2px solid #fff; }
+  }
+  .points.active { background-color: #662d91; }
+  .wallet.active { background-color: #fc5626; }
+  .credit-card.active { background-color: #29a8df; }
+  .net-banking.active { background-color: #31b544; }
+  .item.active.item-stable {
+    border-color: #fff;
+  }
+}
+.accordion-data {
+  padding: 8px 16px;
+  color: #fff;
+}
+
+// payment end

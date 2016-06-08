@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicScrollDelegate) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicScrollDelegate) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -9,8 +9,8 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-       $ionicScrollDelegate.scrollTop();
-   });
+    $ionicScrollDelegate.scrollTop();
+  });
 
 
   // Form data for the login modal
@@ -89,6 +89,74 @@ angular.module('starter.controllers', [])
 
   })
   .controller('PaymentCtrl', function($scope, $stateParams) {
+    // $scope.groups = [];
+    // for (var i = 0; i < 4; i++) {
+    //   $scope.groups[i] = {
+    //     name: i,
+    //     items: []
+    //   };
+    //   for (var j = 0; j < 3; j++) {
+    //     $scope.groups[i].items.push(i + '-' + j);
+    //   }
+    // }
+    // $scope.toggleGroup = function(group) {
+    //   if ($scope.isGroupShown(group)) {
+    //     $scope.shownGroup = null;
+    //   } else {
+    //     $scope.shownGroup = group;
+    //   }
+    // };
+    // $scope.isGroupShown = function(group) {
+    //   return $scope.shownGroup === group;
+    // };
+    $scope.showAccordion = false;
+    $scope.accordionOne = function() {
+      $scope.showAccordionsec = false;
+      $scope.showAccordionthr = false;
+      $scope.showAccordionfor = false;
+      if($scope.showAccordion == true) {
+        $scope.showAccordion = false;
+        $scope.showAccordionsec = false;
+        $scope.showAccordionthr = false;
+        $scope.showAccordionfor = false;
+      }else {
+          $scope.showAccordion = true;
+      }
+    };
+    $scope.showAccordionsec = false;
+    $scope.accordionTwo = function() {
+      $scope.showAccordion = false;
+      $scope.showAccordionthr = false;
+      $scope.showAccordionfor = false;
+      if($scope.showAccordionsec == true) {
+        $scope.showAccordionsec = false;
+        $scope.showAccordionfor = false;
+      }else {
+          $scope.showAccordionsec = true;
+      }
+    };
+    $scope.showAccordionthr = false;
+    $scope.accordionThree = function() {
+      $scope.showAccordion = false;
+      $scope.showAccordionsec = false;
+      $scope.showAccordionfor = false;
+      if($scope.showAccordionthr == true) {
+        $scope.showAccordionthr = false;
+      }else {
+          $scope.showAccordionthr = true;
+      }
+    };
+    $scope.showAccordionfor = false;
+    $scope.accordionFour = function() {
+      $scope.showAccordion = false;
+      $scope.showAccordionsec = false;
+      $scope.showAccordionthr = false;
+      if($scope.showAccordionfor == true) {
+        $scope.showAccordionfor = false;
+      }else {
+          $scope.showAccordionfor = true;
+      }
+    };
 
   })
   .controller('DirectionCtrl', function($scope, $stateParams) {
@@ -106,7 +174,7 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state) {
+.controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state) {
     var ionicpop = "";
     $scope.oneTimepswd = function() {
       ionicpop = $ionicPopup.show({
