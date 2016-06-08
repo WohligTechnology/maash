@@ -10129,6 +10129,7 @@ h3.ion-ios-bell-outline {
 .profile-strip {
   margin-top: -6px;
   padding: 5px 10px 5px 0;
+  position: relative;
   background: url("../img/strip-bg.jpg") no-repeat;
   background-size: 100%; }
 
@@ -10152,6 +10153,16 @@ h3.ion-ios-bell-outline {
   right: -7px;
   z-index: 1; }
 
+.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  position: absolute;
+  top: -5px;
+  z-index: 2; }
+  .profile-img img {
+    border-radius: 100%; }
+
 .get-points {
   height: 275px;
   position: relative;
@@ -10168,6 +10179,13 @@ h3.ion-ios-bell-outline {
   position: absolute;
   top: 33px;
   right: 0; }
+
+.slash {
+  position: absolute;
+  top: 5px;
+  left: 63%; }
+  .slash span {
+    font-size: 30px; }
 
 .buy-recharge {
   background: url("../img/bgpurple.png") no-repeat;
