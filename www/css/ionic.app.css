@@ -10234,15 +10234,17 @@ h3.ion-ios-bell-outline {
     background-color: #fc5626; }
   .payment .credit-card {
     background-color: #29a8df; }
+  .payment .debit-card {
+    background-color: #01a69a; }
   .payment .net-banking {
     background-color: #31b544; }
 
 .accordion-heading {
-  padding: 16px;
+  padding: 10px 16px;
   display: block; }
 
 .accordion-main {
-  margin: 0px 20px; }
+  margin: 20px; }
   .accordion-main .item {
     padding: 0;
     border-bottom: 2px solid #fff; }

@@ -89,74 +89,25 @@ angular.module('starter.controllers', [])
 
   })
   .controller('PaymentCtrl', function($scope, $stateParams) {
-    // $scope.groups = [];
-    // for (var i = 0; i < 4; i++) {
-    //   $scope.groups[i] = {
-    //     name: i,
-    //     items: []
-    //   };
-    //   for (var j = 0; j < 3; j++) {
-    //     $scope.groups[i].items.push(i + '-' + j);
-    //   }
-    // }
-    // $scope.toggleGroup = function(group) {
-    //   if ($scope.isGroupShown(group)) {
-    //     $scope.shownGroup = null;
-    //   } else {
-    //     $scope.shownGroup = group;
-    //   }
-    // };
-    // $scope.isGroupShown = function(group) {
-    //   return $scope.shownGroup === group;
-    // };
-    $scope.showAccordion = false;
-    $scope.accordionOne = function() {
-      $scope.showAccordionsec = false;
-      $scope.showAccordionthr = false;
-      $scope.showAccordionfor = false;
-      if($scope.showAccordion == true) {
-        $scope.showAccordion = false;
-        $scope.showAccordionsec = false;
-        $scope.showAccordionthr = false;
-        $scope.showAccordionfor = false;
-      }else {
-          $scope.showAccordion = true;
+    $scope.accordion = function(val) {
+        if (val == $scope.showAccordion) {
+          $scope.showAccordion = 0;
+        } else {
+          if (val == 1) {
+            $scope.showAccordion = 1;
+          } else if (val == 2) {
+            $scope.showAccordion = 2;
+          } else if (val == 3) {
+            $scope.showAccordion = 3;
+          } else if (val == 4) {
+            $scope.showAccordion = 4;
+          } else if (val == 5) {
+            $scope.showAccordion = 5;
+          } else {
+            $scope.showAccordion = 0;
+          }
+        }
       }
-    };
-    $scope.showAccordionsec = false;
-    $scope.accordionTwo = function() {
-      $scope.showAccordion = false;
-      $scope.showAccordionthr = false;
-      $scope.showAccordionfor = false;
-      if($scope.showAccordionsec == true) {
-        $scope.showAccordionsec = false;
-        $scope.showAccordionfor = false;
-      }else {
-          $scope.showAccordionsec = true;
-      }
-    };
-    $scope.showAccordionthr = false;
-    $scope.accordionThree = function() {
-      $scope.showAccordion = false;
-      $scope.showAccordionsec = false;
-      $scope.showAccordionfor = false;
-      if($scope.showAccordionthr == true) {
-        $scope.showAccordionthr = false;
-      }else {
-          $scope.showAccordionthr = true;
-      }
-    };
-    $scope.showAccordionfor = false;
-    $scope.accordionFour = function() {
-      $scope.showAccordion = false;
-      $scope.showAccordionsec = false;
-      $scope.showAccordionthr = false;
-      if($scope.showAccordionfor == true) {
-        $scope.showAccordionfor = false;
-      }else {
-          $scope.showAccordionfor = true;
-      }
-    };
 
   })
   .controller('DirectionCtrl', function($scope, $stateParams) {
