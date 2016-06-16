@@ -465,5 +465,45 @@ img[alt="pay"] { vertical-align: middle; }
 }
 .account-info {
   .row,.col-50 { padding: 0; }
+  .img-holder img { border: 2px solid #fff; }
+  .order img { margin-left: -2px; }
+  .profile img { margin-top: -2px; }
+  .offer img {
+    margin-top: -2px;
+    margin-left: -2px;
+  }
 }
+.profile-info {
+  height: 106px;
+  padding: 35px 10px 5px 0;
+  margin-top: 0;
+  top: -40px;
+  background: url('../img/account-profile.png') no-repeat;
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    top: -34px;
+    left: -35px;
+  }
+  .plan {
+    position: absolute;
+    top: 45px;
+    left: 25px;
+    z-index: 3;
+  }
+}
+
 // account page end
+// explore smaash
+.explore-smaash {
+  background: url('../img/explore-smaash.jpg');
+  background-size: cover;
+}
+.new, .attraction, .party {
+  border: none;
+  .slider-pager { display: none; }
+}
+.new { background-color: #2da3d6; }
+.attraction { background-color: #ffcb18; }
+.party { background-color: transparent; }
+// explore smaash end

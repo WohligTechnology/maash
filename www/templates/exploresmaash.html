@@ -1,0 +1,42 @@
+<ion-view>
+  <ion-content class="explore-smaash">
+    <div class="explore-main">
+      <div class="text-center">
+        <h3 class="text-uppercase text-in-shadow">Explore Smaaash</h3>
+        <p class="color-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+      <ion-list>
+        <ion-item class="new">
+          <div class="explore-slider">
+            <h4 class="text-uppercase text-in-shadow">Whats New</h4>
+            <ion-slide-box auto-play="true" does-continue="true">
+              <ion-slide ng-repeat="new in smaaashNew track by $index">
+                <img ng-src="{{new}}" alt="" class="img-responsive" width="">
+              </ion-slide>
+            </ion-slide-box>
+          </div>
+        </ion-item>
+        <ion-item class="attraction">
+          <div class="explore-slider">
+            <h4 class="text-uppercase text-in-shadow">Attractions</h4>
+            <ion-slide-box auto-play="true" does-continue="true">
+              <ion-slide ng-repeat="attract in smaaashAttract track by $index">
+                <img ng-src="{{attract}}" alt="" class="img-responsive" width="">
+              </ion-slide>
+            </ion-slide-box>
+          </div>
+        </ion-item>
+        <ion-item class="party">
+          <div class="explore-slider">
+            <h4 class="text-uppercase text-in-shadow">Host a party</h4>
+            <ion-slide-box auto-play="true" does-continue="true">
+              <ion-slide ng-repeat="party in smaaashParty track by $index">
+                <img ng-src="{{party}}" alt="" class="img-responsive" width="">
+              </ion-slide>
+            </ion-slide-box>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

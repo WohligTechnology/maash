@@ -10292,3 +10292,51 @@ img[alt="pay"] {
 
 .account-info .row, .account-info .col-50 {
   padding: 0; }
+
+.account-info .img-holder img {
+  border: 2px solid #fff; }
+
+.account-info .order img {
+  margin-left: -2px; }
+
+.account-info .profile img {
+  margin-top: -2px; }
+
+.account-info .offer img {
+  margin-top: -2px;
+  margin-left: -2px; }
+
+.profile-info {
+  height: 106px;
+  padding: 35px 10px 5px 0;
+  margin-top: 0;
+  top: -40px;
+  background: url("../img/account-profile.png") no-repeat; }
+  .profile-info .profile-img {
+    width: 100px;
+    height: 100px;
+    top: -34px;
+    left: -35px; }
+  .profile-info .plan {
+    position: absolute;
+    top: 45px;
+    left: 25px;
+    z-index: 3; }
+
+.explore-smaash {
+  background: url("../img/explore-smaash.jpg");
+  background-size: cover; }
+
+.new, .attraction, .party {
+  border: none; }
+  .new .slider-pager, .attraction .slider-pager, .party .slider-pager {
+    display: none; }
+
+.new {
+  background-color: #2da3d6; }
+
+.attraction {
+  background-color: #ffcb18; }
+
+.party {
+  background-color: transparent; }

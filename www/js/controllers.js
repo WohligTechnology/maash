@@ -88,6 +88,30 @@ angular.module('starter.controllers', [])
   .controller('EventCtrl', function($scope, $stateParams) {
 
   })
+  .controller('ExploreSmaaashCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate) {
+    $scope.smaaashNew = [
+      'img/new.png',
+      'img/new.png',
+      'img/new.png',
+      'img/new.png',
+      'img/new.png'
+    ];
+    $scope.smaaashAttract = [
+      'img/attract.png',
+      'img/attract.png',
+      'img/attract.png',
+      'img/attract.png',
+      'img/attract.png'
+    ];
+    $scope.smaaashParty = [
+      'img/party.png',
+      'img/party.png',
+      'img/party.png',
+      'img/party.png',
+      'img/party.png'
+    ];
+
+  })
   .controller('PaymentCtrl', function($scope, $stateParams) {
     $scope.accordion = function(val) {
         if (val == $scope.showAccordion) {
