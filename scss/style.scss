@@ -439,8 +439,10 @@ h3.ion-ios-bell-outline {
 .accordion-main {
   margin: 20px;
   .item {
+    min-height: 43px;
     padding: 0;
     border-bottom: 2px solid #fff;
+    @include transition(all 300ms linear);
     &:last-child { border-bottom: none; }
   }
   .item.item-stable { border-color: #fff; }
@@ -448,6 +450,10 @@ h3.ion-ios-bell-outline {
   .active {
     @include transition(all 300ms linear);
     .accordion-heading { border-bottom: 2px solid #fff; }
+  }
+  .item.active {
+    min-height: 100px;
+    @include transition(all 300ms linear);
   }
 }
 .accordion-data {
@@ -507,3 +513,21 @@ img[alt="pay"] { vertical-align: middle; }
 .attraction { background-color: #ffcb18; }
 .party { background-color: transparent; }
 // explore smaash end
+// confirm order
+.user-detail {
+  background: url('../img/user-order.png') no-repeat -12px 0;
+  background-size: 100%;
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  position: absolute;
+  top: -15px;
+  left: -50px;
+  img { border-radius: 100%; }
+}
+.billing-information {
+  margin-top: 30px;
+}
+// confirm order end

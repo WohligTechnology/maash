@@ -110,6 +110,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    .state('app.confirmorder', {
+      url: '/confirmorder',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/confirmorder.html',
+          controller: 'ConfirmOrderCtrl'
+        }
+      }
+    })
     .state('app.payment', {
       url: '/payment',
       views: {

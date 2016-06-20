@@ -140,6 +140,9 @@ angular.module('starter.controllers', [])
   .controller('AccountCtrl', function($scope, $stateParams) {
 
   })
+  .controller('ConfirmOrderCtrl', function($scope, $stateParams) {
+
+  })
   .controller('RechargeCtrl', function($scope, $stateParams, $ionicPopup) {
     $scope.popHeadline = function() {
       $scope.headlienPop = $ionicPopup.show({
