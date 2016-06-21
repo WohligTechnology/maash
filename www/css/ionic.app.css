@@ -9817,11 +9817,11 @@ a.button {
 
 @font-face {
   font-family: "American Purpose";
-  src: url("../fonts/American Purpose.ttf"); }
+  src: url("../fonts/AmericanPurpose.ttf"); }
 
 @font-face {
-  font-family: "GalanoGrotesque";
-  src: url("../fonts/Galano Grotesque.otf"); }
+  font-family: "Galano Grotesque";
+  src: url("../fonts/ReneBieder-GalanoGrotesque.otf"); }
 
 .mt5 {
   margin-top: 5px; }
@@ -9867,6 +9867,15 @@ a.button {
   max-width: 100%;
   height: auto; }
 
+.font-light {
+  font-weight: 300; }
+
+.font-medium {
+  font-weight: 500; }
+
+.font-bold {
+  font-weight: 700; }
+
 .m-clear {
   margin: 0; }
 
@@ -9880,7 +9889,7 @@ a.button {
   font-family: "American Purpose"; }
 
 .font-galano {
-  font-family: "GalanoGrotesque"; }
+  font-family: "Galano Grotesque"; }
 
 .text-center {
   text-align: center; }
@@ -9969,7 +9978,7 @@ h3.ion-ios-bell-outline {
 
 .text-in-shadow {
   color: #fff;
-  text-shadow: -2px -2px #000, 2px 2px #000; }
+  text-shadow: -1px -1px #000, 2px 2px #000; }
 
 .choose-city {
   padding: 0px 5px;
@@ -9983,7 +9992,7 @@ h3.ion-ios-bell-outline {
 .resgistration label {
   padding: 0;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   box-shadow: -2px -3px 3px #7a837b; }
   .resgistration label input {
     height: 36px;
