@@ -12,13 +12,22 @@
                 <input type="text" placeholder="Name">
               </label>
               <label class="item item-input">
-                <input type="text" placeholder="DOB" class="calendar">
+                <input type="text" onfocus="this.type='date'" onblur="this.type='text'" placeholder="DOB" class="calendar">
               </label>
-              <label class="item item-input">
+              <!-- <label class="item item-input">
                 <input type="text" placeholder="Gender">
+              </label> -->
+              <label class="item item-input ">
+                <div class="custom-select">
+                  <select>
+                    <option selected>Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
               </label>
               <label class="item item-input">
-                <input type="number" placeholder="Mobile Number">
+                <input type="tel" placeholder="Mobile Number">
               </label>
               <label class="item item-input">
                 <input type="email" placeholder="Email id">
