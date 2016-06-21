@@ -455,6 +455,7 @@ h3.ion-ios-bell-outline {
     border-bottom: 2px solid #fff;
     @include transition(all 300ms linear);
     &:last-child { border-bottom: none; }
+    p { color: #fff; }
   }
   .item.item-stable { border-color: #fff; }
   .list { border: 2px solid #fff; }

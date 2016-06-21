@@ -10283,6 +10283,8 @@ h3.ion-ios-bell-outline {
     transition: all 300ms linear; }
     .accordion-main .item:last-child {
       border-bottom: none; }
+    .accordion-main .item p {
+      color: #fff; }
   .accordion-main .item.item-stable {
     border-color: #fff; }
   .accordion-main .list {
