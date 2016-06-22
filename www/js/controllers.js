@@ -97,6 +97,9 @@ angular.module('starter.controllers', [])
         $ionicSlideBoxDelegate.$getByHandle(val).next();
       }
     };
+    $scope.disableSwipe = function() {
+      $ionicSlideBoxDelegate.enableSlide(false);
+    };
 
     $scope.smaaashNew = [
       'img/new.png',
