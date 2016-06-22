@@ -475,7 +475,9 @@ h3.ion-ios-bell-outline {
   display: inline-block;
   img {
     width: 110px;
-    margin-left: 25%;
+    position: relative;
+    right: -15px;
+    bottom: -5px;
   }
 }
 // home end

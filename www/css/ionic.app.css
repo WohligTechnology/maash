@@ -10227,7 +10227,9 @@ h3.ion-ios-bell-outline {
   display: inline-block; }
   .lady-baga img {
     width: 110px;
-    margin-left: 25%; }
+    position: relative;
+    right: -15px;
+    bottom: -5px; }
 
 .buy-recharge {
   background: url("../img/bgpurple.png") no-repeat;
