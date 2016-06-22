@@ -10062,18 +10062,6 @@ h3.ion-ios-bell-outline {
 .headline .popup-content {
   padding: 20px; }
 
-.menu-open .menu-left {
-  left: 0; }
-
-.menu-open .menu-right {
-  right: 0; }
-
-.menu-left {
-  left: -275px; }
-
-.menu-right {
-  right: -275px; }
-
 .grid-menu .row {
   padding: 0;
   border-top: 2px solid #fff; }
