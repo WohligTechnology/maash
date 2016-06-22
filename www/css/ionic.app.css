@@ -9924,7 +9924,7 @@ a.button {
 .tab-item .foot-tab {
   height: 49px;
   background-repeat: no-repeat;
-  background-position: 50% 0px;
+  background-position: 50% 0;
   background-size: 100%; }
 
 .tab-item .explore {
@@ -9958,8 +9958,10 @@ h3.ion-ios-bell-outline {
 
 .bar-footer {
   padding: 0; }
-  .bar-footer .tabs-striped .tab-item.tab-item-active, .bar-footer .tabs-striped .tab-item.active, .bar-footer .tabs-striped .tab-item.activated {
-    margin-top: 0px;
+  .bar-footer .tabs-striped .tab-item.tab-item-active,
+  .bar-footer .tabs-striped .tab-item.active,
+  .bar-footer .tabs-striped .tab-item.activated {
+    margin-top: 0;
     border-top: none;
     border-right: 2px solid #fff;
     border-bottom: none;
@@ -9981,7 +9983,7 @@ h3.ion-ios-bell-outline {
   text-shadow: 1px 1px #000,-1px 0 #000,0 -1px #000,-1px -1px #000,0 1px #000,1px 0 #000,-1px 1px #000,1px -1px #000; }
 
 .choose-city {
-  padding: 0px 5px;
+  padding: 0 5px;
   margin: 10px 0; }
 
 .signup, .recharge {
@@ -10071,7 +10073,7 @@ h3.ion-ios-bell-outline {
   border-right: 2px solid #fff; }
 
 .get-menu {
-  padding: 44px 0px 0px; }
+  padding: 44px 0 0; }
 
 .bar.bar-light {
   background-color: transparent !important;
@@ -10119,7 +10121,7 @@ h3.ion-ios-bell-outline {
   padding: 10px;
   border: none;
   border-bottom: 1px solid #808080;
-  margin: 0px 5px;
+  margin: 0 5px;
   background-color: transparent; }
   .noti-list .item p {
     margin-bottom: 10px;
@@ -10130,7 +10132,8 @@ h3.ion-ios-bell-outline {
 .bar-light .button.button-clear {
   color: #fff; }
 
-.bar .back-button.hide, .bar .buttons .hide {
+.bar .back-button.hide,
+.bar .buttons .hide {
   display: block; }
 
 .home {
@@ -10202,7 +10205,7 @@ h3.ion-ios-bell-outline {
   background-size: cover; }
 
 .recharge-list {
-  margin: 20px 0px 0px; }
+  margin: 20px 0 0; }
   .recharge-list .img-holder {
     margin-top: -5px; }
     .recharge-list .img-holder:first-child {
@@ -10214,7 +10217,7 @@ h3.ion-ios-bell-outline {
       border-bottom: 2px solid #fff; }
 
 .recharge {
-  padding: 50px 0px 0; }
+  padding: 50px 0 0; }
 
 .recharge-main p {
   line-height: 18px; }
@@ -10245,7 +10248,7 @@ h3.ion-ios-bell-outline {
   border-right: none;
   border-bottom: 1px solid #fff;
   border-left: none;
-  margin: 0px 30px;
+  margin: 0 30px;
   background-color: transparent;
   text-align: left; }
 
@@ -10307,7 +10310,8 @@ img[alt="pay"] {
 .account-more-info {
   margin-top: -40px; }
 
-.account-info .row, .account-info .col-50 {
+.account-info .row,
+.account-info .col-50 {
   padding: 0; }
 
 .account-info .img-holder img {
@@ -10344,12 +10348,14 @@ img[alt="pay"] {
   background: url("../img/explore-smaash.jpg");
   background-size: cover; }
 
-.new, .attraction, .party {
+.new,
+.attraction,
+.party {
   border: none; }
-  .new .slider-pager, .attraction .slider-pager, .party .slider-pager {
+  .new .slider-pager,
+  .attraction .slider-pager,
+  .party .slider-pager {
     display: none; }
-  .new .slider-slides, .attraction .slider-slides, .party .slider-slides {
-    text-align: center; }
 
 .new {
   background-color: #2da3d6; }
@@ -10359,6 +10365,15 @@ img[alt="pay"] {
 
 .party {
   background-color: transparent; }
+
+.custom-btn {
+  width: 50px !important;
+  height: 50px !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 13% !important;
+  -webkit-transform: translate(0, 50%) !important;
+  transform: translate(0, 50%) !important; }
 
 .user-detail {
   height: 125px;

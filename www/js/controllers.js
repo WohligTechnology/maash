@@ -88,7 +88,16 @@ angular.module('starter.controllers', [])
   .controller('EventCtrl', function($scope, $stateParams) {
 
   })
-  .controller('ExploreSmaaashCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate) {
+  .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate) {
+
+    $scope.nextSlide = function(val) {
+      if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() == $ionicSlideBoxDelegate.$getByHandle(val).currentIndex() + 2) {
+        $ionicSlideBoxDelegate.$getByHandle(val).slide(0);
+      } else {
+        $ionicSlideBoxDelegate.$getByHandle(val).next();
+      }
+    };
+
     $scope.smaaashNew = [
       'img/new.png',
       'img/new.png',
@@ -114,24 +123,28 @@ angular.module('starter.controllers', [])
   })
   .controller('PaymentCtrl', function($scope, $stateParams) {
     $scope.accordion = function(val) {
-        if (val == $scope.showAccordion) {
-          $scope.showAccordion = 0;
+      console.log($scope.showAccordion);
+      console.log(val);
+      if (val == $scope.showAccordion) {
+        $scope.showAccordion = 0;
+      } else {
+        if (val == 1) {
+          $scope.showAccordion = 1;
+        } else if (val == 2) {
+          $scope.showAccordion = 2;
+        } else if (val == 3) {
+          $scope.showAccordion = 3;
+        } else if (val == 4) {
+          $scope.showAccordion = 4;
+        } else if (val == 5) {
+          $scope.showAccordion = 5;
         } else {
-          if (val == 1) {
-            $scope.showAccordion = 1;
-          } else if (val == 2) {
-            $scope.showAccordion = 2;
-          } else if (val == 3) {
-            $scope.showAccordion = 3;
-          } else if (val == 4) {
-            $scope.showAccordion = 4;
-          } else if (val == 5) {
-            $scope.showAccordion = 5;
-          } else {
-            $scope.showAccordion = 0;
-          }
+          $scope.showAccordion = 0;
         }
       }
+      console.log($scope.showAccordion);
+      console.log(val);
+    }
 
   })
   .controller('DirectionCtrl', function($scope, $stateParams) {
