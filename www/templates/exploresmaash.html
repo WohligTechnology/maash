@@ -11,7 +11,9 @@
             <h4 class="text-uppercase text-in-shadow font-america">Whats New</h4>
             <ion-slide-box auto-play="true" does-continue="true">
               <ion-slide ng-repeat="new in smaaashNew track by $index">
-                <img ng-src="{{new}}" alt="" class="img-responsive" width="">
+                <div class="custom-slider">
+                  <img ng-src="{{new}}" alt="" class="img-responsive" width="">
+                </div>
               </ion-slide>
             </ion-slide-box>
           </div>

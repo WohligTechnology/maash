@@ -365,7 +365,7 @@ h3.ion-ios-bell-outline {
 }
 .slash {
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 63%;
   span { font-size: 30px; }
 }
@@ -376,7 +376,7 @@ h3.ion-ios-bell-outline {
   background-size: cover;
 }
 .recharge-list {
-  margin: 25px 0px 0px;
+  margin: 20px 0px 0px;
   .img-holder {
     margin-top: -5px;
     &:first-child { margin-top: 0; }
@@ -419,11 +419,11 @@ h3.ion-ios-bell-outline {
   background-size: cover;
 }
 .see-map {
-  margin: 10px;
+  margin: 0 20px;
 }
 .direction-list {
   .item {
-    padding: 16px 0;
+    padding: 10px 0;
     border-top: none;
     border-right: none;
     border-bottom: 1px solid #fff;
@@ -481,6 +481,7 @@ img[alt="pay"] { vertical-align: middle; }
   background: url('../img/bgaccount.jpg') no-repeat;
   background-size: cover;
 }
+.account-more-info { margin-top: -40px; }
 .account-info {
   .row,.col-50 { padding: 0; }
   .img-holder img { border: 2px solid #fff; }
@@ -520,8 +521,11 @@ img[alt="pay"] { vertical-align: middle; }
 .new, .attraction, .party {
   border: none;
   .slider-pager { display: none; }
+  .slider-slides { text-align: center; }
 }
-.new { background-color: #2da3d6; }
+.new {
+  background-color: #2da3d6;
+}
 .attraction { background-color: #ffcb18; }
 .party { background-color: transparent; }
 // explore smaash end

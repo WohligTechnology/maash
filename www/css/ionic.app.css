@@ -10204,7 +10204,7 @@ h3.ion-ios-bell-outline {
 
 .slash {
   position: absolute;
-  top: 5px;
+  top: 10px;
   left: 63%; }
   .slash span {
     font-size: 30px; }
@@ -10214,7 +10214,7 @@ h3.ion-ios-bell-outline {
   background-size: cover; }
 
 .recharge-list {
-  margin: 25px 0px 0px; }
+  margin: 20px 0px 0px; }
   .recharge-list .img-holder {
     margin-top: -5px; }
     .recharge-list .img-holder:first-child {
@@ -10249,10 +10249,10 @@ h3.ion-ios-bell-outline {
   background-size: cover; }
 
 .see-map {
-  margin: 10px; }
+  margin: 0 20px; }
 
 .direction-list .item {
-  padding: 16px 0;
+  padding: 10px 0;
   border-top: none;
   border-right: none;
   border-bottom: 1px solid #fff;
@@ -10316,6 +10316,9 @@ img[alt="pay"] {
   background: url("../img/bgaccount.jpg") no-repeat;
   background-size: cover; }
 
+.account-more-info {
+  margin-top: -40px; }
+
 .account-info .row, .account-info .col-50 {
   padding: 0; }
 
@@ -10357,6 +10360,8 @@ img[alt="pay"] {
   border: none; }
   .new .slider-pager, .attraction .slider-pager, .party .slider-pager {
     display: none; }
+  .new .slider-slides, .attraction .slider-slides, .party .slider-slides {
+    text-align: center; }
 
 .new {
   background-color: #2da3d6; }
