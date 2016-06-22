@@ -445,6 +445,39 @@ h3.ion-ios-bell-outline {
     font-size: 30px;
   }
 }
+.detail-smaash {
+  .row,.col { padding: 0; }
+}
+.inside-smaash {
+  .inside {
+    position: absolute;
+    top: 30px;
+    right: -15px;
+  }
+  .red-img {
+    height: 200px;
+  }
+}
+.points {
+  background: url('../img/bg-strip.png') no-repeat -165px -10px #fff002;
+}
+.know-more {
+  width: 49%;
+  display: inline-block;
+  img {
+    width: 100%;
+    position: relative;
+    bottom: 10px;
+  }
+}
+.lady-baga {
+  width: 49%;
+  display: inline-block;
+  img {
+    width: 101px;
+    margin-left: 33%;
+  }
+}
 // home end
 // buy
 .buy-recharge {

@@ -10200,6 +10200,35 @@ h3.ion-ios-bell-outline {
   .slash span {
     font-size: 30px; }
 
+.detail-smaash .row, .detail-smaash .col {
+  padding: 0; }
+
+.inside-smaash .inside {
+  position: absolute;
+  top: 30px;
+  right: -15px; }
+
+.inside-smaash .red-img {
+  height: 200px; }
+
+.points {
+  background: url("../img/bg-strip.png") no-repeat -165px -10px #fff002; }
+
+.know-more {
+  width: 49%;
+  display: inline-block; }
+  .know-more img {
+    width: 100%;
+    position: relative;
+    bottom: 10px; }
+
+.lady-baga {
+  width: 49%;
+  display: inline-block; }
+  .lady-baga img {
+    width: 101px;
+    margin-left: 33%; }
+
 .buy-recharge {
   background: url("../img/bgpurple.png") no-repeat;
   background-size: cover; }
