@@ -43,6 +43,19 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+  // scroll class
+  // $(document).ready(function() {
+  //   $(window).scroll(function() {
+  //     var scroll = $(window).scrollTop();
+  //     console.log(scroll);
+  //     if (scroll >= 40) {
+  //       $(".bar-light").addClass("darkHeader");
+  //     } else {
+  //       $(".bar-light").removeClass("darkHeader");
+  //     }
+  //   });
+  // });
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -153,8 +166,16 @@ angular.module('starter.controllers', [])
   .controller('DirectionCtrl', function($scope, $stateParams) {
 
   })
-  .controller('AccountCtrl', function($scope, $stateParams) {
-
+  .controller('AccountCtrl', function($scope, $stateParams, $ionicPopup) {
+    $scope.getPlan = function() {
+      $scope.checkPlan = $ionicPopup.show({
+        templateUrl: 'templates/modal/headline.html',
+        scope: $scope
+      });
+    };
+    $scope.closePopup = function() {
+      $scope.checkPlan.close();
+    }
   })
   .controller('ConfirmOrderCtrl', function($scope, $stateParams) {
 

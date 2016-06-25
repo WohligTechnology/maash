@@ -22,22 +22,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
     .state('noheader', {
-    url: '/no-header',
-    abstract: true,
-    templateUrl: 'templates/no-header.html',
-    controller: 'NoHeaderCtrl'
-  })
+      url: '/no-header',
+      abstract: true,
+      templateUrl: 'templates/no-header.html',
+      controller: 'NoHeaderCtrl'
+    })
 
   .state('app.search', {
     url: '/search',
@@ -185,4 +185,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/no-header/select-city');
-});
+})
+
+.directive('scrollDetector', function($window) {
+  return {
+    restrict : 'A',
+
+    link: function(scope, element, attrs) {
+      element.on('scroll', function() {
+        console.log('Scrolled');
+        console.log(element.prop( 'offsetTop' ));
+      });
+    }
+  };
+})

@@ -260,7 +260,8 @@ h3.ion-ios-bell-outline {
   label {
     margin-bottom: 7px;
     input {
-      font-size: 13px;
+      padding: 6px 8px;
+      font-size: 12px;
     }
   }
   button {
@@ -278,7 +279,11 @@ h3.ion-ios-bell-outline {
 }
 .headline {
   .popup-content {
-    padding: 20px;
+    padding: 15px;
+    p {
+      font-size: 13px;
+      line-height: 18px;
+    }
   }
 }
 // headline pop end
@@ -465,6 +470,9 @@ h3.ion-ios-bell-outline {
 .know-more {
   width: 49%;
   display: inline-block;
+  position: relative;
+  top: -50px;
+  left: 10px;
   img {
     width: 100%;
     position: relative;
@@ -701,10 +709,14 @@ img[alt="pay"] {
   height: 125px;
   background: url('../img/user-order.png') no-repeat -12px 0;
   background-size: 100%;
+  .col.col-75 {
+    padding: 0px 5px;
+  }
+  h3 { font-size: 20px; }
 }
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 100%;
   position: absolute;
   top: -15px;
