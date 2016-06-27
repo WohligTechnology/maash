@@ -10068,6 +10068,9 @@ h3.ion-ios-bell-outline {
     font-size: 13px;
     line-height: 18px; }
 
+.menu-open .ion-navicon:before {
+  content: "\f2d7" !important; }
+
 .grid-menu .row {
   padding: 0;
   border-top: 2px solid #fff; }

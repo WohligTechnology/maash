@@ -299,6 +299,9 @@ h3.ion-ios-bell-outline {
 //   left: -275px;
 // }
 // .menu-right { right: -275px; }
+.menu-open {
+  .ion-navicon:before { content: "\f2d7" !important;}
+}
 .grid-menu {
   .row {
     padding: 0;
