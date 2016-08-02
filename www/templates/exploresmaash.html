@@ -12,7 +12,7 @@
             <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
               <ion-slide ng-repeat="new in smaaashNew track by $index">
                 <div class="custom-slider">
-                  <img ng-src="{{new}}" alt="" class="img-responsive" width="">
+                  <img ng-src="{{new.image|uploadpath}}" alt="" class="img-responsive" width="">
                 </div>
               </ion-slide>
               <div class="custom-btn" ng-click="nextSlide('first');">
@@ -26,7 +26,7 @@
             <h4 class="text-uppercase text-in-shadow font-america">Attractions</h4>
             <ion-slide-box delegate-handle="sec" ng-init="disableSwipe()">
               <ion-slide ng-repeat="attract in smaaashAttract track by $index">
-                <img ng-src="{{attract}}" alt="" class="img-responsive" width="">
+                <img ng-src="{{attract.image|uploadpath}}" alt="" class="img-responsive" width="">
               </ion-slide>
               <div class="custom-btn" ng-click="nextSlide('sec');">
                 <img src="img/slider-button.png" alt="" class="img-responsive">
@@ -39,7 +39,7 @@
             <h4 class="text-uppercase text-in-shadow font-america">Host a party</h4>
             <ion-slide-box delegate-handle="third" ng-init="disableSwipe()">
               <ion-slide ng-repeat="party in smaaashParty track by $index">
-                <img ng-src="{{party}}" alt="" class="img-responsive" width="">
+                <img ng-src="{{party.image|uploadpath}}" alt="" class="img-responsive" width="">
               </ion-slide>
               <div class="custom-btn" ng-click="nextSlide('third');">
                 <img src="img/slider-button.png" alt="" class="img-responsive">

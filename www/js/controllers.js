@@ -89,10 +89,32 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('SelectCityCtrl', function($scope, $stateParams) {
+.controller('SelectCityCtrl', function($scope, $stateParams, MyServices, $state) {
 
+  MyServices.getCity(function(data) {
+    $scope.getCity = _.chunk(data.data, 2);
+    console.log('$scope.getCity', $scope.getCity);
   })
-  .controller('SelectAvatarCtrl', function($scope, $stateParams) {
+
+  // $scope.getCityName=function(cityName){
+  //   $.jStorage.set("city",cityName);
+  //   $scope.city=$.jStorage.get("city").name;
+  // console.log("  $scope.city",  $scope.city);
+  // }
+
+
+
+
+})
+
+
+
+
+
+
+
+
+.controller('SelectAvatarCtrl', function($scope, $stateParams) {
 
   })
   .controller('BuyCtrl', function($scope, $stateParams) {
@@ -101,7 +123,7 @@ angular.module('starter.controllers', [])
   .controller('EventCtrl', function($scope, $stateParams) {
 
   })
-  .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate) {
+  .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
 
     $scope.nextSlide = function(val) {
       if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() == $ionicSlideBoxDelegate.$getByHandle(val).currentIndex() + 2) {
@@ -113,28 +135,48 @@ angular.module('starter.controllers', [])
     $scope.disableSwipe = function() {
       $ionicSlideBoxDelegate.enableSlide(false);
     };
+    $scope.smaaashAttract = [];
+    $scope.smaaashNew = [];
+    $scope.smaaashParty = [];
 
-    $scope.smaaashNew = [
-      'img/new.png',
-      'img/new.png',
-      'img/new.png',
-      'img/new.png',
-      'img/new.png'
-    ];
-    $scope.smaaashAttract = [
-      'img/attract.png',
-      'img/attract.png',
-      'img/attract.png',
-      'img/attract.png',
-      'img/attract.png'
-    ];
-    $scope.smaaashParty = [
-      'img/party.png',
-      'img/party.png',
-      'img/party.png',
-      'img/party.png',
-      'img/party.png'
-    ];
+    MyServices.getHomeContent(function(data) {
+      if (data.value) {
+        $scope.homeContent = data.data;
+        $scope.content = _.groupBy($scope.homeContent, "type");
+        $scope.smaaashAttract = $scope.content.Attraction;
+
+        $scope.smaaashNew = $scope.content["What's new"];
+        $scope.smaaashParty = $scope.content["Host a Party"];
+        console.log("$scope.smaaashParty", $scope.smaaashParty);
+        console.log("$scope.smaaashNew ", $scope.smaaashNew);
+        console.log("$scope.smaaashAttract", $scope.smaaashAttract);
+      } else {
+
+      }
+
+    });
+
+    // $scope.smaaashNew = [
+    //   'img/new.png',
+    //   'img/new.png',
+    //   'img/new.png',
+    //   'img/new.png',
+    //   'img/new.png'
+    // ];
+    // $scope.smaaashAttract = [
+    //   'img/attract.png',
+    //   'img/attract.png',
+    //   'img/attract.png',
+    //   'img/attract.png',
+    //   'img/attract.png'
+    // ];
+    // $scope.smaaashParty = [
+    //   'img/party.png',
+    //   'img/party.png',
+    //   'img/party.png',
+    //   'img/party.png',
+    //   'img/party.png'
+    // ];
 
   })
   .controller('PaymentCtrl', function($scope, $stateParams) {
@@ -204,6 +246,16 @@ angular.module('starter.controllers', [])
       ionicpop.close();
       $state.go("noheader.avatar")
     };
+
+    $scope.userForm = {};
+    console.log("$scope.userForm", $scope.userForm);
+    // $scope.userSignup =function(formValid){
+    //   if (formValid.$valid) {
+    //     MyServices.
+    //   }
+    //
+    // }
+
 
   })
   .controller('NoHeaderCtrl', function($scope, $stateParams) {

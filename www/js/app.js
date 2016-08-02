@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -152,8 +152,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         'content': {
           templateUrl: 'templates/select-city.html',
           controller: 'SelectCityCtrl'
+          }
         }
-      }
     })
     .state('noheader.signup', {
       url: '/signup',
@@ -199,3 +199,31 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   };
 })
+
+
+
+.filter('uploadpath', function() {
+    return function(input, width, height, style) {
+        var other = "";
+        if (width && width != "") {
+            other += "&width=" + width;
+        }
+        if (height && height != "") {
+            other += "&height=" + height;
+        }
+        if (style && style != "") {
+            other += "&style=" + style;
+        }
+        if (input) {
+            if (input.indexOf('https://') == -1) {
+                return imgpath + "?file=" + input + other;
+
+            } else {
+                return input;
+            }
+        }
+    };
+})
+
+
+;
