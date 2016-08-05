@@ -1,4 +1,4 @@
-var adminurl = "http://192.168.1.103:1337/";
+var adminurl = "http://192.168.1.102:1337/";
 // var imgpath = adminurl + "uploadfile/getupload?file=";
 var imgurl = adminurl + "upload/";
 var imgpath = imgurl + "readFile";
