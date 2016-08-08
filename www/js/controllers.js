@@ -143,10 +143,13 @@ angular.module('starter.controllers', [])
       if (data.value) {
         $scope.homeContent = data.data;
         $scope.content = _.groupBy($scope.homeContent, "type");
-        $scope.smaaashAttract = $scope.content.Attraction;
+        $scope.smaaashAttract = _.chunk($scope.content.Attraction,1);
 
-        $scope.smaaashNew = $scope.content["What's new"];
-        $scope.smaaashParty = $scope.content["Host a Party"];
+      $scope.smaaashNew1= $scope.content["What's new"];
+        $scope.smaaashNew =_.chunk($scope.smaaashNew1,1)
+
+       $scope.smaaashParty1 = $scope.content["Host a Party"];
+         $scope.smaaashParty=_.chunk($scope.smaaashParty1 ,1)
         console.log("$scope.smaaashParty", $scope.smaaashParty);
         console.log("$scope.smaaashNew ", $scope.smaaashNew);
         console.log("$scope.smaaashAttract", $scope.smaaashAttract);
