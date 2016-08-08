@@ -9,8 +9,8 @@
         <h1 class="text-center" ui-sref="app.home"><img src="img/logo.png" class="logo"></h1>
       </ion-nav-title>
       <!-- <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button> -->
-      <ion-nav-buttons side="right">
-        <h3 class="ion-ios-bell-outline color-white" menu-toggle="right">
+      <ion-nav-buttons side="right"  >
+        <h3 class="ion-ios-bell-outline color-white {{getCross}}" ng-click="whenClose();" menu-toggle="right">
         </h3>
       </ion-nav-buttons>
     </ion-nav-bar>

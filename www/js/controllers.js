@@ -8,6 +8,15 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.getCross = "";
+  $scope.whenClose = function() {
+    console.log("clickabe");
+    if($scope.getCross == "") {
+      $scope.getCross = "m-cross";
+    }else {
+      $scope.getCross = "";
+    }
+  };
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $ionicScrollDelegate.scrollTop();
   });
@@ -55,6 +64,7 @@ angular.module('starter.controllers', [])
   //     }
   //   });
   // });
+
 
 })
 
@@ -126,14 +136,17 @@ angular.module('starter.controllers', [])
   .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
 
     $scope.nextSlide = function(val) {
-      if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() == $ionicSlideBoxDelegate.$getByHandle(val).currentIndex() + 2) {
+      console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() );
+      console.log($ionicSlideBoxDelegate.$getByHandle(val).currentIndex() );
+      if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() == $ionicSlideBoxDelegate.$getByHandle(val).currentIndex() ) {
         $ionicSlideBoxDelegate.$getByHandle(val).slide(0);
       } else {
         $ionicSlideBoxDelegate.$getByHandle(val).next();
       }
     };
+
     $scope.disableSwipe = function() {
-      $ionicSlideBoxDelegate.enableSlide(false);
+      // $ionicSlideBoxDelegate.enableSlide(false);
     };
     $scope.smaaashAttract = [];
     $scope.smaaashNew = [];
@@ -144,15 +157,14 @@ angular.module('starter.controllers', [])
         $scope.homeContent = data.data;
         $scope.content = _.groupBy($scope.homeContent, "type");
 
-        $scope.smaaashAttract = _.chunk($scope.content.Attraction,1);
-console.log('ftgyhujikgtyhu',$scope.smaaashAttract);
+        $scope.smaaashAttract =$scope.content.Attraction;
+        // console.log('ftgyhujikgtyhu',$scope.smaaashAttract);
         $scope.smaaashNew = $scope.content["What's new"];
+        console.log($scope.smaaashNew);
         $scope.smaaashParty = $scope.content["Host a Party"];
         console.log("$scope.smaaashParty", $scope.smaaashParty);
         console.log("$scope.smaaashNew ", $scope.smaaashNew);
         console.log("$scope.smaaashAttract", $scope.smaaashAttract);
-      } else {
-
       }
 
     });
