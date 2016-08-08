@@ -11,9 +11,9 @@ angular.module('starter.controllers', [])
   $scope.getCross = "";
   $scope.whenClose = function() {
     console.log("clickabe");
-    if($scope.getCross == "") {
+    if ($scope.getCross == "") {
       $scope.getCross = "m-cross";
-    }else {
+    } else {
       $scope.getCross = "";
     }
   };
@@ -136,20 +136,23 @@ angular.module('starter.controllers', [])
   .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
 
     $scope.nextSlide = function(val) {
-      console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() );
-      console.log($ionicSlideBoxDelegate.$getByHandle(val).currentIndex() );
-      if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() == $ionicSlideBoxDelegate.$getByHandle(val).currentIndex() ) {
+      console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount());
+      console.log($ionicSlideBoxDelegate.$getByHandle(val).currentIndex());
+      if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount()-2 <= $ionicSlideBoxDelegate.$getByHandle(val).currentIndex()) {
         $ionicSlideBoxDelegate.$getByHandle(val).slide(0);
       } else {
         $ionicSlideBoxDelegate.$getByHandle(val).next();
       }
     };
-
+    $scope.options = {
+      loop: true
+    };
     $scope.disableSwipe = function() {
-      // $ionicSlideBoxDelegate.enableSlide(false);
+      $ionicSlideBoxDelegate.enableSlide(false);
     };
     $scope.smaaashAttract = [];
     $scope.smaaashNew = [];
+
     $scope.smaaashParty = [];
 
     MyServices.getHomeContent(function(data) {
@@ -157,10 +160,11 @@ angular.module('starter.controllers', [])
         $scope.homeContent = data.data;
         $scope.content = _.groupBy($scope.homeContent, "type");
 
-        $scope.smaaashAttract =$scope.content.Attraction;
-        // console.log('ftgyhujikgtyhu',$scope.smaaashAttract);
+        $scope.smaaashAttract = $scope.content.Attraction;
+
         $scope.smaaashNew = $scope.content["What's new"];
-        console.log($scope.smaaashNew);
+        console.log(JSON.stringify($scope.content["What's new"]));
+
         $scope.smaaashParty = $scope.content["Host a Party"];
         console.log("$scope.smaaashParty", $scope.smaaashParty);
         console.log("$scope.smaaashNew ", $scope.smaaashNew);
