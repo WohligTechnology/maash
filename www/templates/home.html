@@ -17,19 +17,23 @@
             <div class="col col-75">
               <div class="clearfix relate">
                 <div class="name pull-left">
-                  <div class="">
-                    <h4 class="m-clear text-in-shadow color-white font-america">Amrit Bhamrah</h4>
-                    <span class="text-in-shadow color-white font-america">Cricketer</span>
+                  <div class="" ng-if="!showSignUp">
+                    <h4 class="m-clear text-in-shadow color-white font-america">{{user.name}}</h4>
+                    <!-- <span class="text-in-shadow color-white font-america">Cricketer</span> -->
                   </div>
-                  <div class="">
-                    <h4 class="m-clear text-in-shadow color-white font-america">SIGN UP</h4>
+                  <div class="" ng-if="showSignUp">
+                    <h4 class="m-clear text-in-shadow color-white font-america" ui-sref="noheader.signup">SIGN UP</h4>
                   </div>
                 </div>
                 <div class="slash">
                   <span class="text-in-shadow font-galano color-white">/</span>
                 </div>
-                <div class="name pull-right">
+                <div class="name pull-right" ng-if="!showSignUp">
                   <h4 class="m-clear text-in-shadow color-white font-america">33500</h4>
+                  <span class="text-in-shadow color-white font-america">Points</span>
+                </div>
+                <div class="name pull-right" ng-if="showSignUp">
+                  <h4 class="m-clear text-in-shadow color-white font-america">0</h4>
                   <span class="text-in-shadow color-white font-america">Points</span>
                 </div>
               </div>

@@ -7,7 +7,7 @@
       <ion-list>
         <div class="row">
           <div class="col-offset-10 col col-80">
-            <form name="user" ng-submit="userSignup(userForm,user);">
+            <form name="user" ng-submit="userSignup(userForm);">
               <label class="item item-input">
                 <input type="text" placeholder="Name" name="fullname" required ng-model="userForm.fullname">
               </label>
@@ -40,6 +40,9 @@
                 <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pin" name="pin">
               </label>
               <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>
+              <!-- <button type="submit" name="button" class="go full-width">
+                <img src="img/go.png" alt="" class="img-responsive">
+              </button> -->
               <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();">
                 <img src="img/go.png" alt="" class="img-responsive">
               </button>
