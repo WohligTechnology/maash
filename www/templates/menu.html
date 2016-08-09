@@ -101,7 +101,7 @@
       </h1>
     </ion-header-bar>
     <ion-content>
-      <ion-list class="noti-list">
+      <ion-list class="noti-list" ng-click="whenClose();">
         <ion-item menu-close>
           <p class="no-ellipsis">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span>
@@ -116,17 +116,17 @@
 </ion-side-menus>
 <ion-footer-bar>
   <ion-tabs class="tabs-icon-only">
-    <ion-tab class="hide" ui-sref="app.home" menu-close>
+    <ion-tab class="hide" ui-sref="app.home" menu-close ng-click="closeAll()">
     </ion-tab>
-    <ion-tab title="Explore" icon-on="foot-tab explore" icon-off="foot-tab explore" ui-sref="app.exploresmaash" menu-close>
+    <ion-tab title="Explore" icon-on="foot-tab explore" icon-off="foot-tab explore" ng-click="closeAll('app.exploresmaash');">
     </ion-tab>
-    <ion-tab title="Buy" icon-on="foot-tab buy" icon-off="foot-tab buy" ui-sref="app.buy" menu-close>
+    <ion-tab title="Buy" icon-on="foot-tab buy" icon-off="foot-tab buy" ng-click="closeAll('app.buy');" menu-close>
     </ion-tab>
-    <ion-tab title="My Account" ui-sref="app.account" icon-on="foot-tab account" icon-off="foot-tab account" menu-close>
+    <ion-tab title="My Account" ng-click="closeAll('app.account');" icon-on="foot-tab account" icon-off="foot-tab account" menu-close>
     </ion-tab>
-    <ion-tab title="Check in" icon-on="foot-tab check" icon-off="foot-tab check" ui-sref="app.home" menu-close>
+    <ion-tab title="Check in" icon-on="foot-tab check" icon-off="foot-tab check" ng-click="closeAll('app.home');" menu-close>
     </ion-tab>
-    <ion-tab title="Contact us" icon-on="foot-tab contact" icon-off="foot-tab contact" ui.sref="app.home" menu-close>
+    <ion-tab title="Contact us" icon-on="foot-tab contact" icon-off="foot-tab contact"  ng-click="closeAll('app.home');" menu-close>
     </ion-tab>
   </ion-tabs>
 </ion-footer-bar>

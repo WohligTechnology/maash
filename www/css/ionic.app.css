@@ -9956,6 +9956,9 @@ a.button {
 h3.ion-ios-bell-outline {
   margin-top: 4px; }
 
+.m-cross:before {
+  content: "\f2d7" !important; }
+
 .bar-footer {
   padding: 0; }
   .bar-footer .tabs-striped .tab-item.tab-item-active,
@@ -10413,7 +10416,7 @@ img[alt="pay"] {
   height: 50px !important;
   position: absolute !important;
   top: 50% !important;
-  left: 13% !important;
+  left: 25% !important;
   -webkit-transform: translate(0, 50%) !important;
   transform: translate(0, 50%) !important; }
 

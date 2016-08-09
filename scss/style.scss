@@ -147,6 +147,11 @@
 h3.ion-ios-bell-outline {
   margin-top: 4px;
 }
+.m-cross {
+  &:before {
+    content: "\f2d7" !important;
+  }
+}
 // footer
 .bar-footer {
   padding: 0;
@@ -702,7 +707,7 @@ img[alt="pay"] {
   height: 50px !important;
   position: absolute !important;
   top: 50% !important;
-  left: 13%!important;
+  left: 25%!important;
   @include transform(translate(0,50%) !important);
 }
 
