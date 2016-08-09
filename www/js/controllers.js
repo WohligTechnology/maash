@@ -22,14 +22,12 @@ angular.module('starter.controllers', [])
     if($ionicSideMenuDelegate.isOpenLeft())
     {
       $ionicSideMenuDelegate.toggleLeft();
-      $scope.whenClose();
-      console.log("open");
+      // $scope.whenClose();
     }
     if($ionicSideMenuDelegate.isOpenRight())
     {
       $ionicSideMenuDelegate.toggleRight();
       $scope.whenClose();
-      console.log("Close");
     }
   };
 
