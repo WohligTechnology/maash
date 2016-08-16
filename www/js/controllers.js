@@ -242,6 +242,11 @@ angular.module('starter.controllers', [])
     .controller('DirectionCtrl', function($scope, $stateParams) {
 
     })
+
+    .controller('OrderCtrl', function($scope, $stateParams) {
+
+    })
+
     .controller('AccountCtrl', function($scope, $stateParams, $ionicPopup) {
         $scope.getPlan = function() {
             $scope.checkPlan = $ionicPopup.show({

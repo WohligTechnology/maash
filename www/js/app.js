@@ -110,6 +110,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('app.order', {
+      url: '/order',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/order.html',
+          controller: 'OrderCtrl'
+        }
+      }
+    })
     .state('app.confirmorder', {
       url: '/confirmorder',
       views: {
@@ -164,6 +173,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    // .state('noheader.signup', {
+    //   url: '/signup',
+    //   views: {
+    //     'content': {
+    //       templateUrl: 'templates/signup.html',
+    //       controller: 'SignupCtrl'
+    //     }
+    //   }
+    // })
     .state('noheader.avatar', {
       url: '/avatar',
       views: {
