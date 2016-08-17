@@ -10302,6 +10302,10 @@ h3.ion-ios-bell-outline {
   white-space: normal;
   color: #fff; }
 
+.order-bg {
+  background: url("../img/bgorder.png");
+  background-size: cover; }
+
 .payment {
   background: url("../img/bgred.jpg"); }
   .payment .points {
