@@ -562,16 +562,26 @@ h3.ion-ios-bell-outline {
     padding: 10px 0;
     border-top: none;
     border-right: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: none;
     border-left: none;
     margin: 0 30px;
     background-color: transparent;
     text-align: left;
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span+span{
+      margin-left: 15px;
+    }
   }
   .no-ellipsis {
     overflow: visible;
     white-space: normal;
     color: #fff;
+  }
+  .border{
+    border-top: 1px solid #fff;
   }
 }
 // direction end
@@ -580,7 +590,18 @@ h3.ion-ios-bell-outline {
   background: url('../img/bgorder.png');
   background-size: cover;
 }
-
+.order-text{
+  .item{
+    background-color: transparent;
+    border: none;
+    p{
+      color: #fff;
+      font-size: 20px;
+      padding: 10px;
+      border: 2px solid #fff;
+    }
+  }
+}
 
 
 // payment

@@ -10291,20 +10291,37 @@ h3.ion-ios-bell-outline {
   padding: 10px 0;
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: none;
   border-left: none;
   margin: 0 30px;
   background-color: transparent;
   text-align: left; }
+  .direction-list .item span {
+    display: inline-block;
+    vertical-align: middle; }
+  .direction-list .item span + span {
+    margin-left: 15px; }
 
 .direction-list .no-ellipsis {
   overflow: visible;
   white-space: normal;
   color: #fff; }
 
+.direction-list .border {
+  border-top: 1px solid #fff; }
+
 .order-bg {
   background: url("../img/bgorder.png");
   background-size: cover; }
+
+.order-text .item {
+  background-color: transparent;
+  border: none; }
+  .order-text .item p {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #fff; }
 
 .payment {
   background: url("../img/bgred.jpg"); }
