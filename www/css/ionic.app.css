@@ -10290,9 +10290,10 @@ h3.ion-ios-bell-outline {
 .direction .list select {
   width: 50%;
   border-radius: 5px;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-appearance: none; }
 
 .direction-list .item {
   padding: 10px 0;
@@ -10316,6 +10317,8 @@ h3.ion-ios-bell-outline {
 
 .direction-list .border {
   border-top: 1px solid #fff; }
+  .direction-list .border span, .direction-list .border p {
+    cursor: pointer; }
 
 .order-bg {
   background: url("../img/bgorder.png");

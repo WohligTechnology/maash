@@ -565,9 +565,10 @@ h3.ion-ios-bell-outline {
     select{
       width: 50%;
       border-radius: 5px;
-      padding: 10px 0;
+      padding: 10px;
       text-align: center;
       margin: 0 auto;
+     -webkit-appearance: none;
     }
   }
 }
@@ -602,6 +603,9 @@ h3.ion-ios-bell-outline {
   }
   .border{
     border-top: 1px solid #fff;
+    span,p{
+      cursor: pointer;
+    }
   }
 }
 // direction end
