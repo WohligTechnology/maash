@@ -8,6 +8,9 @@
   src: url("../fonts/ReneBieder-GalanoGrotesque.otf");
 }
 // end fonts
+//background-colors
+$brand-purply:#662d91 !default;
+$brand-darkblue: #2a3890!default;
 // classes
 .mt5 {
   margin-top: 5px;
@@ -772,3 +775,9 @@ img[alt="pay"] {
   margin-top: 10px;
 }
 // confirm order end
+//order page starts
+.game-orders{
+  p{
+    background-color: $brand-darkblue;
+  }
+}
