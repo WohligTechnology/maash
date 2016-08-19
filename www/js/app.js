@@ -119,6 +119,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+    .state('app.deals', {
+      url: '/deals',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/deals.html',
+          controller: 'DealsCtrl'
+        }
+      }
+    })
+    
     .state('app.confirmorder', {
       url: '/confirmorder',
       views: {

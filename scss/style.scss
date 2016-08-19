@@ -602,10 +602,16 @@ h3.ion-ios-bell-outline {
       font-size: 20px;
       padding: 10px;
       border: 2px solid #fff;
+      border-top: none;
+      margin-top: -7px;
     }
   }
 }
-
+//detail-smaash
+.deals-bg{
+  background: url('../img/bgdeals.png');
+  background-size: cover;
+}
 
 // payment
 .payment {

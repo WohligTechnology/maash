@@ -10321,7 +10321,13 @@ h3.ion-ios-bell-outline {
     color: #fff;
     font-size: 20px;
     padding: 10px;
-    border: 2px solid #fff; }
+    border: 2px solid #fff;
+    border-top: none;
+    margin-top: -7px; }
+
+.deals-bg {
+  background: url("../img/bgdeals.png");
+  background-size: cover; }
 
 .payment {
   background: url("../img/bgred.jpg"); }
