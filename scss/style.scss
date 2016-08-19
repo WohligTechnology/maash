@@ -562,6 +562,11 @@ h3.ion-ios-bell-outline {
 }
 .direction{
   .list{
+    a{
+      position: absolute;
+      right: 26%;
+      top: 25%;
+    }
     select{
       width: 50%;
       border-radius: 5px;
@@ -633,6 +638,32 @@ h3.ion-ios-bell-outline {
 .deals-bg{
   background: url('../img/bgdeals.png');
   background-size: cover;
+}
+.dealings{
+.card{
+  border: 2px solid #fff;
+  margin: 20px 40px;
+  // border-radius: 0;
+  // padding: 1px 15px;
+}
+    .pink-button{
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 70%;
+      right: 0%;
+      z-index: 9999;
+      transform: translate(-50%,-50%);
+    }
+    .click{
+      background-color: #000;
+          padding: 25px 10px;
+          h3{
+              color: #fff;
+              font-size: 18px;
+          }
+
+  }
 }
 //about
 

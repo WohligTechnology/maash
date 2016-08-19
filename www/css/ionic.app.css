@@ -10287,6 +10287,11 @@ h3.ion-ios-bell-outline {
 .see-map {
   margin: 0 20px; }
 
+.direction .list a {
+  position: absolute;
+  right: 26%;
+  top: 25%; }
+
 .direction .list select {
   width: 50%;
   border-radius: 5px;
@@ -10338,6 +10343,26 @@ h3.ion-ios-bell-outline {
 .deals-bg {
   background: url("../img/bgdeals.png");
   background-size: cover; }
+
+.dealings .card {
+  border: 2px solid #fff;
+  margin: 20px 40px; }
+
+.dealings .pink-button {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 70%;
+  right: 0%;
+  z-index: 9999;
+  transform: translate(-50%, -50%); }
+
+.dealings .click {
+  background-color: #000;
+  padding: 25px 10px; }
+  .dealings .click h3 {
+    color: #fff;
+    font-size: 18px; }
 
 .about-bg {
   background: url("../img/about.png");
