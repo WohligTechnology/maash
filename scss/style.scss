@@ -608,10 +608,43 @@ h3.ion-ios-bell-outline {
   }
 }
 //detail-smaash
+//deals
 .deals-bg{
   background: url('../img/bgdeals.png');
   background-size: cover;
 }
+//about
+
+.about-bg{
+  background: url('../img/about.png');
+  background-size: cover;
+}
+
+.about-text{
+  .card{
+    overflow: hidden;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 0;
+    padding: 1px 15px;
+    .heading{
+      padding: 10px;
+      border: none;
+    }
+    h3{
+      font-size: 24px;
+    }
+    p{
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}
+.deals-packages{
+  background-color: #fff;
+}
+
+
 
 // payment
 .payment {

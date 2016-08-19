@@ -10329,6 +10329,28 @@ h3.ion-ios-bell-outline {
   background: url("../img/bgdeals.png");
   background-size: cover; }
 
+.about-bg {
+  background: url("../img/about.png");
+  background-size: cover; }
+
+.about-text .card {
+  overflow: hidden;
+  background-color: #fff;
+  margin: 20px 0;
+  border-radius: 0;
+  padding: 1px 15px; }
+  .about-text .card .heading {
+    padding: 10px;
+    border: none; }
+  .about-text .card h3 {
+    font-size: 24px; }
+  .about-text .card p {
+    margin: 0;
+    padding: 10px 0; }
+
+.deals-packages {
+  background-color: #fff; }
+
 .payment {
   background: url("../img/bgred.jpg"); }
   .payment .points {
