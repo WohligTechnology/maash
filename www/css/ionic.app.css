@@ -10287,6 +10287,13 @@ h3.ion-ios-bell-outline {
 .see-map {
   margin: 0 20px; }
 
+.direction .list select {
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 auto; }
+
 .direction-list .item {
   padding: 10px 0;
   border-top: none;
