@@ -120,6 +120,10 @@ angular.module('starter.controllers', [])
     }
 })
 
+.controller('ProfileCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('SelectCityCtrl', function($scope, $stateParams, MyServices, $state) {
 
     MyServices.getCity(function(data) {

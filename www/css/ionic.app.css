@@ -10431,6 +10431,10 @@ h3.ion-ios-bell-outline {
 img[alt="pay"] {
   vertical-align: middle; }
 
+.profile-bg {
+  background: url("../img/profile.png");
+  background-size: cover; }
+
 .account-main {
   padding: 0;
   background: url("../img/bgaccount.jpg") no-repeat;
