@@ -761,7 +761,19 @@ img[alt="pay"] {
   background: url('../img/profile.png');
   background-size: cover;
 }
-
+.profile{
+  form{
+    .editing{
+    background: url("../img/pen.png") no-repeat 95% 50%;
+    }
+    .arrows{
+      background: url("../img/arrow.png") no-repeat 95% 50%;
+    }
+  }
+  .profile-info {
+    top: 0px;
+}
+}
 // account page
 .account-main {
   padding: 0;
