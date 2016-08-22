@@ -590,7 +590,7 @@ h3.ion-ios-bell-outline {
     border-right: none;
     border-bottom: none;
     border-left: none;
-    margin: 0 30px;
+    margin: 0 20px;
     background-color: transparent;
     text-align: left;
     span{
@@ -771,7 +771,18 @@ img[alt="pay"] {
     }
   }
   .profile-info {
-    top: 0px;
+    height: 90px;
+    top: 15px;
+    padding: 25px 0px 0 0;
+    background: url("../img/amrit.png") no-repeat;
+   .profile-img{
+     left: 0;
+     top: -45px;
+   }
+   .plan{
+     left: 70px;
+     top: 25px;
+   }
 }
 }
 // account page
