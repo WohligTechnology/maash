@@ -785,6 +785,51 @@ img[alt="pay"] {
    }
 }
 }
+//cart
+.cut{
+  position: absolute;
+  right: 0;
+  top: 3px;
+  border: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+// .amount-letter{
+//   p{
+//     display: inline-block;
+//   }
+// }
+.order{
+  .cut{
+    height: 30px;
+    width: 50px;
+  }
+}
+.cart-text{
+  .card{
+    padding: 10px 15px;
+  }
+}
+.cart-bg{
+  background: url('../img/carts.jpg');
+  background-size: cover;
+}
+.quantity{
+    width: 50px;
+    height: 25px;
+    display: inline-block;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.quant-status{
+  padding: 10px 0;
+  span{
+    font-size: 12px;
+  }
+}
 // account page
 .account-main {
   padding: 0;

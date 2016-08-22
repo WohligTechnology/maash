@@ -124,6 +124,10 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('CartCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('SelectCityCtrl', function($scope, $stateParams, MyServices, $state) {
 
     MyServices.getCity(function(data) {

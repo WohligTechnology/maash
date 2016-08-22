@@ -140,6 +140,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('app.cart', {
+      url: '/cart',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/cart.html',
+          controller: 'CartCtrl'
+        }
+      }
+    })
+
 
     .state('app.profile', {
       url: '/profile',
