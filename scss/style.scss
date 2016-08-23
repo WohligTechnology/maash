@@ -8,6 +8,8 @@
   src: url("../fonts/ReneBieder-GalanoGrotesque.otf");
 }
 // end fonts
+//fontawesome
+// @import "www/lib/fontawesome/scss/font-awesome";
 //background-colors
 $brand-purply:#662d91 !default;
 $brand-darkblue: #2a3890!default;
@@ -696,7 +698,82 @@ h3.ion-ios-bell-outline {
   background-color: #fff;
 }
 
+//attractions
 
+.attraction-bg{
+  background: url('../img/attractions.jpg');
+  background-size: cover;
+}
+.brand-blue{
+  background-color:#29a8df;
+}
+.attractions{
+  .bluey{
+    color: #29a8df;
+  }
+  .blue{
+    background-color: #29a8df;
+  }
+  .card{
+    margin: 0;
+    padding: 15px;
+  }
+  .border-changes{
+    border: 2px solid #29a8df;
+  }
+  .new-detail{
+    border: 1px solid #29a8df;
+    border-top: none;
+    padding: 20px;
+    p{
+      color: #ccc;
+    }
+  }
+  .pink-button{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  .views{
+    button{
+      background-color: #fff;
+      border: 1px solid #29a8df;
+      padding: 5px 15px;
+    }
+  }
+  .button-set{
+    button{
+    color: #fff;
+    padding: 10px 9px;
+    border: none;
+    border-radius: 6px;
+    text-transform: capitalize;
+    }
+    button+button{
+      margin-left: 1px;
+    }
+  }
+  .love{
+    button{
+      text-align: center;
+      background-color: #ccc;
+      border: none;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 5px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #fff;
+      .fa{
+        margin: 0 5px;
+      }
+    }
+  }
+}
 
 // payment
 .payment {

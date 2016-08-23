@@ -92,6 +92,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+
+    .state('app.attraction', {
+      url: '/attractions',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/attractions.html',
+          controller: 'AttractionsCtrl'
+        }
+      }
+    })
+
+
     .state('app.exploresmaash', {
       url: '/exploresmaash',
       views: {

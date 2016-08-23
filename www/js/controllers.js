@@ -154,6 +154,19 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('AttractionsCtrl', function($scope, $stateParams, $ionicPopup) {
+  $scope.getPlan = function() {
+      $scope.checkPlan = $ionicPopup.show({
+          templateUrl: 'templates/modal/choose.html',
+          scope: $scope
+      });
+  };
+  $scope.closePopup = function() {
+      $scope.checkPlan.close();
+  }
+
+})
+
 .controller('EventCtrl', function($scope, $stateParams) {
 
 })
