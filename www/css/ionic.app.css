@@ -10393,8 +10393,17 @@ h3.ion-ios-bell-outline {
 .brand-blue {
   background-color: #29a8df; }
 
+.brand-purblu {
+  background-color: #642c91; }
+
+.attractions .order-main {
+  margin: 0 10px; }
+
 .attractions .bluey {
   color: #29a8df; }
+
+.attractions .purpley {
+  color: #642c91; }
 
 .attractions .blue {
   background-color: #29a8df; }
@@ -10406,18 +10415,18 @@ h3.ion-ios-bell-outline {
 .attractions .border-changes {
   border: 2px solid #29a8df; }
 
-.attractions .new-detail {
+.attractions .new-detail, .attractions .news-detail, .attractions .new-details {
   border: 1px solid #29a8df;
   border-top: none;
   padding: 20px; }
-  .attractions .new-detail p {
+  .attractions .new-detail p, .attractions .news-detail p, .attractions .new-details p {
     color: #ccc; }
 
 .attractions .pink-button {
   height: 50px;
   width: 50px;
   position: absolute;
-  top: 40%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%); }
 
@@ -10448,6 +10457,11 @@ h3.ion-ios-bell-outline {
   color: #fff; }
   .attractions .love button .fa {
     margin: 0 5px; }
+
+.attractions .news-detail {
+  border: 1px solid #642c91; }
+  .attractions .news-detail .views button {
+    border: 1px solid #642c91; }
 
 .payment {
   background: url("../img/bgred.jpg"); }

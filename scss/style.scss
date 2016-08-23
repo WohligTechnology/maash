@@ -7,6 +7,7 @@
   font-family: "Galano Grotesque";
   src: url("../fonts/ReneBieder-GalanoGrotesque.otf");
 }
+
 // end fonts
 //fontawesome
 // @import "www/lib/fontawesome/scss/font-awesome";
@@ -707,9 +708,18 @@ h3.ion-ios-bell-outline {
 .brand-blue{
   background-color:#29a8df;
 }
+.brand-purblu{
+  background-color: #642c91;
+}
 .attractions{
+  .order-main{
+    margin: 0 10px;
+  }
   .bluey{
     color: #29a8df;
+  }
+  .purpley{
+    color: #642c91;
   }
   .blue{
     background-color: #29a8df;
@@ -721,7 +731,7 @@ h3.ion-ios-bell-outline {
   .border-changes{
     border: 2px solid #29a8df;
   }
-  .new-detail{
+  .new-detail,.news-detail,.new-details{
     border: 1px solid #29a8df;
     border-top: none;
     padding: 20px;
@@ -733,7 +743,7 @@ h3.ion-ios-bell-outline {
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
   }
@@ -773,6 +783,22 @@ h3.ion-ios-bell-outline {
       }
     }
   }
+  .news-detail{
+      border: 1px solid #642c91;
+      .views{
+        button{
+            border: 1px solid #642c91;
+        }
+  }
+}
+//   .new-details{
+//     .views{
+//       button{
+//         border: 1px solid #2a3890;
+//       }
+// }
+//   }
+
 }
 
 // payment
