@@ -8,9 +8,14 @@
   src: url("../fonts/ReneBieder-GalanoGrotesque.otf");
 }
 
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome-webfont.eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // end fonts
-//fontawesome
-// @import "www/lib/fontawesome/scss/font-awesome";
 //background-colors
 $brand-purply:#662d91 !default;
 $brand-darkblue: #2a3890!default;
@@ -840,6 +845,15 @@ h3.ion-ios-bell-outline {
       color: #fff;
       .fa{
         margin: 0 5px;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        &:before{
+          font-family: "fontawesome";
+          content: "\f08a";
+        }
       }
     }
   }
