@@ -10355,6 +10355,7 @@ h3.ion-ios-bell-outline {
   top: 70%;
   right: 0%;
   z-index: 9999;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 .dealings .click {
@@ -10396,6 +10397,50 @@ h3.ion-ios-bell-outline {
 .brand-purblu {
   background-color: #642c91; }
 
+.choose .modal-bg {
+  background: url("../img/modal-bg.png");
+  background-size: cover; }
+
+.choose .close {
+  height: 40px;
+  width: 40px;
+  top: 0;
+  right: 0; }
+
+.choose .forms {
+  padding: 35px 10px; }
+  .choose .forms .search-green {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto; }
+    .choose .forms .search-green .form-control {
+      border-radius: 10px;
+      padding: 6px 12px;
+      height: 45px;
+      box-shadow: 0px 3px 1px #ccc inset;
+      position: relative; }
+    .choose .forms .search-green .microscope {
+      position: absolute;
+      top: 6px;
+      right: 20px; }
+  .choose .forms .game-type {
+    position: relative;
+    margin: 15px auto 0; }
+    .choose .forms .game-type .form-control {
+      height: 40px;
+      width: 100%;
+      padding: 6px 12px;
+      border-radius: 10px;
+      box-shadow: 0px 3px 1px #ccc inset; }
+    .choose .forms .game-type select {
+      -webkit-appearance: none; }
+    .choose .forms .game-type a {
+      position: absolute;
+      right: 5%;
+      top: 25%;
+      color: #ccc; }
+
 .attractions .order-main {
   margin: 0 10px; }
 
@@ -10428,6 +10473,7 @@ h3.ion-ios-bell-outline {
   position: absolute;
   top: 60%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 .attractions .views button {

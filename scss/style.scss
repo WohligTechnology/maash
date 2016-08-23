@@ -656,7 +656,7 @@ h3.ion-ios-bell-outline {
       top: 70%;
       right: 0%;
       z-index: 9999;
-      transform: translate(-50%,-50%);
+    @include transform(translate(-50%,-50%));
     }
     .click{
       background-color: #000;
@@ -711,7 +711,67 @@ h3.ion-ios-bell-outline {
 .brand-purblu{
   background-color: #642c91;
 }
+.choose{
+  .modal-bg{
+    background: url('../img/modal-bg.png');
+    background-size: cover;
+  }
+  .close{
+    height: 40px;
+    width: 40px;
+    top: 0;
+    right: 0;
+  }
+  .forms{
+    padding: 35px 10px;
+    .search-green{
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      .form-control{
+        border-radius: 10px;
+        padding: 6px 12px;
+        height: 45px;
+        box-shadow: 0px 3px 1px #ccc inset;
+        position: relative;
+      }
+      .microscope{
+        position: absolute;
+        top: 6px;
+        right: 20px;
+        // height: 35px;
+        // width: 35px;
+        // padding: 5px;
+        // border: 1px solid #000;
+        // cursor: pointer;
+      }
+    }
+    .game-type{
+      // width: 100%;
+      position: relative;
+      margin:  15px auto 0;
+      .form-control{
+        height: 40px;
+        width: 100%;
+        padding: 6px 12px;
+        border-radius: 10px;
+        box-shadow: 0px 3px 1px #ccc inset;
+      }
+      select{
+        -webkit-appearance:none;
+      }
+      a{
+        position: absolute;
+        right: 5%;
+        top: 25%;
+        color: #ccc;
+      }
+    }
+  }
+}
 .attractions{
+
   .order-main{
     margin: 0 10px;
   }
@@ -745,7 +805,7 @@ h3.ion-ios-bell-outline {
     position: absolute;
     top: 60%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    @include transform(translate(-50%,-50%));
   }
 
   .views{
