@@ -9829,6 +9829,18 @@ a.button {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'fontawesome';
+  src: url("../fonts/fontawesome-webfont.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("../fonts/fontawesome-webfont.woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .mt5 {
   margin-top: 5px; }
 
@@ -10510,12 +10522,11 @@ h3.ion-ios-bell-outline {
   .attractions .love button .fa {
     margin: 0 5px;
     display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
+    font: normal normal normal 14px/1 fontawesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased; }
     .attractions .love button .fa:before {
-      font-family: "fontawesome";
       content: "\f08a"; }
 
 .attractions .news-detail {

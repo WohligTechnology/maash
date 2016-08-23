@@ -14,6 +14,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome-webfont.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 // end fonts
 //background-colors
@@ -846,12 +858,11 @@ h3.ion-ios-bell-outline {
       .fa{
         margin: 0 5px;
         display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
+        font: normal normal normal 14px/1 fontawesome;
         font-size: inherit;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         &:before{
-          font-family: "fontawesome";
           content: "\f08a";
         }
       }
