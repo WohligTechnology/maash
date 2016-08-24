@@ -10409,11 +10409,59 @@ h3.ion-ios-bell-outline {
   background: url("../img/attractions.jpg");
   background-size: cover; }
 
+.cricket-bg .button-set {
+  margin: 0 5px; }
+  .cricket-bg .button-set button {
+    color: #fff;
+    padding: 5px 0;
+    border: none;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 6px;
+    text-transform: capitalize; }
+  .cricket-bg .button-set button + button {
+    margin-left: 1px; }
+
+.cricket-bg .card {
+  margin: 20px 0; }
+
+.cricket-bg .love {
+  margin: 0 5px; }
+
+.love button {
+  text-align: center;
+  background-color: #ccc;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #fff; }
+  .love button .fa {
+    margin: 0 5px;
+    display: inline-block;
+    font: normal normal normal 14px/1 fontawesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased; }
+    .love button .fa:before {
+      content: "\f08a"; }
+
 .brand-blue {
-  background-color: #29a8df; }
+  background-color: #29a8df !important; }
 
 .brand-purblu {
   background-color: #642c91; }
+
+.blue {
+  background-color: #29a8df; }
+
+.bluey {
+  color: #29a8df; }
+
+.purpley {
+  color: #642c91; }
 
 .choose .modal-bg {
   background: url("../img/modal-bg.png");
@@ -10461,15 +10509,6 @@ h3.ion-ios-bell-outline {
 
 .attractions .order-main {
   margin: 0 10px; }
-
-.attractions .bluey {
-  color: #29a8df; }
-
-.attractions .purpley {
-  color: #642c91; }
-
-.attractions .blue {
-  background-color: #29a8df; }
 
 .attractions .card {
   margin: 0;

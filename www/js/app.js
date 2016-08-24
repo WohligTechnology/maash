@@ -65,6 +65,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+    .state('app.cricket', {
+      url: '/cricket',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/cricket.html',
+          controller: 'CricketCtrl'
+        }
+      }
+    })
     .state('app.home', {
       url: '/home',
       views: {
