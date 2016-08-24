@@ -10412,12 +10412,18 @@ h3.ion-ios-bell-outline {
 .cricket-bg {
   background: url("../img/attractions.jpg");
   background-size: cover; }
+  .cricket-bg .accordion-list .card {
+    background-color: transparent; }
   .cricket-bg .accordion {
     /* DEMO */ }
+    .cricket-bg .accordion p {
+      color: #fff; }
+    .cricket-bg .accordion .item {
+      border: transparent; }
     .cricket-bg .accordion .item-expand {
       position: relative;
       width: 100%;
-      max-height: 60px;
+      max-height: 20px;
       transition: max-height 0.1s ease-out;
       overflow: hidden; }
     .cricket-bg .accordion .item-expand.inactive:after {
@@ -10427,19 +10433,15 @@ h3.ion-ios-bell-outline {
       left: 0;
       height: 15px;
       width: 100%;
-      display: block;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(1, white));
-      background-image: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 100%);
-      background-image: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 100%);
-      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
-      background-image: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, white 100%);
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%); }
+      display: block; }
     .cricket-bg .accordion .item-expand.active {
       max-height: 200px;
       transition: max-height 0.3s ease-out; }
     .cricket-bg .accordion .item-expand-footer {
-      color: red;
-      margin-top: 10px; }
+      color: #fff;
+      position: absolute;
+      right: 10px;
+      top: 10px; }
     .cricket-bg .accordion .item-expand-footer i {
       margin-right: 10px; }
   .cricket-bg .button-set {

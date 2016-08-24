@@ -149,16 +149,16 @@ angular.module('starter.controllers', [])
       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
     },{
       title: 'timing and pricing',
-      text: 'take guard against the greatest...'
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
     },{
       title: 'technology',
-      text: 'take guard against the greatest...'
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
     },{
       title: 'game description',
-      text: 'take guard against the greatest...'
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
     },{
       title: 'promotions',
-      text: 'take guard against the greatest...'
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
   }];
   $scope.toggleItem= function(item) {
      if ($scope.isItemShown(item)) {

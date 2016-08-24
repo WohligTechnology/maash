@@ -29,20 +29,24 @@
   </a> -->
 
 </div>
-<ion-list class="accordion">
+<div class="accordion-list">
+<div class="list card">
+<ion-list class="accordion ">
 
-        <ion-item ng-repeat="item in items" class="item item-text-wrap">
+        <ion-item ng-repeat="item in items" class="item item-text-wrap brand-blue relate">
           <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
-            <h2>{{ item.title }}</h2>
+            <h2 class="text-left  text-uppercase text-in-shadow font-america">{{ item.title }}</h2>
             <p>{{ item.text }}</p>
           </div>
           <div ng-click="toggleItem(item)" class="item-expand-footer">
-            <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
-            {{ isGroupShown(item) ? 'Less' : 'More' }}
+            <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+            <!-- {{ isGroupShown(item) ? 'Less' : 'More' }} -->
           </div>
         </ion-item>
 
       </ion-list>
+    </div>
+  </div>
 <!-- <div class="list card">
 <div class="item item-image">
 <img src="img/monsson.png">
