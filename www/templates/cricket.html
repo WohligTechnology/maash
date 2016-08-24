@@ -1,6 +1,6 @@
 
 <ion-view>
-  <ion-content class="cricket-bg order-text dealings ">
+  <ion-content class="cricket-bg">
     <div class="order-main text-center">
         <h3 class="text-center text-uppercase text-in-shadow font-america">smaaash cricket</h3>
       </div>
@@ -29,6 +29,20 @@
   </a> -->
 
 </div>
+<ion-list class="accordion">
+
+        <ion-item ng-repeat="item in items" class="item item-text-wrap">
+          <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.text }}</p>
+          </div>
+          <div ng-click="toggleItem(item)" class="item-expand-footer">
+            <i ng-class="isItemShown(item) ? 'ion-ios-minus-outline' : 'ion-ios-plus-outline'"></i>
+            {{ isGroupShown(item) ? 'Less' : 'More' }}
+          </div>
+        </ion-item>
+
+      </ion-list>
 <!-- <div class="list card">
 <div class="item item-image">
 <img src="img/monsson.png">
