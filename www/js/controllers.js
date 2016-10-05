@@ -387,8 +387,15 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('NoHeaderCtrl', function($scope, $stateParams) {
-
+.controller('NoHeaderCtrl', function($scope, $stateParams,MyServices) {
+  MyServices.getCity(function(data) {
+      $scope.getCity = _.chunk(data.data, 2);
+      console.log('$scope.getCity', $scope.getCity);
+  })
+  $scope.selectCity = function(city) {
+      $.jStorage.set("mycity", city);
+      $state.go("noheader.signup");
+  }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {});
