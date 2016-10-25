@@ -75,6 +75,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+   .state('app.smaashcricket', {
+      url: '/smaashcricket',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/smaashcricket.html',
+          controller: 'SCricketCtrl'
+        }
+      }
+    })
+
     .state('app.home', {
       url: '/home',
       views: {

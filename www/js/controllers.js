@@ -128,6 +128,10 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('SCricketCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('CricketCtrl', function($scope, $stateParams) {
 //   $scope.groups = [];
 // for (var i=0; i<10; i++) {
