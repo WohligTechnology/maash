@@ -129,7 +129,36 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SCricketCtrl', function($scope, $stateParams) {
-
+ $scope.items = [{
+      title: 'game description',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'timing and pricing',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'technology',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'game description',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'promotions',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+  },{
+      title: 'photos',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+  }
+  ];
+  $scope.toggleItem= function(item) {
+     if ($scope.isItemShown(item)) {
+       $scope.shownItem = null;
+     } else {
+       $scope.shownItem = item;
+     }
+   };
+   $scope.isItemShown = function(item) {
+     return $scope.shownItem === item;
+   };
 })
 
 .controller('CricketCtrl', function($scope, $stateParams) {
