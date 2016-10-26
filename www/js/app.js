@@ -106,6 +106,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('app.partyform', {
+      url: '/partyform',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/partyform.html',
+          controller: 'PartyFormCtrl'
+        }
+      }
+    })
+
     .state('app.home', {
       url: '/home',
       views: {

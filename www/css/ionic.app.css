@@ -10848,3 +10848,13 @@ img[alt="pay"] {
 
 .game-orders p {
   background-color: #2a3890; }
+
+.partyform .resgistration {
+  margin-top: 50px; }
+
+.partyform h3 {
+  font-style: italic; }
+
+.final-decision a, .final-decision button {
+  display: inline-block;
+  vertical-align: middle; }

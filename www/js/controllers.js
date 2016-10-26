@@ -132,6 +132,10 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('PartyFormCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('CartCtrl', function($scope, $stateParams) {
 
 })

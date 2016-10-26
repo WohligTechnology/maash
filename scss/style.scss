@@ -1307,3 +1307,18 @@ img[alt="pay"] {
     background-color: $brand-darkblue;
   }
 }
+
+.partyform{
+  .resgistration{
+    margin-top: 50px;
+  }
+  h3{
+    font-style: italic;
+  }
+}
+.final-decision{
+  a,button{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
