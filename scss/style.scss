@@ -718,10 +718,25 @@ h3.ion-ios-bell-outline {
 
 //attractions
 
-.attraction-bg{
+.attraction-bg,.beverage-bg{
   background: url('../img/attractions.jpg');
   background-size: cover;
 }
+
+.beverage-bg{
+    background: url('../img/explore-smaash.jpg');
+    .card{
+      background-color: transparent;
+      box-shadow: none;
+    }
+    .restaurant-name{
+      padding: 0 10px;
+      img{
+        width: 100%;
+      }
+    }
+}
+
 .cricket-bg,.smaash-bg{
   background: url('../img/attractions.jpg');
   background-size: cover;
@@ -842,8 +857,9 @@ background-color:    #fc5626;
   img{
     width: 100%;
   }
-   img+img{
+   a{
     width: auto;
+    height: auto;
     bottom: 0;
     right: 0;
     position: absolute;

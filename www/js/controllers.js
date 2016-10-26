@@ -124,6 +124,14 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('BeverageCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('PartyCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('CartCtrl', function($scope, $stateParams) {
 
 })
