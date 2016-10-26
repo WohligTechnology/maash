@@ -144,6 +144,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+       .state('app.events', {
+      url: '/events',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/events.html',
+          controller: 'EventsCtrl'
+        }
+      }
+    })
+
 
     .state('app.attraction', {
       url: '/attractions',
@@ -214,6 +224,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+      .state('app.earn', {
+      url: '/earn',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/earn.html',
+          controller: 'EarnCtrl'
+        }
+      }
+    })
+
 
     .state('app.profile', {
       url: '/profile',
@@ -277,6 +297,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         'content': {
           templateUrl: 'templates/signup.html',
           controller: 'SignupCtrl'
+        }
+      }
+    })
+
+        .state('noheader.bonus', {
+      url: '/bonus',
+      views: {
+        'content': {
+          templateUrl: 'templates/bonus.html',
+          controller: 'BonusCtrl'
         }
       }
     })

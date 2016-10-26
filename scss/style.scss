@@ -737,7 +737,7 @@ h3.ion-ios-bell-outline {
     }
 }
 
-.cricket-bg,.smaash-bg{
+.cricket-bg,.smaash-bg,.earn-bg{
   background: url('../img/attractions.jpg');
   background-size: cover;
 .accordion-list{
@@ -867,6 +867,19 @@ background-color:    #fc5626;
 }
 
 
+}
+ 
+.events-bg{
+ .accordion .item{
+padding: 18px 0 !important;
+  }
+  
+  p{
+    border-top: 2px solid #fff;
+  }
+  h2,p{
+padding: 0 10px;
+  }
 }
 .love{
   button{
@@ -1320,5 +1333,22 @@ img[alt="pay"] {
   a,button{
     display: inline-block;
     vertical-align: middle;
+  }
+}
+.bonus-img{
+  img{
+    width: 100%;
+  }
+}
+.buttons{
+  .share{
+    margin-left: 80px;
+  }
+  .review{
+    margin-right: 80px;
+    margin-left: 0;
+  }
+  .next{
+    margin: 0;
   }
 }

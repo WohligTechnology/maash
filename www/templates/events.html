@@ -1,0 +1,52 @@
+
+<ion-view>
+  <ion-content class="smaash-bg events-bg">
+    <div class="order-main text-center">
+      <h3 class="text-center text-uppercase text-in-shadow font-america">events</h3>
+    </div>
+     <div class="accordion-list">
+        
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/party.png" alt="">
+ 
+    </div>
+        <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <p>{{ item.text }}</p>
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+             
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    
+    <div class="accordion-list">
+        
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/party.png" alt="">
+ 
+    </div>
+        <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <p>{{ item.text }}</p>
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+             
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

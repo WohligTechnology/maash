@@ -136,6 +136,43 @@ angular.module('starter.controllers', [])
 
 })
 
+
+.controller('EventsCtrl', function($scope, $stateParams) {
+     $scope.items = [{
+      title: 'live screening !',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+     },
+
+//    {
+//       title: 'timing and pricing',
+//       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+//     },{
+//       title: 'technology',
+//       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+//     },{
+//       title: 'game description',
+//       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+//     },{
+//       title: 'promotions',
+//       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+//   },{
+//       title: 'photos',
+//       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+//   }
+  ];
+  $scope.toggleItem= function(item) {
+     if ($scope.isItemShown(item)) {
+       $scope.shownItem = null;
+     } else {
+       $scope.shownItem = item;
+     }
+   };
+   $scope.isItemShown = function(item) {
+     return $scope.shownItem === item;
+   };
+
+})
+
 .controller('CartCtrl', function($scope, $stateParams) {
 
 })
@@ -431,6 +468,55 @@ angular.module('starter.controllers', [])
         })
     }
 })
+.controller('BonusCtrl', function($scope, $stateParams, MyServices) {
+    })
+
+    .controller('EarnCtrl', function($scope, $stateParams,  MyServices) {
+        //  $scope.nextSlide = function(val) {
+        //     console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount());
+        //     console.log($ionicSlideBoxDelegate.$getByHandle(val).currentIndex());
+        //     if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() - 2 <= $ionicSlideBoxDelegate.$getByHandle(val).currentIndex()) {
+        //         $ionicSlideBoxDelegate.$getByHandle(val).slide(0);
+        //     } else {
+        //         $ionicSlideBoxDelegate.$getByHandle(val).next();
+        //     }
+        // };
+        // $scope.options = {
+        //     loop: true
+        // };
+        // $scope.disableSwipe = function() {
+        //     $ionicSlideBoxDelegate.enableSlide(false);
+        // };
+        
+
+        $scope.items = [{
+      title: 'game description',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'timing and pricing',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'technology',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'game description',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+    },{
+      title: 'promotions',
+      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+  }];
+  $scope.toggleItem= function(item) {
+     if ($scope.isItemShown(item)) {
+       $scope.shownItem = null;
+     } else {
+       $scope.shownItem = item;
+     }
+   };
+   $scope.isItemShown = function(item) {
+     return $scope.shownItem === item;
+   };
+
+    })
 
 .controller('NoHeaderCtrl', function($scope, $stateParams,MyServices) {
   MyServices.getCity(function(data) {
