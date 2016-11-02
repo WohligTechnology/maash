@@ -9878,6 +9878,9 @@ a.button {
 .block {
   display: block; }
 
+.inline-block {
+  display: inline-block; }
+
 .no-border {
   border: none !important; }
 
@@ -10405,25 +10408,23 @@ h3.ion-ios-bell-outline {
 .deals-packages {
   background-color: #fff; }
 
-.attraction-bg, .beverage-bg {
-  background: url("../img/attractions.jpg");
-  background-size: cover; }
-
-.beverage-bg {
-  background: url("../img/explore-smaash.jpg"); }
-  .beverage-bg .card {
-    background-color: transparent;
-    box-shadow: none; }
-  .beverage-bg .restaurant-name {
-    padding: 0 10px; }
-    .beverage-bg .restaurant-name img {
-      width: 100%; }
-
 .cricket-bg, .smaash-bg, .earn-bg {
   background: url("../img/attractions.jpg");
   background-size: cover; }
   .cricket-bg .accordion-list .card, .smaash-bg .accordion-list .card, .earn-bg .accordion-list .card {
     background-color: transparent; }
+  .cricket-bg .attraction-bg, .cricket-bg .beverage-bg, .smaash-bg .attraction-bg, .smaash-bg .beverage-bg, .earn-bg .attraction-bg, .earn-bg .beverage-bg {
+    background: url("../img/attractions.jpg");
+    background-size: cover; }
+  .cricket-bg .beverage-bg, .smaash-bg .beverage-bg, .earn-bg .beverage-bg {
+    background: url("../img/bgyellow.jpg"); }
+    .cricket-bg .beverage-bg .card, .smaash-bg .beverage-bg .card, .earn-bg .beverage-bg .card {
+      background-color: transparent;
+      box-shadow: none; }
+    .cricket-bg .beverage-bg .restaurant-name, .smaash-bg .beverage-bg .restaurant-name, .earn-bg .beverage-bg .restaurant-name {
+      padding: 0 10px; }
+      .cricket-bg .beverage-bg .restaurant-name img, .smaash-bg .beverage-bg .restaurant-name img, .earn-bg .beverage-bg .restaurant-name img {
+        width: 100%; }
   .cricket-bg .accordion, .smaash-bg .accordion, .earn-bg .accordion {
     /* DEMO */ }
     .cricket-bg .accordion p, .smaash-bg .accordion p, .earn-bg .accordion p {

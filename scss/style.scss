@@ -68,6 +68,11 @@ $brand-darkblue: #2a3890!default;
 .block {
   display: block;
 }
+
+.inline-block{
+   display: inline-block;
+}
+
 .no-border {
   border: none !important;
 }
@@ -718,13 +723,25 @@ h3.ion-ios-bell-outline {
 
 //attractions
 
+
+
+
+
+.cricket-bg,.smaash-bg,.earn-bg{
+  background: url('../img/attractions.jpg');
+  background-size: cover;
+.accordion-list{
+  .card{
+    background-color: transparent;
+  }
+}
+
 .attraction-bg,.beverage-bg{
   background: url('../img/attractions.jpg');
   background-size: cover;
-}
-
+} 
 .beverage-bg{
-    background: url('../img/explore-smaash.jpg');
+    background: url('../img/bgyellow.jpg');
     .card{
       background-color: transparent;
       box-shadow: none;
@@ -736,16 +753,6 @@ h3.ion-ios-bell-outline {
       }
     }
 }
-
-.cricket-bg,.smaash-bg,.earn-bg{
-  background: url('../img/attractions.jpg');
-  background-size: cover;
-.accordion-list{
-  .card{
-    background-color: transparent;
-  }
-}
-
   .accordion{
     p{
       color: #fff;
