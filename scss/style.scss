@@ -571,10 +571,7 @@ h3.ion-ios-bell-outline {
 }
 // recharge end
 // event
-.event {
-  background: url('../img/bgdark-blue.jpg') no-repeat;
-  background-size: cover;
-}
+
 // event end
 // direction
 .direction {
@@ -721,10 +718,12 @@ h3.ion-ios-bell-outline {
   background-color: #fff;
 }
 
-//attractions
 
 
-
+.event {
+  background: url('../img/bgdark-blue.jpg') no-repeat;
+  background-size: cover;
+}
 
 
 .cricket-bg,.smaash-bg,.earn-bg{
@@ -736,23 +735,8 @@ h3.ion-ios-bell-outline {
   }
 }
 
-.attraction-bg,.beverage-bg{
-  background: url('../img/attractions.jpg');
-  background-size: cover;
-} 
-.beverage-bg{
-    background: url('../img/bgyellow.jpg');
-    .card{
-      background-color: transparent;
-      box-shadow: none;
-    }
-    .restaurant-name{
-      padding: 0 10px;
-      img{
-        width: 100%;
-      }
-    }
-}
+
+
   .accordion{
     p{
       color: #fff;
@@ -1068,13 +1052,6 @@ padding: 0 10px;
         }
   }
 }
-//   .new-details{
-//     .views{
-//       button{
-//         border: 1px solid #2a3890;
-//       }
-// }
-//   }
 
 }
 
@@ -1175,11 +1152,7 @@ img[alt="pay"] {
   width: 40px;
   cursor: pointer;
 }
-// .amount-letter{
-//   p{
-//     display: inline-block;
-//   }
-// }
+
 .order{
   .cut{
     height: 30px;
@@ -1259,10 +1232,8 @@ img[alt="pay"] {
 }
 // account page end
 // explore smaash
-.explore-smaash {
-  background: url('../img/explore-smaash.jpg');
-  background-size: cover;
-}
+
+
 .new,
 .attraction,
 .party {
@@ -1357,5 +1328,48 @@ img[alt="pay"] {
   }
   .next{
     margin: 0;
+  }
+}
+//events
+
+.attraction-bg,.beverage-bg{
+  background: url('../img/attractions.jpg');
+  background-size: cover;
+} 
+.beverage-bg{
+    background: url('../img/bgyellow.jpg');
+
+    .card{
+      background-color: transparent;
+      // background-color: #000;
+      box-shadow: none;
+    }
+    .restaurant-name{
+      padding: 0 10px;
+      img{
+        width: 100%;
+      }
+    }
+  
+}
+.beverage-bg{
+  .restaurant-detail{
+    h3{
+    color:#f23cb2;
+  }
+  }
+.crickets{
+  padding: 0;
+  line-height: 0;
+}
+}
+
+//beverage
+.explore-smaash ,.evento{
+  background: url('../img/explore-smaash.jpg');
+  background-size: cover;
+  .card{
+    background-color: transparent;
+    box-shadow: none;
   }
 }
