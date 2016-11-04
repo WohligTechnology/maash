@@ -4,19 +4,19 @@
     <div class="order-main text-center">
       <h3 class="text-center text-uppercase text-in-shadow font-america">food &amp; beverages</h3>
     </div>
-  
-      <div class="list card">
+
+      <div class="list card" ng-repeat ="data in drinkParty">
    <div class="restaurant-name text-center">
-       <img src="img/uncocked.png" class="img-responsive" alt="">
+       <img ng-src="{{data.homeimage | uploadpath}}" class="img-responsive" alt="">
    </div>
    <div class="restaurant-detail">
-         <h3 class="text-uppercase font-america color-white">uncorked</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos repudiandae inventore beatae. Atque nobis porro architecto repudiandae qui! Dolores, enim. Velit debitis ea, praesentium voluptate delectus vitae saepe quod laborum!</p>
+         <h3 class="text-uppercase font-america color-white" ng-bind-html="data.hometext"></h3>
+    <p ng-bind-html="data.description"></p>
    </div>
     <a href="" class="inline-block"> <img src="img/buy.png" class="img-responsive" alt=""></a>
       <a href="" class="inline-block"> <img src="img/camera.png" class="img-responsive" alt=""></a>
       </div>
-         <div class="list card">
+         <!-- <div class="list card">
    <div class="restaurant-name text-center">
        <img src="img/know-more.png" class="img-responsive" alt="">
    </div>
@@ -26,6 +26,6 @@
    </div>
    <a href="" class="inline-block"> <img src="img/buy.png" class="img-responsive" alt=""></a>
       <a href="" class="inline-block"> <img src="img/camera.png" class="img-responsive" alt=""></a>
-      </div>
+      </div> -->
   </ion-content>
 </ion-view>

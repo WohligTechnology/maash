@@ -105,7 +105,7 @@ angular.module('starter.controllers', [])
     }];
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate) {
+.controller('HomeCtrl', function($scope, $stateParams, MyServices,$ionicSlideBoxDelegate) {
     $scope.homeslider = [
         'img/banners/banner.jpg',
         'img/banners/banner.jpg',
@@ -117,14 +117,30 @@ angular.module('starter.controllers', [])
         $scope.showSignUp = true;
     } else {
         $scope.showSignUp = false;
-    }
+    };
+    MyServices.getSlider(function(data) {
+        $scope.mySlides = data.data;
+        var i = 1;
+        _.each($scope.mySlides, function(n) {
+
+            n.ordering = i;
+            i++;
+        });
+      $ionicSlideBoxDelegate.update();
+    });
+
 })
 
 .controller('ProfileCtrl', function($scope, $stateParams) {
 
 })
 
-.controller('BeverageCtrl', function($scope, $stateParams) {
+.controller('BeverageCtrl', function($scope, $stateParams,MyServices) {
+$scope.foodBeveragesId = "57bc4b48eb9c91f1025a3b57";
+MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
+    $scope.drinkParty = data.data;
+    console.log("  $scope.drinkParty",  $scope.drinkParty);
+  });
 
 })
 
@@ -263,7 +279,9 @@ angular.module('starter.controllers', [])
         console.log('$scope.getCity', $scope.getCity);
     })
     $scope.selectCity = function(city) {
-        $.jStorage.set("mycity", city);
+
+        $.jStorage.set("cityid", city._id);
+        $.jStorage.set("city", city.name);
         $state.go("noheader.signup");
     }
 
@@ -487,7 +505,7 @@ angular.module('starter.controllers', [])
         // $scope.disableSwipe = function() {
         //     $ionicSlideBoxDelegate.enableSlide(false);
         // };
-        
+
 
         $scope.items = [{
       title: 'game description',

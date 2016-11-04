@@ -72,7 +72,11 @@ $brand-darkblue: #2a3890!default;
 .inline-block{
    display: inline-block;
 }
-
+.slider-slide{
+  img{
+    width: 100%;
+  }
+}
 .no-border {
   border: none !important;
 }
@@ -840,7 +844,7 @@ background-color:    #9c1d62;
         .done:nth-of-type(6){
 background-color:    #fc5626;
   }
-  
+
 
 .crickets{
   position: relative;
@@ -859,12 +863,12 @@ background-color:    #fc5626;
 
 
 }
- 
+
 .events-bg{
  .accordion .item{
 padding: 18px 0 !important;
   }
-  
+
   p{
     border-top: 2px solid #fff;
   }
@@ -1335,7 +1339,7 @@ img[alt="pay"] {
 .attraction-bg,.beverage-bg{
   background: url('../img/attractions.jpg');
   background-size: cover;
-} 
+}
 .beverage-bg{
     background: url('../img/bgyellow.jpg');
 
@@ -1350,7 +1354,7 @@ img[alt="pay"] {
         width: 100%;
       }
     }
-  
+
 }
 .beverage-bg{
   .restaurant-detail{

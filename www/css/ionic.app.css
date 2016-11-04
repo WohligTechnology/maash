@@ -9881,6 +9881,9 @@ a.button {
 .inline-block {
   display: inline-block; }
 
+.slider-slide img {
+  width: 100%; }
+
 .no-border {
   border: none !important; }
 

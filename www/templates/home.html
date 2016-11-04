@@ -2,8 +2,10 @@
   <ion-content class="home">
     <div class="home-main">
       <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true">
-        <ion-slide ng-repeat="slide in homeslider track by $index">
-          <img ng-src="{{slide}}" alt="Home Slider" width="100%">
+        <ion-slide ng-repeat="slide in mySlides track by $index">
+          <div class="img-bx">
+            <img ng-src="{{slide.image | uploadpath}}" alt="Home Slider" class="full-image">
+          </div>
         </ion-slide>
       </ion-slide-box>
       <div class="">

@@ -36,6 +36,30 @@
          withCredentials: true,
          data: data
        }).success(callback);
-     }
+     },
+     getSlider: function(callback) {
+         var data = {
+             city: $.jStorage.get("cityid")
+         };
+         $http({
+             url: adminurl + 'slider/getAllSliderByOrder',
+             method: 'POST',
+             withCredentials: true,
+             data: data
+         }).success(callback);
+     },
+     getSingleExploreSmaaash: function(id, callback) {
+         var data = {
+             _id: id,
+             city: $.jStorage.get("cityid")
+         };
+         $http({
+             url: adminurl + 'exploresmash/getSingleExploreSmaaash',
+             method: 'POST',
+             withCredentials: true,
+             data: data
+
+         }).success(callback);
+     },
    };
  });
