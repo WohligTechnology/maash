@@ -10896,3 +10896,30 @@ img[alt="pay"] {
   .explore-smaash .card, .evento .card {
     background-color: transparent;
     box-shadow: none; }
+
+.attract-new .card {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 5px; }
+
+.attract-new .new-detail {
+  background-color: #fff;
+  padding: 10px; }
+
+.attract-new .views button {
+  padding: 5px 10px;
+  border-radius: 5px; }
+
+.attract-new .button-set button {
+  width: 40%; }
+
+.attract-new .button-set .love {
+  width: 58%; }
+  .attract-new .button-set .love button {
+    width: 100%;
+    margin-top: 0; }
+
+.icos li {
+  margin: 0 5px; }
+  .icos li h3 {
+    color: #333; }
