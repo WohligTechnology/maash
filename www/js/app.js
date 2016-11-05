@@ -366,6 +366,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 
+
 .filter('uploadpath', function() {
     return function(input, width, height, style) {
         var other = "";
@@ -388,6 +389,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
     };
 })
-
-
-;
+.filter('htmlToPlaintext', function () {
+    return function (text) {
+        return text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    };
+});

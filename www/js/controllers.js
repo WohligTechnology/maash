@@ -144,8 +144,17 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
 
 })
 
-.controller('PartyCtrl', function($scope, $stateParams) {
-
+.controller('PartyCtrl', function($scope, $stateParams,MyServices) {
+  $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
+  MyServices.getSingleExploreSmaaash($scope.hostpartyId, function(data) {
+      $scope.SingleHostParty = data.data;
+      // $scope.SingleHostParty = _.chunk(data.data, 3);
+      // $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
+      // $scope.birthday = $scope.content['57d6a09dbd5eb9846074b419'];
+      // $scope.kittyparties = $scope.content['57e1429c3da62fae1dfc560c'];
+      // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
+      // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
+  });
 })
 
 .controller('PartyFormCtrl', function($scope, $stateParams) {
@@ -303,7 +312,7 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
 
 })
 
-.controller('AttractionsCtrl', function($scope, $stateParams, $ionicPopup) {
+.controller('AttractionsCtrl', function($scope, $stateParams, $ionicPopup,MyServices) {
   $scope.getPlan = function() {
       $scope.checkPlan = $ionicPopup.show({
           templateUrl: 'templates/modal/choose.html',
@@ -313,6 +322,43 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
   $scope.closePopup = function() {
       $scope.checkPlan.close();
   }
+  $scope.attractionId="57bc4b2aeb9c91f1025a3b55";
+
+  $scope.male = '';
+  $scope.female = '';
+  $scope.children = '';
+  $scope.filter = {};
+  $scope.filter._id = $scope.attractionId;
+  $scope.msg = false;
+  $scope.goTOSearch = function(filter) {
+      MyServices.searchExploreSmaaash($scope.filter, function(data) {
+          $scope.singleAttraction = data.data;
+          if ($scope.singleAttraction.length === 0) {
+              $scope.msg = true;
+          } else {
+              $scope.msg = false;
+          }
+
+          _.each($scope.singleAttraction, function(data) {
+              data.gameforarray = [];
+              _.each(data.gamefor, function(n) {
+                  switch (n) {
+                      case '1':
+                          data.gameforarray.push('Male')
+                          break;
+                      case '2':
+                          data.gameforarray.push('Female')
+                          break;
+                      case '3':
+                          data.gameforarray.push('Children')
+                          break;
+                      default:
+                  }
+              });
+          });
+      });
+  }
+  $scope.goTOSearch($scope.filter);
 
 })
 

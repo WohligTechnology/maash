@@ -61,5 +61,17 @@
 
          }).success(callback);
      },
+     searchExploreSmaaash: function(filter, callback) {
+       if(filter){
+         filter.city=$.jStorage.get("cityid");
+       }
+               $http({
+               url: adminurl + 'exploresmash/getSingleExploreSmaaash',
+               method: 'POST',
+               withCredentials: true,
+               data: filter
+
+           }).success(callback);
+       },
    };
  });
