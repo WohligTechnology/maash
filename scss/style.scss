@@ -1377,3 +1377,42 @@ img[alt="pay"] {
     box-shadow: none;
   }
 }
+
+.attract-new{
+  .card{
+    background-color: transparent;
+    box-shadow: none;
+    padding: 5px;
+  }
+  .new-detail{
+    background-color: #fff;
+    padding: 10px;
+  }
+  .views{
+    button{
+      padding: 5px 10px;
+    border-radius: 5px;
+    }
+  }
+  .button-set{
+    button{
+      width: 40%;
+    }
+   .love{
+      width: 58%;
+      button{
+            width: 100%;
+    margin-top: 0;
+      }
+    }
+  }
+}
+
+.icos{
+  li{
+    margin: 0 5px;
+    h3{
+      color: #333;
+    }
+  }
+}

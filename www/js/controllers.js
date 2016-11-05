@@ -193,6 +193,9 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
 
 })
 
+.controller('NewCtrl', function($scope, $stateParams) {
+
+})
 .controller('SCricketCtrl', function($scope, $stateParams) {
  $scope.items = [{
       title: 'game description',
