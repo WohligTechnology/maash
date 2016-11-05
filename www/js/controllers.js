@@ -511,16 +511,9 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
     };
 
     $scope.userForm = {};
-    console.log("$scope.userForm", $scope.userForm);
-    // $scope.userSignup =function(formValid){
-    //   if (formValid.$valid) {
-    //     MyServices.
-    //   }
-    //
-    // }
-    $scope.userSignup = function(input) {
-        console.log("userSignup");
-        MyServices.signUp(input, function(data) {
+    $scope.userSignup = function(formData) {
+        console.log("formData",formData);
+        MyServices.signUp(formData, function(data) {
             console.log(data);
             if (data.value) {
 
@@ -586,14 +579,14 @@ MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
     })
 
 .controller('NoHeaderCtrl', function($scope, $stateParams,MyServices) {
-  MyServices.getCity(function(data) {
-      $scope.getCity = _.chunk(data.data, 2);
-      console.log('$scope.getCity', $scope.getCity);
-  })
-  $scope.selectCity = function(city) {
-      $.jStorage.set("mycity", city);
-      $state.go("noheader.signup");
-  }
+  // MyServices.getCity(function(data) {
+  //     $scope.getCity = _.chunk(data.data, 2);
+  //     console.log('$scope.getCity', $scope.getCity);
+  // })
+  // $scope.selectCity = function(city) {
+  //     $.jStorage.set("mycity", city);
+  //     $state.go("noheader.signup");
+  // }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {});

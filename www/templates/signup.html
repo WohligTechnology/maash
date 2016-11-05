@@ -9,9 +9,9 @@
           <div class="col-offset-10 col col-80">
             <form name="user" ng-submit="userSignup(userForm);">
               <label class="item item-input">
-                <input type="text" placeholder="Name" name="fullname" required ng-model="userForm.fullname">
+                <input type="text" placeholder="Name" name="name" required ng-model="userForm.name">
               </label>
-              <p class="error-msg" ng-if="user.fullname.$error.required && user.fullname.$touched">Please Enter Your Name.</p>
+              <p class="error-msg" ng-if="user.name.$error.required && user.name.$touched">Please Enter Your Name.</p>
               <label class="item item-input">
                 <input type="text" onfocus="this.type='date'" name="dob" onblur="this.type='text'" placeholder="DOB" class="calendar" required ng-model="userForm.dob">
               </label>
@@ -29,7 +29,7 @@
                 </div>
               </label>
               <label class="item item-input">
-                <input type="tel" placeholder="Mobile Number" name="mobileno" ng-model="userForm.mobileno" required>
+                <input type="tel" placeholder="Mobile Number" name="mobileno" ng-model="userForm.mobileno" required only-Digits maxlength="10" minlength="8">
               </label>
               <p class="error-msg" ng-show="user.mobileno.$error.required && user.mobileno.$touched">Please Enter Your Mobile Number.</p>
               <label class="item item-input">
@@ -37,7 +37,7 @@
               </label>
               <p class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email.</p>
               <label class="item item-input">
-                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pin" name="pin">
+                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pin" name="pin" only-Digits maxlength="6" minlength="6">
               </label>
               <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>
               <!-- <button type="submit" name="button" class="go full-width">

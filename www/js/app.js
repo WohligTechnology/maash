@@ -393,4 +393,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     return function (text) {
         return text ? String(text).replace(/<[^>]+>/gm, '') : '';
     };
+})
+.directive('onlyDigits', function () {
+    return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function (scope, element, attr, ctrl) {
+            var digits;
+
+            function inputValue(val) {
+                if (val) {
+                    if (attr.type == "tel") {
+                        digits = val.replace(/[^0-9\+\\]/g, '');
+                    } else {
+                        digits = val.replace(/[^0-9\-\\]/g, '');
+                    }
+
+
+                    if (digits !== val) {
+                        ctrl.$setViewValue(digits);
+                        ctrl.$render();
+                    }
+                    return parseInt(digits, 10);
+                }
+                return undefined;
+            }
+            ctrl.$parsers.push(inputValue);
+        }
+    };
 });
