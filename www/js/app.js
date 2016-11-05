@@ -165,6 +165,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+  .state('app.whatsnew', {
+      url: '/whats-new',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/whats-new.html',
+          controller: 'NewCtrl'
+        }
+      }
+    })
 
     .state('app.exploresmaash', {
       url: '/exploresmaash',
