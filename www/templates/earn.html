@@ -16,6 +16,7 @@
           <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
             <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <div class="clearfix"></div>
                      <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
               <ion-slide >
                 <div class="custom-slider">

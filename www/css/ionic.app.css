@@ -10428,7 +10428,8 @@ h3.ion-ios-bell-outline {
       width: 100%;
       max-height: 20px;
       transition: max-height 0.1s ease-out;
-      overflow: hidden; }
+      overflow: hidden;
+      padding: 0 25px; }
     .cricket-bg .accordion .item-expand.inactive:after, .smaash-bg .accordion .item-expand.inactive:after, .earn-bg .accordion .item-expand.inactive:after {
       content: "";
       position: absolute;
@@ -10466,32 +10467,54 @@ h3.ion-ios-bell-outline {
     .cricket-bg .love button, .smaash-bg .love button, .earn-bg .love button {
       padding: 7px 0; }
 
-.smaash-bg {
+.smaash-bg, .cricket-bg {
   background: url("../img/bgred.jpg");
   background-size: cover; }
-  .smaash-bg .done {
+  .smaash-bg .done, .cricket-bg .done {
     background-color: #29a8df; }
-  .smaash-bg .done:nth-of-type(2) {
+    .smaash-bg .done .item-expand-footer, .cricket-bg .done .item-expand-footer {
+      right: 10px; }
+  .smaash-bg .done:nth-of-type(2), .cricket-bg .done:nth-of-type(2) {
     background-color: #FFEF01; }
-  .smaash-bg .done:nth-of-type(3) {
+    .smaash-bg .done:nth-of-type(2) h2, .cricket-bg .done:nth-of-type(2) h2 {
+      float: right !important; }
+    .smaash-bg .done:nth-of-type(2) .item-expand-footer, .cricket-bg .done:nth-of-type(2) .item-expand-footer {
+      left: 10px; }
+  .smaash-bg .done:nth-of-type(3), .cricket-bg .done:nth-of-type(3) {
     background-color: #642c91; }
-  .smaash-bg .done:nth-of-type(4) {
+    .smaash-bg .done:nth-of-type(3) .item-expand-footer, .cricket-bg .done:nth-of-type(3) .item-expand-footer {
+      right: 10px; }
+  .smaash-bg .done:nth-of-type(4), .cricket-bg .done:nth-of-type(4) {
     background-color: #01a69a; }
-  .smaash-bg .done:nth-of-type(5) {
+    .smaash-bg .done:nth-of-type(4) h2, .cricket-bg .done:nth-of-type(4) h2 {
+      float: right !important; }
+    .smaash-bg .done:nth-of-type(4) .item-expand-footer, .cricket-bg .done:nth-of-type(4) .item-expand-footer {
+      left: 10px; }
+  .smaash-bg .done:nth-of-type(5), .cricket-bg .done:nth-of-type(5) {
     background-color: #9c1d62; }
-  .smaash-bg .done:nth-of-type(6) {
+    .smaash-bg .done:nth-of-type(5) .item-expand-footer, .cricket-bg .done:nth-of-type(5) .item-expand-footer {
+      right: 10px; }
+  .smaash-bg .done:nth-of-type(6), .cricket-bg .done:nth-of-type(6) {
     background-color: #fc5626; }
-  .smaash-bg .crickets {
+    .smaash-bg .done:nth-of-type(6) h2, .cricket-bg .done:nth-of-type(6) h2 {
+      float: right !important; }
+    .smaash-bg .done:nth-of-type(6) .item-expand-footer, .cricket-bg .done:nth-of-type(6) .item-expand-footer {
+      left: 10px; }
+  .smaash-bg .crickets, .cricket-bg .crickets {
     position: relative;
     padding: 0 20px; }
-    .smaash-bg .crickets img {
+    .smaash-bg .crickets img, .cricket-bg .crickets img {
       width: 100%; }
-    .smaash-bg .crickets a {
+    .smaash-bg .crickets a, .cricket-bg .crickets a {
       width: auto;
       height: auto;
       bottom: 0;
       right: 0;
       position: absolute; }
+
+.cricket-bg {
+  background: url("../img/attractions.jpg");
+  background-size: cover; }
 
 .events-bg .accordion .item {
   padding: 18px 0 !important; }
