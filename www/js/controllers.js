@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, $ionicScrollDelegate, $ionicSideMenuDelegate) {
 
@@ -303,7 +303,30 @@ angular.module('starter.controllers', [])
   // }
 })
 
-.controller('SelectAvatarCtrl', function($scope, $stateParams) {
+.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer) {
+  var url = "http://example.gajotres.net/upload/upload.php";
+
+//File for Upload
+var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
+
+// File name only
+var filename = targetPath.split("/").pop();
+
+var options = {
+     fileKey: "file",
+     fileName: filename,
+     chunkedMode: false,
+     mimeType: "image/jpg",
+ params : {'directory':'upload', 'fileName':filename} // directory represents remote directory,  fileName represents final remote file name
+ };
+
+ $cordovaFileTransfer.upload(url, targetPath, options).then(function (result) {
+     console.log("SUCCESS: " + JSON.stringify(result.response));
+ }, function (err) {
+     console.log("ERROR: " + JSON.stringify(err));
+ }, function (progress) {
+     // PROGRESS HANDLING GOES HERE
+ });
 
 })
 

@@ -26,6 +26,7 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
     "pushwoosh-cordova-plugin",
+    "cordova-plugin-file-transfer",
     "cordova-plugin-x-socialsharing",
     "cordova-plugin-inappbrowser"
   ],
