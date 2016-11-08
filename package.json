@@ -28,7 +28,8 @@
     "pushwoosh-cordova-plugin",
     "cordova-plugin-file-transfer",
     "cordova-plugin-x-socialsharing",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-image-picker"
   ],
   "cordovaPlatforms": [
     "android",

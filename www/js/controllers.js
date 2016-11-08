@@ -303,30 +303,53 @@ angular.module('starter.controllers', ['ngCordova'])
   // }
 })
 
-.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer) {
-  var url = "http://example.gajotres.net/upload/upload.php";
-
-//File for Upload
-var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
-
-// File name only
-var filename = targetPath.split("/").pop();
-
+.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer, $cordovaImagePicker) {
+//   var url = "http://example.gajotres.net/upload/upload.php";
+//
+// //File for Upload
+// var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
+//
+// // File name only
+// var filename = targetPath.split("/").pop();
+//
+// var options = {
+//      fileKey: "file",
+//      fileName: filename,
+//      chunkedMode: false,
+//      mimeType: "image/jpg",
+//  params : {'directory':'upload', 'fileName':filename} // directory represents remote directory,  fileName represents final remote file name
+//  };
+//
+//  $cordovaFileTransfer.upload(url, targetPath, options).then(function (result) {
+//      console.log("SUCCESS: " + JSON.stringify(result.response));
+//  }, function (err) {
+//      console.log("ERROR: " + JSON.stringify(err));
+//  }, function (progress) {
+//      // PROGRESS HANDLING GOES HERE
+//  });
 var options = {
-     fileKey: "file",
-     fileName: filename,
-     chunkedMode: false,
-     mimeType: "image/jpg",
- params : {'directory':'upload', 'fileName':filename} // directory represents remote directory,  fileName represents final remote file name
- };
+    maximumImagesCount: 1,
+    quality: 100
+};
 
- $cordovaFileTransfer.upload(url, targetPath, options).then(function (result) {
-     console.log("SUCCESS: " + JSON.stringify(result.response));
- }, function (err) {
-     console.log("ERROR: " + JSON.stringify(err));
- }, function (progress) {
-     // PROGRESS HANDLING GOES HERE
- });
+$scope.uploadProfilePic = function() {
+  console.log("hi");
+    $cordovaImagePicker.getPictures(options).then(function(resultImage) {
+        // Success! Image data is here
+        console.log("hi1");
+
+        console.log(resultImage);
+        $scope.imagetobeup = resultImage[0];
+        $scope.uploadPhoto(imgurl, function(data) {
+            console.log(data);
+            console.log(JSON.parse(data.response));
+            var parsedImage = JSON.parse(data.response);
+            $scope.personal.profilePicture = parsedImage.data[0];
+        });
+    }, function(err) {
+        // An error occured. Show a message to the user
+    });
+}
 
 })
 
