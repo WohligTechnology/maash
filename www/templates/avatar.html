@@ -11,7 +11,8 @@
             <div class="row">
               <div class="col col-50">
                 <div class="add-photo">
-                  <img src="img/addphoto.png" alt="" class="img-responsive" ng-click="uploadProfilePic();">
+                  <img ng-src="{{collection.selectedImage}}" alt=""  class="img-responsive" ng-click="getImageSaveContact()">
+
                   <!-- <div class="uploaded-pic">
                     <img src="" alt="" class="img-responsive">
                   </div> -->
@@ -19,7 +20,7 @@
               </div>
               <div class="col col-50">
                 <div class="add-photo">
-                  <img src="img/takephoto.png" alt="" class="img-responsive">
+                  <img ng-src="img/takephoto.png" alt="" class="img-responsive">
                   <!-- <div class="uploaded-pic">
                     <img src="" alt="" class="img-responsive">
                   </div> -->

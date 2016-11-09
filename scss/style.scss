@@ -81,8 +81,12 @@ $brand-darkblue: #2a3890!default;
   border: none !important;
 }
 .img-responsive {
-  max-width: 100%;
-  height: auto;
+  max-width: 100px;
+  height: 100px;
+}
+.add-photo{
+  height: 100px;
+  width: 100px;
 }
 .font-light {
   font-weight: 300;
@@ -891,7 +895,7 @@ background: url('../img/attractions.jpg');
   background-size: cover;
 
 }
- 
+
 .events-bg{
  .accordion .item{
 padding: 18px 0 !important;
