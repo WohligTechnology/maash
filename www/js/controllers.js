@@ -381,9 +381,9 @@ var options = {
 
 $scope.uploadPhoto = function(serverpath, callback) {
         console.log("function called");
-        if ($scope.imagetobeup) {
-            $scope.startloading();
-        }
+        // if ($scope.imagetobeup) {
+        //     $scope.startloading();
+        // }
         $cordovaFileTransfer.upload(serverpath, $scope.imagetobeup, options)
             .then(function(result) {
                 console.log(result);
