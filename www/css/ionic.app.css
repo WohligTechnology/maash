@@ -9891,6 +9891,10 @@ a.button {
   max-width: 100%;
   height: auto; }
 
+.add-photo {
+  height: 100px;
+  width: 100px; }
+
 .font-light {
   font-weight: 300; }
 

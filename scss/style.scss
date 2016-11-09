@@ -81,9 +81,10 @@ $brand-darkblue: #2a3890!default;
   border: none !important;
 }
 .img-responsive {
-  max-width: 100px;
-  height: 100px;
+  max-width: 100%;
+  height: auto;
 }
+
 .add-photo{
   height: 100px;
   width: 100px;
@@ -607,11 +608,6 @@ h3.ion-ios-bell-outline {
     }
   }
 }
-
-
-
-
-
 
 .direction-list {
   .item {
