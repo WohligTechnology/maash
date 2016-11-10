@@ -4,17 +4,18 @@
     <div class="order-main text-center">
         <h3 class="text-center text-uppercase text-in-shadow font-america">Deals and Packages</h3>
       </div>
-      <div class="list card">
+      <div class="list card" ng-repeat="data in SingleDealsPackages">
   <div class="item item-image">
-    <img src="img/monsson.png">
+    <img ng-src="{{data.image | uploadpath}}">
   </div>
   <a href="" class="pink-button"><img src="img/button.png" class="img-responsive" alt=""></a>
   <a class="item item-icon-left assertive click" href="">
-  <h3 class="margin0 brand-white">MONSOON DAY PASS!</h3>
+  <h3 class="margin0 brand-white" ng-bind-html="data.hometext"></h3>
+  <h3 class="margin0 brand-white" ng-if="!data.hometext">Nothing to show.</h3>
   </a>
 
 </div>
-<div class="list card">
+<!-- <div class="list card">
 <div class="item item-image">
 <img src="img/monsson.png">
 </div>
@@ -33,7 +34,7 @@
 <h3 class="margin0 brand-white">MONSOON DAY PASS!</h3>
 </a>
 
-</div>
+</div> -->
     <!-- <ion-list no-lines>
   <ion-item class="deals pointer text-center">
     <img src="img/monsson.png" alt="monsoon-deals" class="img-responsive">

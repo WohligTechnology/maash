@@ -575,8 +575,11 @@ $scope.uploadProfilePic = function() {
 
 })
 
-.controller('DealsCtrl', function($scope, $stateParams) {
-
+.controller('DealsCtrl', function($scope, $stateParams,MyServices) {
+    var id = "57bc4b5aeb9c91f1025a3b58";
+  MyServices.getSingleExploreSmaaash(id, function(data) {
+  $scope.SingleDealsPackages = data.data;
+  });
 })
 
 .controller('AboutCtrl', function($scope, $stateParams) {

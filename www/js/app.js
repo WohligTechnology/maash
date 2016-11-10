@@ -394,6 +394,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
         return text ? String(text).replace(/<[^>]+>/gm, '') : '';
     };
 })
+.filter('youtubethumb', function () {
+    return function (input, onlyid) {
+        if (input) {
+            return "http://img.youtube.com/vi/" + input + "/hqdefault.jpg";
+        }
+    };
+})
 .directive('onlyDigits', function () {
     return {
         require: 'ngModel',
