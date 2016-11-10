@@ -202,8 +202,14 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('NewCtrl', function($scope, $stateParams) {
+.controller('NewCtrl', function($scope, $stateParams,MyServices) {
+var id="57bc4af6eb9c91f1025a3b4f";
+MyServices.getSingleExploreSmaaash(id, function(data) {
+    $scope.SingleExploreSmaaash = data.data;
 
+    console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
+
+});
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{
@@ -796,4 +802,6 @@ $scope.uploadPhoto = function(serverpath, callback) {
   // }
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {});
+.controller('PlaylistCtrl', function($scope, $stateParams) {
+  
+});
