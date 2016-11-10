@@ -7,7 +7,7 @@
       <ion-list>
         <div class="row">
           <div class="col-offset-10 col col-80">
-            <form name="user" ng-submit="userSignup(userForm);">
+            <form name="user" ng-submit="userSignup(userForm);" ng-if="!formComplete">
               <label class="item item-input">
                 <input type="text" placeholder="Name" name="name" required ng-model="userForm.name">
               </label>
@@ -23,8 +23,8 @@
                 <div class="custom-select">
                   <select class="gender" required ng-model="userForm.gender">
                     <option selected value="">Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                   </select>
                 </div>
               </label>
@@ -36,19 +36,22 @@
                 <input type="email" placeholder="Email id" required ng-model="userForm.email" name="email">
               </label>
               <p class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email.</p>
+              <p ng-if="emailExist">Email Id Already Exist.</p>
               <label class="item item-input">
-                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pin" name="pin" only-Digits maxlength="6" minlength="6">
+                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pincode" name="pin" only-Digits maxlength="6" minlength="6">
               </label>
               <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>
               <!-- <button type="submit" name="button" class="go full-width">
                 <img src="img/go.png" alt="" class="img-responsive">
               </button> -->
-              <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();">
+              <button type="submit" name="button" class="go full-width" >
+              <!-- <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();"> -->
                 <img src="img/go.png" alt="" class="img-responsive">
               </button>
               <p class="text-center color-white font-galano">OR</p>
               <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>
             </form>
+            <div ng-if="formComplete" class="text-center">Thank You.</div>
           </div>
         </div>
       </ion-list>

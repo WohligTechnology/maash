@@ -202,14 +202,14 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('NewCtrl', function($scope, $stateParams,MyServices) {
-var id="57bc4af6eb9c91f1025a3b4f";
-MyServices.getSingleExploreSmaaash(id, function(data) {
-    $scope.SingleExploreSmaaash = data.data;
+.controller('NewCtrl', function($scope, $stateParams, MyServices) {
+    var id = "57bc4af6eb9c91f1025a3b4f";
+    MyServices.getSingleExploreSmaaash(id, function(data) {
+      $scope.SingleExploreSmaaash = data.data;
 
-    console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
+      console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
 
-});
+    });
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{
@@ -302,149 +302,149 @@ MyServices.getSingleExploreSmaaash(id, function(data) {
     $state.go("noheader.signup");
   }
   $scope.uploadProfilePic = function() {
-    console.log("hi");
+      console.log("hi");
       $cordovaImagePicker.getPictures(options).then(function(resultImage) {
-          // Success! Image data is here
-          console.log("hi1");
+        // Success! Image data is here
+        console.log("hi1");
 
-          console.log(resultImage);
-          $scope.imagetobeup = resultImage[0];
-          $scope.uploadPhoto(imgurl, function(data) {
-              console.log(data);
-              console.log(JSON.parse(data.response));
-              var parsedImage = JSON.parse(data.response);
-              $scope.personal.profilePicture = parsedImage.data[0];
-          });
+        console.log(resultImage);
+        $scope.imagetobeup = resultImage[0];
+        $scope.uploadPhoto(imgurl, function(data) {
+          console.log(data);
+          console.log(JSON.parse(data.response));
+          var parsedImage = JSON.parse(data.response);
+          $scope.personal.profilePicture = parsedImage.data[0];
+        });
       }, function(err) {
-          // An error occured. Show a message to the user
+        // An error occured. Show a message to the user
       });
-  }
-  // $scope.getCityName=function(cityName){
-  //   $.jStorage.set("city",cityName);
-  //   $scope.city=$.jStorage.get("city").name;
-  // console.log("  $scope.city",  $scope.city);
-  // }
+    }
+    // $scope.getCityName=function(cityName){
+    //   $.jStorage.set("city",cityName);
+    //   $scope.city=$.jStorage.get("city").name;
+    // console.log("  $scope.city",  $scope.city);
+    // }
 })
 
-.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer, $ionicLoading,$cordovaImagePicker,$cordovaCamera) {
+.controller('SelectAvatarCtrl', function($scope, $stateParams, $cordovaFileTransfer, $ionicLoading, $cordovaImagePicker, $cordovaCamera) {
 
   $scope.startloading = function() {
-          $ionicLoading.show({
-              template: '<ion-spinner class="spinner-light"></ion-spinner>'
-          });
-      };
+    $ionicLoading.show({
+      template: '<ion-spinner class="spinner-light"></ion-spinner>'
+    });
+  };
   $scope.collection = {
-       selectedImage : ''
-   };
+    selectedImage: ''
+  };
 
-$scope.collection.selectedImage = "img/addphoto.png";
-$scope.imagetobeup = "img/addphoto.png";
+  $scope.collection.selectedImage = "img/addphoto.png";
+  $scope.imagetobeup = "img/addphoto.png";
 
-var options = {
-      maximumImagesCount: 1,
-      quality: 100
+  var options = {
+    maximumImagesCount: 1,
+    quality: 100
   };
 
   $scope.uploadProfilePic = function() {
-      $cordovaImagePicker.getPictures(options).then(function(resultImage) {
-          // Success! Image data is here
-          console.log(resultImage);
-          $scope.imagetobeup = resultImage[0];
-          $scope.uploadPhoto(adminurl + "upload/", function(data) {
-              console.log(data);
-              console.log(JSON.parse(data.response));
-              var parsedImage = JSON.parse(data.response);
-              $scope.personal.profilePicture = parsedImage.data[0];
-          });
-      }, function(err) {
-          // An error occured. Show a message to the user
+    $cordovaImagePicker.getPictures(options).then(function(resultImage) {
+      // Success! Image data is here
+      console.log(resultImage);
+      $scope.imagetobeup = resultImage[0];
+      $scope.uploadPhoto(adminurl + "upload/", function(data) {
+        console.log(data);
+        console.log(JSON.parse(data.response));
+        var parsedImage = JSON.parse(data.response);
+        $scope.personal.profilePicture = parsedImage.data[0];
       });
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
   }
 
-    //  $scope.getImageSaveContact = function() {
-    //      // Image picker will load images according to these settings
-    //      var options = {
-    //          maximumImagesCount: 1, // Max number of selected images, I'm using only one for this example
-    //          width: 800,
-    //          height: 800,
-    //          quality: 80            // Higher is better
-    //      };
-     //
-    //      $cordovaImagePicker.getPictures(options).then(function (results) {
-    //          // Loop through acquired images
-    //          for (var i = 0; i < results.length; i++) {
-    //              $scope.collection.selectedImage = results[i];   // We loading only one image so we can use it like this
-     //
-    //              window.plugins.Base64.encodeFile($scope.collection.selectedImage, function(base64){  // Encode URI to Base64 needed for contacts plugin
-    //                  $scope.collection.selectedImage = base64;
-    //              });
-    //          }
-    //      }, function(error) {
-    //          console.log('Error: ' + JSON.stringify(error));    // In case of error
-    //      });
-    //  };
+  //  $scope.getImageSaveContact = function() {
+  //      // Image picker will load images according to these settings
+  //      var options = {
+  //          maximumImagesCount: 1, // Max number of selected images, I'm using only one for this example
+  //          width: 800,
+  //          height: 800,
+  //          quality: 80            // Higher is better
+  //      };
+  //
+  //      $cordovaImagePicker.getPictures(options).then(function (results) {
+  //          // Loop through acquired images
+  //          for (var i = 0; i < results.length; i++) {
+  //              $scope.collection.selectedImage = results[i];   // We loading only one image so we can use it like this
+  //
+  //              window.plugins.Base64.encodeFile($scope.collection.selectedImage, function(base64){  // Encode URI to Base64 needed for contacts plugin
+  //                  $scope.collection.selectedImage = base64;
+  //              });
+  //          }
+  //      }, function(error) {
+  //          console.log('Error: ' + JSON.stringify(error));    // In case of error
+  //      });
+  //  };
 
 
-$scope.uploadPhoto = function(serverpath, callback) {
-        console.log("function called");
-        // if ($scope.imagetobeup) {
-        //     $scope.startloading();
-        // }
-        $cordovaFileTransfer.upload(serverpath, $scope.imagetobeup, options)
-            .then(function(result) {
-                console.log(result);
-                callback(result);
-                $ionicLoading.hide();
-                //$scope.addretailer.store_image = $scope.filename2;
-            }, function(err) {
-                // Error
-                console.log(err);
-            }, function(progress) {
-                // constant progress updates
-            });
+  $scope.uploadPhoto = function(serverpath, callback) {
+    console.log("function called");
+    // if ($scope.imagetobeup) {
+    //     $scope.startloading();
+    // }
+    $cordovaFileTransfer.upload(serverpath, $scope.imagetobeup, options)
+      .then(function(result) {
+        console.log(result);
+        callback(result);
+        $ionicLoading.hide();
+        //$scope.addretailer.store_image = $scope.filename2;
+      }, function(err) {
+        // Error
+        console.log(err);
+      }, function(progress) {
+        // constant progress updates
+      });
+  };
+  $scope.imgURI = "img/takephoto.png";
+  $scope.takePhotoCamera = function() {
+    var options = {
+      quality: 75,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 300,
+      targetHeight: 300,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
     };
-    $scope.imgURI="img/takephoto.png";
-    $scope.takePhotoCamera = function () {
-              var options = {
-                quality: 75,
-                destinationType: Camera.DestinationType.DATA_URL,
-                sourceType: Camera.PictureSourceType.CAMERA,
-                allowEdit: true,
-                encodingType: Camera.EncodingType.JPEG,
-                targetWidth: 300,
-                targetHeight: 300,
-                popoverOptions: CameraPopoverOptions,
-                saveToPhotoAlbum: false
-            };
 
-                $cordovaCamera.getPicture(options).then(function (imageData) {
-                          console.log("hi1");
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      console.log("hi1");
 
-                    $scope.imgURI = "data:image/jpeg;base64," + imageData;
-                }, function (err) {
-                    // An error occured. Show a message to the user
-                });
-            }
+      $scope.imgURI = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
+  }
 
-            $scope.choosePhoto = function () {
-              var options = {
-                quality: 75,
-                destinationType: Camera.DestinationType.DATA_URL,
-                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                allowEdit: true,
-                encodingType: Camera.EncodingType.JPEG,
-                targetWidth: 300,
-                targetHeight: 300,
-                popoverOptions: CameraPopoverOptions,
-                saveToPhotoAlbum: false
-            };
+  $scope.choosePhoto = function() {
+    var options = {
+      quality: 75,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 300,
+      targetHeight: 300,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
+    };
 
-                $cordovaCamera.getPicture(options).then(function (imageData) {
-                    $scope.imgURI = "data:image/jpeg;base64," + imageData;
-                }, function (err) {
-                    // An error occured. Show a message to the user
-                });
-            }
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      $scope.imgURI = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
+  }
 
 })
 
@@ -526,50 +526,50 @@ $scope.uploadPhoto = function(serverpath, callback) {
     };
     showWishList();
   }
-  // $scope.addedToWishList = function(id) {
-  //     if ($.jStorage.get("loginDetail") == null) {
-  //         console.log("am in if");
-  //         $ionicPopup.show({
-  //             templateUrl: 'templates/modal/wishlistsignup.html',
-  //             scope: $scope
-  //         });
-  //     } else if ($.jStorage.get("loginDetail") != null) {
-  //         var findIndex = _.findIndex($scope.userwishlist, function(key) {
-  //             console.log(id, '////////');
-  //             return key.exploresmash._id === id;
-  //         });
-  //         console.log("findIndex", findIndex);
-  //         if (findIndex !== -1) {
-  //             console.log("findIndex", findIndex);
-  //             constraints = _.find($scope.userwishlist, function(key) {
-  //                 return key.exploresmash._id === id;
-  //             });
-  //             console.log(constraints);
-  //             MyServices.removeFromWishList(constraints._id, function(data) {
-  //                 console.log(data, 'removed data');
-  //                 if (data.value) {
-  //                     showWishList();
-  //                    $ionicPopup.show({
-  //             templateUrl: 'templates/modal/removeWishlist.html',
-  //             scope: $scope
-  //         });
-  //                 };
-  //
-  //             });
-  //         } else {
-  //             MyServices.addToWishList(id, function(data) {
-  //                 console.log("wishlist", data);
-  //                 if (data.value) {
-  //                     $ionicPopup.show({
-  //             templateUrl: 'templates/modal/wishlist.html',
-  //             scope: $scope
-  //         });
-  //                 }
-  //                 showWishList();
-  //             });
-  //         }
-  //     }
-  // };
+  $scope.addedToWishList = function(id) {
+      if ($.jStorage.get("loginDetail") == null) {
+          console.log("am in if");
+           $ionicPopup.show({
+            templateUrl: 'templates/modal/wishlistsignup.html',
+            scope: $scope
+          });
+      } else if ($.jStorage.get("loginDetail") != null) {
+          var findIndex = _.findIndex($scope.userwishlist, function(key) {
+              console.log(id, '////////');
+              return key.exploresmash._id === id;
+          });
+          console.log("findIndex", findIndex);
+          if (findIndex !== -1) {
+              console.log("findIndex", findIndex);
+              constraints = _.find($scope.userwishlist, function(key) {
+                  return key.exploresmash._id === id;
+              });
+              console.log(constraints);
+              NavigationService.removeFromWishList(constraints._id, function(data) {
+                  console.log(data, 'removed data');
+                  if (data.value) {
+                      showWishList();
+                      $ionicPopup.show({
+                       templateUrl: 'templates/modal/removeWishlist.html',
+                       scope: $scope
+                     });
+                  };
+
+              });
+          } else {
+              NavigationService.addToWishList(id, function(data) {
+                  console.log("wishlist", data);
+                  if (data.value) {
+                    $ionicPopup.show({
+                     templateUrl: 'templates/modal/wishlist.html',
+                     scope: $scope
+                   });
+                  }
+                  showWishList();
+              });
+          }
+      }
+  };
 
 })
 
@@ -674,10 +674,10 @@ $scope.uploadPhoto = function(serverpath, callback) {
 
 })
 
-.controller('DealsCtrl', function($scope, $stateParams,MyServices) {
-    var id = "57bc4b5aeb9c91f1025a3b58";
+.controller('DealsCtrl', function($scope, $stateParams, MyServices) {
+  var id = "57bc4b5aeb9c91f1025a3b58";
   MyServices.getSingleExploreSmaaash(id, function(data) {
-  $scope.SingleDealsPackages = data.data;
+    $scope.SingleDealsPackages = data.data;
   });
 })
 
@@ -711,7 +711,7 @@ $scope.uploadPhoto = function(serverpath, callback) {
     }
   })
 
-.controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices) {
+.controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {
     var ionicpop = "";
     $scope.oneTimepswd = function() {
       ionicpop = $ionicPopup.show({
@@ -725,20 +725,24 @@ $scope.uploadPhoto = function(serverpath, callback) {
     };
 
     $scope.userForm = {};
+    $scope.formComplete = false;
+    $scope.emailExist = false;
     $scope.userSignup = function(formData) {
       console.log("formData", formData);
       MyServices.signUp(formData, function(data) {
         console.log(data);
-        if (data.value) {
-
-        } else {
-
+        if (data.value === true) {
+            $.jStorage.set("loginDetail", data);
+          $scope.formComplete = true;
+          $timeout(function() {
+            $scope.formComplete = false;
+            $scope.emailExist = false;
+            $scope.userForm = {};
+          }, 2000);
+        } else  {
+          $scope.emailExist = true;
         }
-        // if()
-        //
-        // }else {
-        //
-        // }
+
       })
     }
   })
@@ -803,5 +807,5 @@ $scope.uploadPhoto = function(serverpath, callback) {
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-  
+
 });
