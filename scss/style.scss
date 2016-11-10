@@ -82,7 +82,13 @@ $brand-darkblue: #2a3890!default;
 }
 .img-responsive {
   max-width: 100%;
+  max-height: 100%;
   height: auto;
+}
+
+.add-photo{
+  height: 100px;
+  width: 100px;
 }
 .font-light {
   font-weight: 300;
@@ -604,11 +610,6 @@ h3.ion-ios-bell-outline {
   }
 }
 
-
-
-
-
-
 .direction-list {
   .item {
     padding: 10px 0;
@@ -640,10 +641,23 @@ h3.ion-ios-bell-outline {
   }
 }
 // direction end
+//bonus
 //order
-.order-bg {
+.order-bg,.bonus-bg {
   background: url('../img/bgorder.png');
   background-size: cover;
+}
+// .relative{
+//   position: relative;
+// }
+
+.bonus-bg{
+  // position: relative;
+   background: url('../img/banners/ballons.png');
+   background-position: center;
+   .abs{
+     margin-top: 70px;
+   }
 }
 .order-text{
   .item{
@@ -891,7 +905,7 @@ background: url('../img/attractions.jpg');
   background-size: cover;
 
 }
- 
+
 .events-bg{
  .accordion .item{
 padding: 18px 0 !important;
@@ -1346,16 +1360,30 @@ img[alt="pay"] {
   }
 }
 .bonus-img{
+  position: relative;
+  .bonus-text{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    p{
+      font-size: 32px;
+    }
+    p+p{
+      font-size: 16px;
+    }
+  }
+  // background-image: url("../img/banners/pinky.png");
   img{
     width: 100%;
   }
 }
 .buttons{
   .share{
-    margin-left: 80px;
+    margin-left: 0px;
   }
   .review{
-    margin-right: 80px;
+    margin-right: 0px;
     margin-left: 0;
   }
   .next{

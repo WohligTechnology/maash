@@ -29,7 +29,8 @@
     "cordova-plugin-file-transfer",
     "cordova-plugin-x-socialsharing",
     "cordova-plugin-inappbrowser",
-    "cordova-plugin-image-picker"
+    "cordova-plugin-image-picker",
+    "cordova-plugin-camera"
   ],
   "cordovaPlatforms": [
     "android",

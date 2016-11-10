@@ -295,7 +295,24 @@ angular.module('starter.controllers', ['ngCordova'])
     $.jStorage.set("city", city.name);
     $state.go("noheader.signup");
   }
+  $scope.uploadProfilePic = function() {
+    console.log("hi");
+      $cordovaImagePicker.getPictures(options).then(function(resultImage) {
+          // Success! Image data is here
+          console.log("hi1");
 
+          console.log(resultImage);
+          $scope.imagetobeup = resultImage[0];
+          $scope.uploadPhoto(imgurl, function(data) {
+              console.log(data);
+              console.log(JSON.parse(data.response));
+              var parsedImage = JSON.parse(data.response);
+              $scope.personal.profilePicture = parsedImage.data[0];
+          });
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+  }
   // $scope.getCityName=function(cityName){
   //   $.jStorage.set("city",cityName);
   //   $scope.city=$.jStorage.get("city").name;
@@ -303,57 +320,133 @@ angular.module('starter.controllers', ['ngCordova'])
   // }
 })
 
-.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer, $cordovaImagePicker) {
-//   var url = "http://example.gajotres.net/upload/upload.php";
-//
-// //File for Upload
-// var targetPath = cordova.file.externalRootDirectory + "logo_radni.png";
-//
-// // File name only
-// var filename = targetPath.split("/").pop();
-//
-// var options = {
-//      fileKey: "file",
-//      fileName: filename,
-//      chunkedMode: false,
-//      mimeType: "image/jpg",
-//  params : {'directory':'upload', 'fileName':filename} // directory represents remote directory,  fileName represents final remote file name
-//  };
-//
-//  $cordovaFileTransfer.upload(url, targetPath, options).then(function (result) {
-//      console.log("SUCCESS: " + JSON.stringify(result.response));
-//  }, function (err) {
-//      console.log("ERROR: " + JSON.stringify(err));
-//  }, function (progress) {
-//      // PROGRESS HANDLING GOES HERE
-//  });
+.controller('SelectAvatarCtrl', function($scope, $stateParams,$cordovaFileTransfer, $ionicLoading,$cordovaImagePicker,$cordovaCamera) {
+
+  $scope.startloading = function() {
+          $ionicLoading.show({
+              template: '<ion-spinner class="spinner-light"></ion-spinner>'
+          });
+      };
+  $scope.collection = {
+       selectedImage : ''
+   };
+
+$scope.collection.selectedImage = "img/addphoto.png";
+$scope.imagetobeup = "img/addphoto.png";
+
 var options = {
-    maximumImagesCount: 1,
-    quality: 100
-};
+      maximumImagesCount: 1,
+      quality: 100
+  };
 
-$scope.uploadProfilePic = function() {
-  console.log("hi");
-    $cordovaImagePicker.getPictures(options).then(function(resultImage) {
-        // Success! Image data is here
-        console.log("hi1");
+  $scope.uploadProfilePic = function() {
+      $cordovaImagePicker.getPictures(options).then(function(resultImage) {
+          // Success! Image data is here
+          console.log(resultImage);
+          $scope.imagetobeup = resultImage[0];
+          $scope.uploadPhoto(adminurl + "upload/", function(data) {
+              console.log(data);
+              console.log(JSON.parse(data.response));
+              var parsedImage = JSON.parse(data.response);
+              $scope.personal.profilePicture = parsedImage.data[0];
+          });
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+  }
 
-        console.log(resultImage);
-        $scope.imagetobeup = resultImage[0];
-        $scope.uploadPhoto(imgurl, function(data) {
-            console.log(data);
-            console.log(JSON.parse(data.response));
-            var parsedImage = JSON.parse(data.response);
-            $scope.personal.profilePicture = parsedImage.data[0];
-        });
-    }, function(err) {
-        // An error occured. Show a message to the user
-    });
-}
+    //  $scope.getImageSaveContact = function() {
+    //      // Image picker will load images according to these settings
+    //      var options = {
+    //          maximumImagesCount: 1, // Max number of selected images, I'm using only one for this example
+    //          width: 800,
+    //          height: 800,
+    //          quality: 80            // Higher is better
+    //      };
+     //
+    //      $cordovaImagePicker.getPictures(options).then(function (results) {
+    //          // Loop through acquired images
+    //          for (var i = 0; i < results.length; i++) {
+    //              $scope.collection.selectedImage = results[i];   // We loading only one image so we can use it like this
+     //
+    //              window.plugins.Base64.encodeFile($scope.collection.selectedImage, function(base64){  // Encode URI to Base64 needed for contacts plugin
+    //                  $scope.collection.selectedImage = base64;
+    //              });
+    //          }
+    //      }, function(error) {
+    //          console.log('Error: ' + JSON.stringify(error));    // In case of error
+    //      });
+    //  };
+
+
+$scope.uploadPhoto = function(serverpath, callback) {
+        console.log("function called");
+        // if ($scope.imagetobeup) {
+        //     $scope.startloading();
+        // }
+        $cordovaFileTransfer.upload(serverpath, $scope.imagetobeup, options)
+            .then(function(result) {
+                console.log(result);
+                callback(result);
+                $ionicLoading.hide();
+                //$scope.addretailer.store_image = $scope.filename2;
+            }, function(err) {
+                // Error
+                console.log(err);
+            }, function(progress) {
+                // constant progress updates
+            });
+    };
+    $scope.imgURI="img/takephoto.png";
+    $scope.takePhotoCamera = function () {
+              var options = {
+                quality: 75,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
+
+                $cordovaCamera.getPicture(options).then(function (imageData) {
+                          console.log("hi1");
+
+                    $scope.imgURI = "data:image/jpeg;base64," + imageData;
+                }, function (err) {
+                    // An error occured. Show a message to the user
+                });
+            }
+
+            $scope.choosePhoto = function () {
+              var options = {
+                quality: 75,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 300,
+                targetHeight: 300,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
+
+                $cordovaCamera.getPicture(options).then(function (imageData) {
+                    $scope.imgURI = "data:image/jpeg;base64," + imageData;
+                }, function (err) {
+                    // An error occured. Show a message to the user
+                });
+            }
 
 })
 
 .controller('BuyCtrl', function($scope, $stateParams) {
+
+})
+
+.controller('ContactCtrl', function($scope, $stateParams) {
 
 })
 
