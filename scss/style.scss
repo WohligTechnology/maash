@@ -641,10 +641,23 @@ h3.ion-ios-bell-outline {
   }
 }
 // direction end
+//bonus
 //order
-.order-bg {
+.order-bg,.bonus-bg {
   background: url('../img/bgorder.png');
   background-size: cover;
+}
+// .relative{
+//   position: relative;
+// }
+
+.bonus-bg{
+  // position: relative;
+   background: url('../img/banners/ballons.png');
+   background-position: center;
+   .abs{
+     margin-top: 70px;
+   }
 }
 .order-text{
   .item{
@@ -1347,16 +1360,30 @@ img[alt="pay"] {
   }
 }
 .bonus-img{
+  position: relative;
+  .bonus-text{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    p{
+      font-size: 32px;
+    }
+    p+p{
+      font-size: 16px;
+    }
+  }
+  // background-image: url("../img/banners/pinky.png");
   img{
     width: 100%;
   }
 }
 .buttons{
   .share{
-    margin-left: 80px;
+    margin-left: 0px;
   }
   .review{
-    margin-right: 80px;
+    margin-right: 0px;
     margin-left: 0;
   }
   .next{

@@ -10350,9 +10350,15 @@ h3.ion-ios-bell-outline {
   .direction-list .border span, .direction-list .border p {
     cursor: pointer; }
 
-.order-bg {
+.order-bg, .bonus-bg {
   background: url("../img/bgorder.png");
   background-size: cover; }
+
+.bonus-bg {
+  background: url("../img/banners/ballons.png");
+  background-position: center; }
+  .bonus-bg .abs {
+    margin-top: 70px; }
 
 .order-text .item {
   background-color: transparent;
@@ -10884,14 +10890,25 @@ img[alt="pay"] {
   display: inline-block;
   vertical-align: middle; }
 
-.bonus-img img {
-  width: 100%; }
+.bonus-img {
+  position: relative; }
+  .bonus-img .bonus-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .bonus-img .bonus-text p {
+      font-size: 32px; }
+    .bonus-img .bonus-text p + p {
+      font-size: 16px; }
+  .bonus-img img {
+    width: 100%; }
 
 .buttons .share {
-  margin-left: 80px; }
+  margin-left: 0px; }
 
 .buttons .review {
-  margin-right: 80px;
+  margin-right: 0px;
   margin-left: 0; }
 
 .buttons .next {

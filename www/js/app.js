@@ -76,15 +76,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
-  //  .state('app.smaashcricket', {
-  //     url: '/smaashcricket',
-  //     views: {
-  //       'menuContent': {
-  //         templateUrl: 'templates/smaashcricket.html',
-  //         controller: 'SCricketCtrl'
-  //       }
-  //     }
-  //   })
+   .state('app.contact', {
+      url: '/contact-us',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/contact.html',
+          controller: 'ContactCtrl'
+        }
+      }
+    })
 
        .state('app.beverage', {
       url: '/beverage',

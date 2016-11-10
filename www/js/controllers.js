@@ -446,6 +446,10 @@ $scope.uploadPhoto = function(serverpath, callback) {
 
 })
 
+.controller('ContactCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('AttractionsCtrl', function($scope, $stateParams, $ionicPopup, MyServices) {
   $scope.getPlan = function() {
     $scope.checkPlan = $ionicPopup.show({
