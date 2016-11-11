@@ -1493,7 +1493,16 @@ img[alt="pay"] {
         background-image: url("../img/login.png");
   }
 }
-
+.login{
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  .pizzas{
+        margin-bottom: 25px;
+    p{
+      margin: 0;
+    }
+  }
+}
 // .bar-footer{
 //   .ion-ios-upload-outline:before {
 //     transform: rotate(90deg);
