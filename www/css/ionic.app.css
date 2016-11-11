@@ -10036,6 +10036,12 @@ h3.ion-ios-bell-outline {
   background: url("../img/arrow.png") no-repeat 95% 50%;
   cursor: pointer; }
 
+.landing .list {
+  margin-top: 40px; }
+
+.landing label {
+  margin-bottom: 25px; }
+
 .go {
   border: none;
   background-color: transparent; }

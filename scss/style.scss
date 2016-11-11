@@ -234,6 +234,7 @@ h3.ion-ios-bell-outline {
   background: url('../img/bggreen.png') no-repeat;
   background-size: cover;
 }
+
 .resgistration {
   label {
     padding: 0;
@@ -250,6 +251,17 @@ h3.ion-ios-bell-outline {
     cursor: pointer;
   }
 }
+
+//landing
+.landing{
+.list{
+  margin-top: 40px;
+}
+label{
+   margin-bottom: 25px;
+}
+}
+
 .go {
   border: none;
   background-color: transparent;

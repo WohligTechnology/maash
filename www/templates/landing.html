@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-content class="signup landing">
+    <div class="resgistration">
+      <div class="logo text-center">
+        <a href=""><img src="img/big-logo.png" width="140" class="img-responsive" alt="Smaash"></a>
+      </div>
+      <ion-list>
+        <div class="row">
+          <div class="col-offset-10 col col-80">
+            <form name="user" ng-submit="userSignup(userForm);">
+              <label class="item item-input">
+                <input type="text" placeholder="Name" name="name" required ng-model="userForm.name">
+              </label>
+              <p class="error-msg" ng-if="user.name.$error.required && user.name.$touched">Please Enter Your Name.</p>
+              <!--<label class="item item-input">
+                <input type="text" onfocus="this.type='date'" name="dob" onblur="this.type='text'" placeholder="DOB" class="calendar" required ng-model="userForm.dob">
+              </label>
+              <p class="error-msg" ng-if="user.dob.$error.required && user.dob.$touched">Please Enter Your DOB.</p>-->
+              <!--<label class="item item-input ">
+                <div class="custom-select">
+                  <select class="gender" required ng-model="userForm.gender">
+                    <option selected value="">Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </label>-->
+              <label class="item item-input">
+                <input type="tel" placeholder="Mobile Number" name="mobileno" ng-model="userForm.mobileno" required only-Digits maxlength="10" minlength="8">
+              </label>
+              <p class="error-msg" ng-show="user.mobileno.$error.required && user.mobileno.$touched">Please Enter Your Mobile Number.</p>
+              <!--<label class="item item-input">
+                <input type="email" placeholder="Email id" required ng-model="userForm.email" name="email">
+              </label>
+              <p class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email.</p>-->
+              <!--<label class="item item-input">
+                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pin" name="pin" only-Digits maxlength="6" minlength="6">
+              </label>
+              <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>-->
+              <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();">
+                <img src="img/go.png" alt="" class="img-responsive">
+              </button>
+              <p class="text-center color-white font-galano">OR</p>
+              <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>
+            </form>
+          </div>
+        </div>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

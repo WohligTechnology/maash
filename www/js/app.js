@@ -310,6 +310,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+      .state('noheader.landing', {
+      url: '/landing',
+      views: {
+        'content': {
+          templateUrl: 'templates/landing.html',
+          controller: 'LandingCtrl'
+        }
+      }
+    })
+
         .state('noheader.bonus', {
       url: '/bonus',
       views: {

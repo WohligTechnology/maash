@@ -737,6 +737,10 @@ angular.module('starter.controllers', ['ngCordova'])
       })
     }
   })
+
+  
+.controller('LandingCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {})
+
   .controller('BonusCtrl', function($scope, $stateParams, MyServices) {})
 
 .controller('EarnCtrl', function($scope, $stateParams, MyServices) {
