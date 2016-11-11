@@ -10974,3 +10974,9 @@ img[alt="pay"] {
   margin: 0 5px; }
   .icos li h3 {
     color: #333; }
+
+.foot .tab-item .signups {
+  background-image: url("../img/signup.png"); }
+
+.foot .tab-item .login {
+  background-image: url("../img/login.png"); }

@@ -320,6 +320,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+         .state('noheader.login', {
+      url: '/login',
+      views: {
+        'content': {
+          templateUrl: 'templates/login.html',
+          controller: 'LoginCtrl'
+        }
+      }
+    })
+
         .state('noheader.bonus', {
       url: '/bonus',
       views: {

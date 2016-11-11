@@ -738,6 +738,8 @@ angular.module('starter.controllers', ['ngCordova'])
     }
   })
 
+  .controller('LoginCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {})
+
   
 .controller('LandingCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {})
 
