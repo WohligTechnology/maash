@@ -1,6 +1,6 @@
- var adminurl = "http://192.168.1.102:1337/"; //local
+ // var adminurl = "http://192.168.100.111:1337/"; //local
 
- // var adminurl = "http://104.155.129.33:82/";  //server
+ var adminurl = "http://104.155.129.33:82/";  //server
  // var imgpath = adminurl + "uploadfile/getupload?file=";
  var imgurl = adminurl + "upload/";
  var imgpath = imgurl + "readFile";
@@ -71,6 +71,22 @@
                withCredentials: true,
                data: filter
 
+           }).success(callback);
+       },
+       addToWishList: function(id, callback) {
+           console.log("nAV", id);
+           var data = {
+               user: $.jStorage.get("loginDetail").data._id,
+               wishList: {
+                   exploresmash: id,
+                   city: $.jStorage.get("cityid")
+               }
+           };
+           $http({
+               url: adminurl + 'signup/addToWishList',
+               method: 'POST',
+               withCredentials: true,
+               data: data
            }).success(callback);
        },
        showWishList: function(callback) {

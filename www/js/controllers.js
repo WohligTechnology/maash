@@ -162,29 +162,11 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 
-.controller('EventsCtrl', function($scope, $stateParams) {
+.controller('EventsCtrl', function($scope, $stateParams,MyServices) {
   $scope.items = [{
       title: 'live screening !',
       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    },
-
-    //    {
-    //       title: 'timing and pricing',
-    //       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    //     },{
-    //       title: 'technology',
-    //       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    //     },{
-    //       title: 'game description',
-    //       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    //     },{
-    //       title: 'promotions',
-    //       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    //   },{
-    //       title: 'photos',
-    //       text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    //   }
-  ];
+    }];
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
       $scope.shownItem = null;
@@ -195,6 +177,14 @@ angular.module('starter.controllers', ['ngCordova'])
   $scope.isItemShown = function(item) {
     return $scope.shownItem === item;
   };
+
+  $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
+  MyServices.getSingleExploreSmaaash($scope.eventId, function(data) {
+    $scope.events = data.data;
+
+    console.log("$scope.events", $scope.events);
+
+  });
 
 })
 
@@ -527,6 +517,7 @@ angular.module('starter.controllers', ['ngCordova'])
     showWishList();
   }
   $scope.addedToWishList = function(id) {
+    console.log("id",id);
       if ($.jStorage.get("loginDetail") == null) {
           console.log("am in if");
            $ionicPopup.show({
@@ -545,7 +536,7 @@ angular.module('starter.controllers', ['ngCordova'])
                   return key.exploresmash._id === id;
               });
               console.log(constraints);
-              NavigationService.removeFromWishList(constraints._id, function(data) {
+              MyServices.removeFromWishList(constraints._id, function(data) {
                   console.log(data, 'removed data');
                   if (data.value) {
                       showWishList();
@@ -557,7 +548,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
               });
           } else {
-              NavigationService.addToWishList(id, function(data) {
+              MyServices.addToWishList(id, function(data) {
                   console.log("wishlist", data);
                   if (data.value) {
                     $ionicPopup.show({
