@@ -1,0 +1,65 @@
+
+<ion-view>
+  <ion-content class="smaash-bg earn-bg">
+    <div class="order-main text-center">
+      <h3 class="text-center text-uppercase text-in-shadow font-america">earn</h3>
+      <p class="color-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos molestiae autem, ipsa pariatur, iure id itaque harum sed soluta ipsam minus debitis laborum dolorem vitae velit magni quasi architecto rerum?</p>
+    </div>
+     <div class="accordion-list">
+        
+      <div class="list card">
+          <!--<div class="crickets text-center">
+  <img src="img/party.png" alt="">
+ 
+    </div>-->
+        <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <div class="clearfix"></div>
+                     <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide >
+                <div class="custom-slider">
+                  <img src="img/menu/cart.jpg" alt="" class="img-responsive" width="">
+                   <!--<img src="img/know-more.png" alt="" class="img-responsive" width=""> -->
+                </div>
+              </ion-slide>
+              <!--<div class="custom-btn" ng-click="nextSlide('first');">
+                <img src="img/slider-button.png" alt="" class="img-responsive">
+              </div>-->
+            </ion-slide-box>
+              <!--<p>{{ item.text }}</p>-->
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+             
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    
+    <div class="accordion-list">
+        
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/party.png" alt="">
+ 
+    </div>
+        <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <p>{{ item.text }}</p>
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+             
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

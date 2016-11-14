@@ -282,6 +282,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
         }
       }
     })
+
+    .state('app.offers', {
+      url: '/offers',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/offers.html',
+          controller: 'OffersCtrl'
+        }
+      }
+    })
+
     .state('app.recharge', {
       url: '/recharge',
       views: {

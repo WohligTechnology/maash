@@ -135,6 +135,10 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
+.controller('OffersCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('BeverageCtrl', function($scope, $stateParams, MyServices) {
   $scope.foodBeveragesId = "57bc4b48eb9c91f1025a3b57";
   MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
