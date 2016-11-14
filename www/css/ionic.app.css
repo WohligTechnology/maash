@@ -9865,6 +9865,9 @@ a.button {
 .ml10 {
   margin-left: 10px; }
 
+.mt40 {
+  margin-top: 40px; }
+
 .relate {
   position: relative; }
 
@@ -10915,10 +10918,11 @@ img[alt="pay"] {
 
 .buttons .review {
   margin-right: 0px;
-  margin-left: 0; }
+  margin-left: 20px; }
 
 .buttons .next {
-  margin: 0; }
+  margin: 0;
+  margin-left: 20px; }
 
 .attraction-bg, .beverage-bg {
   background: url("../img/attractions.jpg");
@@ -10988,3 +10992,20 @@ img[alt="pay"] {
     margin-bottom: 25px; }
     .login .pizzas p {
       margin: 0; }
+
+.ot {
+  font-size: 30px !important;
+  line-height: 1.2; }
+
+.ofbut a {
+  display: inline-block;
+  height: 50px;
+  width: 70px;
+  vertical-align: middle;
+  position: relative; }
+  .ofbut a img {
+    width: 100%; }
+
+.ofbut .share .cart-badge, .ofbut .review .cart-badge, .ofbut .next .cart-badge {
+  top: -15px;
+  right: -10px; }

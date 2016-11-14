@@ -56,6 +56,12 @@ $brand-darkblue: #2a3890!default;
 .ml10 {
   margin-left: 10px;
 }
+
+.mt40{
+  margin-top: 40px;
+}
+
+
 .relate {
   position: relative;
 }
@@ -1396,10 +1402,11 @@ img[alt="pay"] {
   }
   .review{
     margin-right: 0px;
-    margin-left: 0;
+    margin-left: 20px;
   }
   .next{
     margin: 0;
+    margin-left: 20px;
   }
 }
 //events
@@ -1503,17 +1510,29 @@ img[alt="pay"] {
     }
   }
 }
-// .bar-footer{
-//   .ion-ios-upload-outline:before {
-//     transform: rotate(90deg);
-    
-// }
-// .tab-item{
-//   background-color:#31b544;
-//   color:#fff;
-//   }
-//   .tab-item+.tab-item{
-// background-color:#2a3891;
-//  color:#fff;
-//   }
-// }
+
+.ot{
+    font-size: 30px !important;
+    line-height: 1.2;  
+}
+.ofbut{
+ 
+  a{
+display: inline-block;
+    height: 50px;
+    width: 70px;
+    vertical-align: middle;
+     position: relative;
+    img{
+      width: 100%;
+    }
+  }
+  .share,.review,.next{
+  .cart-badge {
+    top: -15px;
+    right: -10px;
+}
+  }
+
+  
+}

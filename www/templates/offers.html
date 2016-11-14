@@ -1,65 +1,50 @@
-
 <ion-view>
-  <ion-content class="smaash-bg earn-bg">
-    <div class="order-main text-center">
-      <h3 class="text-center text-uppercase text-in-shadow font-america">earn</h3>
-      <p class="color-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos molestiae autem, ipsa pariatur, iure id itaque harum sed soluta ipsam minus debitis laborum dolorem vitae velit magni quasi architecto rerum?</p>
-    </div>
-     <div class="accordion-list">
-        
-      <div class="list card">
-          <!--<div class="crickets text-center">
-  <img src="img/party.png" alt="">
- 
-    </div>-->
-        <ion-list class="accordion ">
-          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
-            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
-              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
-              <div class="clearfix"></div>
-                     <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
-              <ion-slide >
-                <div class="custom-slider">
-                  <img src="img/menu/cart.jpg" alt="" class="img-responsive" width="">
-                   <!--<img src="img/know-more.png" alt="" class="img-responsive" width=""> -->
-                </div>
-              </ion-slide>
-              <!--<div class="custom-btn" ng-click="nextSlide('first');">
-                <img src="img/slider-button.png" alt="" class="img-responsive">
-              </div>-->
-            </ion-slide-box>
-              <!--<p>{{ item.text }}</p>-->
-            </div>
-            <div ng-click="toggleItem(item)" class="item-expand-footer">
-              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
-             
-            </div>
-          </ion-item>
-        </ion-list>
+  <ion-content class="choose-avatar bonus-bg ">
+      <div class="order-main text-center mt40">
+        <h3 class="text-center text-uppercase text-in-shadow font-america ">offer 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab vel laborum corporis.</p>
       </div>
+    <div class="">
+      <!--<div class="logo text-center">
+        <a href=""><img src="img/big-logo.png" width="140" alt="Smaash"></a> 
+      </div>-->
+      <div class="list">
+  <div class="">
+<div class="bonus-img">
+    <img src="img/banners/pinky.png" alt="">
+    <div class="bonus-text text-center ">
+  <!--<p class="text-uppercase text-center text-in-shadow font-america">35,000</p>-->
+    <p class="color-white text-in-shadow ot">Virat hit <br> 50 today?</p>
     </div>
+  
+</div>
 
+     </div>
     
-    <div class="accordion-list">
-        
-      <div class="list card">
-          <div class="crickets text-center">
-  <img src="img/party.png" alt="">
- 
-    </div>
-        <ion-list class="accordion ">
-          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
-            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
-              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
-              <p>{{ item.text }}</p>
-            </div>
-            <div ng-click="toggleItem(item)" class="item-expand-footer">
-              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
-             
-            </div>
-          </ion-item>
-        </ion-list>
       </div>
+    <div class="buttons ofbut">
+     <a href="" class="share ">
+         <img src="img/banners/share.png" alt="">
+        <div class="cart-badge badge">
+                <span>21</span>
+              </div>
+            
+               </a>
+      <a href=""  class="review "> 
+        <div class="cart-badge badge">
+                <span>21</span>
+              </div>
+        <img src="img/banners/review.png" alt="">
+        </a>
+  <a href="" class="block next text-center"> 
+    <div class="cart-badge badge">
+                <span>21</span>
+              </div>
+    <img src="img/banners/next.png" alt="">
+    </a>
+</div>
+
+
     </div>
   </ion-content>
 </ion-view>
