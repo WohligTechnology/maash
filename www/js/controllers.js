@@ -665,6 +665,11 @@ angular.module('starter.controllers', ['ngCordova'])
 
   })
 
+    .controller('WishlistCtrl', function($scope, $stateParams) {
+
+  })
+
+
 .controller('OrderCtrl', function($scope, $stateParams) {
 
 })

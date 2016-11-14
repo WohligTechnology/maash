@@ -293,6 +293,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+
+    .state('app.wishlist', {
+      url: '/wishlist',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/wishlist.html',
+          controller: 'WishlistCtrl'
+        }
+      }
+    })
+
     .state('app.recharge', {
       url: '/recharge',
       views: {
