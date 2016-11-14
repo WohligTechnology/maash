@@ -670,6 +670,40 @@ angular.module('starter.controllers', ['ngCordova'])
   })
 
 
+    .controller('TournamentCtrl', function($scope, $stateParams) {
+
+  $scope.toggleItem = function(item) {
+    if ($scope.isItemShown(item)) {
+      $scope.shownItem = null;
+    } else {
+      $scope.shownItem = item;
+    }
+  };
+  $scope.isItemShown = function(item) {
+    return $scope.shownItem === item;
+  };
+  })
+
+
+   .controller('ChallengesCtrl', function($scope, $stateParams) {
+
+  $scope.toggleItem = function(item) {
+    if ($scope.isItemShown(item)) {
+      $scope.shownItem = null;
+    } else {
+      $scope.shownItem = item;
+    }
+  };
+  $scope.isItemShown = function(item) {
+    return $scope.shownItem === item;
+  };
+  })
+
+
+
+
+
+
 .controller('OrderCtrl', function($scope, $stateParams) {
 
 })

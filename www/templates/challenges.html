@@ -1,0 +1,71 @@
+
+<ion-view>
+  <ion-content class="smaash-bg beverage-bg events-bg">
+    <div class="order-main text-center">
+      <h3 class="text-center text-uppercase text-in-shadow font-america">challenges</h3>
+    </div>
+     <div class="accordion-list">
+
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/monsson.png" class="img-responsive" alt="">
+
+    </div>
+        <ion-list class="accordion ">
+          <ion-item  class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">live screening</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, error architecto placeat sint consequatur ex obcaecati maxime necessitatibus, enim, similique aut non vel rerum assumenda ducimus, cumque ipsa eos reiciendis!</p>
+            </div>
+            <div ng-click="toggleItem(data)" class="item-expand-footer">
+              <i ng-class="isItemShown(data) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/monsson.png" class="img-responsive" alt="">
+
+    </div>
+        <ion-list class="accordion ">
+          <ion-item  class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">live screening</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, error architecto placeat sint consequatur ex obcaecati maxime necessitatibus, enim, similique aut non vel rerum assumenda ducimus, cumque ipsa eos reiciendis!</p>
+            </div>
+            <div ng-click="toggleItem(data)" class="item-expand-footer">
+              <i ng-class="isItemShown(data) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+
+    <!-- <div class="accordion-list">
+
+      <div class="list card">
+          <div class="crickets text-center">
+  <img src="img/evento.jpg" class="img-responsive" alt="">
+
+    </div>
+        <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ item.title }}</h2>
+              <p>{{ item.text }}</p>
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div> -->
+  </ion-content>
+</ion-view>

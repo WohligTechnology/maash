@@ -293,6 +293,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+     .state('app.tournaments', {
+      url: '/tournaments',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/tournament.html',
+          controller: 'TournamentCtrl'
+        }
+      }
+    })
+
+       .state('app.challenges', {
+      url: '/challenges',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/challenges.html',
+          controller: 'ChallengesCtrl'
+        }
+      }
+    })
+
+
 
     .state('app.wishlist', {
       url: '/wishlist',
