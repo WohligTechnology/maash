@@ -11008,4 +11008,6 @@ img[alt="pay"] {
 
 .ofbut .share .cart-badge, .ofbut .review .cart-badge, .ofbut .next .cart-badge {
   top: -15px;
-  right: -10px; }
+  right: -10px;
+  background-color: #ff1f1f;
+  color: #fff; }
