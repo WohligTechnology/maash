@@ -710,7 +710,7 @@ angular.module('starter.controllers', ['ngCordova'])
     // ];
 
   })
-  .controller('PaymentCtrl', function($scope, $stateParams) {
+  .controller('PaymentCtrl', function($scope, $stateParams,MyServices) {
     $scope.accordion = function(val) {
       console.log($scope.showAccordion);
       console.log(val);
@@ -740,7 +740,46 @@ angular.module('starter.controllers', ['ngCordova'])
 
   })
 
-    .controller('WishlistCtrl', function($scope, $stateParams) {
+    .controller('WishlistCtrl', function($scope, $stateParams,MyServices) {
+
+
+      $scope.attraction = '';
+      $scope.whatsnew = '';
+var i=0;
+      function getuserWishList() {
+          if ($.jStorage.get("loginDetail") != null) {
+              MyServices.showWishList(function(data) {
+                  $scope.showWishList = data.data;
+                  var i = 1;
+                  _.each($scope.showWishList.wishList, function(data) {
+                      data.pageName = [];
+                      data.ordering = i;
+                      i++;
+                      _.each(data.exploresmash, function(n) {
+                          switch (n) {
+                              case '57bc4b2aeb9c91f1025a3b55':
+                                  data.pageName.push("Attraction")
+                                  break;
+                              case '57bc4af6eb9c91f1025a3b4f':
+                                  data.pageName.push("What's new")
+                                  break;
+                              default:
+                          }
+                      });
+                  });
+
+
+              });
+          }
+      };
+      getuserWishList();
+
+
+      $scope.removeFromWishList = function(id) {
+          MyServices.removeFromWishList(id, function(data) {
+              getuserWishList();
+          });
+      };
 
   })
 

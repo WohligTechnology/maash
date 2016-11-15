@@ -5,15 +5,18 @@
         <h3 class="text-center text-uppercase text-in-shadow font-america">wishlist cart</h3>
       </div>
 
-<div class="list card relate">
+<div class="list card relate" ng-repeat="data in showWishList.wishList">
   <div class="item item-image cut">
-    <img src="img/close-popup.png" alt="close" class="img-responsive">
+    <img src="img/close-popup.png" alt="close" class="img-responsive" ng-click="removeFromWishList(data._id)">
   </div>
 <div class="row">
   <div class="col">
     <div class="item item-image">
-      <img src="img/karting.jpg" alt="karting" class="img-responsive">
-    </div>
+      <img ng-src="{{data.exploresmash.image|uploadpath}}" alt="karting" class="img-responsive" ng-if="data.exploresmash.image">
+      <img ng-if="data.exploresmash.homeimage" ng-src="{{data.exploresmash.homeimage|uploadpath}}" alt="karting" class="img-responsive">
+      <img ng-if="data.exploresmash.homeimage && data.exploresmash.image" ng-src="{{data.exploresmash.homeimage|uploadpath}}" alt="karting" class="img-responsive">
+        <p class="mt10 uppercase" ng-bind-html="data.exploresmash.hometext"></p>
+  </div>
   </div>
   <div class="col">
     <div class="quant-status">
@@ -22,7 +25,7 @@
           <span>Sr.No</span>
       </div>
       <div class="col-50">
-          <span class="quantity">1</span>
+          <span class="quantity">{{data.ordering}}</span>
       </div>
     </div>
     </div>
@@ -32,7 +35,7 @@
           <span>NAME</span>
       </div>
       <div class="col-50">
-          <span class="quantity"></span>
+          <span class="quantity">{{data.pageName[0]}}</span>
       </div>
     </div>
     </div>
@@ -42,7 +45,7 @@
 
 </div>
 
-<div class="list card relate">
+<!-- <div class="list card relate">
   <div class="item item-image cut">
     <img src="img/close-popup.png" alt="close" class="img-responsive">
   </div>
@@ -77,7 +80,7 @@
 </div>
 
 
-</div>
+</div> -->
 
 <!--<div class="list card clearfix">
 
