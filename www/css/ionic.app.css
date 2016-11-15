@@ -11020,5 +11020,5 @@ img[alt="pay"] {
   background-color: #ff1f1f;
   color: #fff; }
 
-.ion-heart:before {
-  color: #ff1f1f; }
+.ion-ios-heart-outline:before {
+  margin-right: 5px; }
