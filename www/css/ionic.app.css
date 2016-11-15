@@ -10847,10 +10847,6 @@ img[alt="pay"] {
 .attraction,
 .party {
   border: none; }
-  .new .slider-pager,
-  .attraction .slider-pager,
-  .party .slider-pager {
-    display: none; }
 
 .account-marker {
   position: absolute;
