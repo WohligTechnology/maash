@@ -21,6 +21,76 @@
         </div>
       </div>
     </div>
+      <div class="accordion-list">
+      <div class="list card">
+        <!-- <ion-list class="accordion ">
+          <ion-item ng-repeat="item in items" class="item item-text-wrap  done relate">
+            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class=" text-uppercase text-in-shadow font-america">{{ item.title }}</h2>
+              <div class="clearfix"></div>
+              <p>{{ item.text }}</p>
+            </div>
+            <div ng-click="toggleItem(item)" class="item-expand-footer">
+              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list> -->
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(6) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">Game description</h2>
+               <div class="clearfix"></div>
+               <div class="clearfix"></div>
+              <p ng-bind-html="cricket.description | htmlToPlaintext"></p>
+            </div>
+            <div ng-click="toggleItem(6)" class="item-expand-footer">
+              <i ng-class="isItemShown(6) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(7) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">timing and pricing</h2>
+               <div class="clearfix"></div>
+              <p ng-bind-html="cricket.timingAndPricing | htmlToPlaintext"></p>
+            </div>
+            <div ng-click="toggleItem(7)" class="item-expand-footer">
+              <i ng-class="isItemShown(7) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(8) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">technology</h2>
+              <div class="clearfix"></div>
+              <p ng-bind-html="cricket.technology |htmlToPlaintext"></p>
+            </div>
+            <div ng-click="toggleItem(8)" class="item-expand-footer">
+              <i ng-class="isItemShown(8) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(9) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">promotions</h2>
+              <div class="clearfix"></div>
+              <p ng-repeat ="data in cricket.multipleattraction" ng-bind-html="data.text |htmlToPlaintext"></p>
+            </div>
+            <div ng-click="toggleItem(9)" class="item-expand-footer">
+              <i ng-class="isItemShown(9) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
     <div class="accordion-list">
       <div class="list card">
         <!-- <ion-list class="accordion ">
@@ -40,6 +110,7 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(1) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">Game description</h2>
+               <div class="clearfix"></div>
               <p ng-bind-html="cricket.description | htmlToPlaintext"></p>
             </div>
             <div ng-click="toggleItem(1)" class="item-expand-footer">
@@ -52,6 +123,7 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(2) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">timing and pricing</h2>
+               <div class="clearfix"></div>
               <p ng-bind-html="cricket.timingAndPricing | htmlToPlaintext"></p>
             </div>
             <div ng-click="toggleItem(2)" class="item-expand-footer">
@@ -64,6 +136,7 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(3) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">technology</h2>
+               <div class="clearfix"></div>
               <p ng-bind-html="cricket.technology |htmlToPlaintext"></p>
             </div>
             <div ng-click="toggleItem(3)" class="item-expand-footer">
@@ -76,6 +149,7 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(4) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">promotions</h2>
+               <div class="clearfix"></div>
               <p ng-repeat ="data in cricket.multipleattraction" ng-bind-html="data.text |htmlToPlaintext"></p>
             </div>
             <div ng-click="toggleItem(4)" class="item-expand-footer">

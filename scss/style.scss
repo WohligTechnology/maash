@@ -860,13 +860,19 @@ label{
   background-size: cover;
   .accordion-list{
     .accordion{
+      .done{
 background-color: #29a8df;
+      }
+
 .item-expand-footer{
 right:10px;
 }
   }
     .accordion:nth-of-type(2){
+      .done{
 background-color:  #FFEF01;
+      }
+
     h2{
       float: right !important;
     }
@@ -878,7 +884,10 @@ background-color:  #FFEF01;
 
   }
   .accordion:nth-of-type(3){
+    .done{
 background-color: #642c91;
+    }
+
 .item-expand-footer{
   right:10px;
 }

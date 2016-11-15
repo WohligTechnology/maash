@@ -10498,20 +10498,20 @@ h3.ion-ios-bell-outline {
 .smaash-bg, .cricket-bg {
   background: url("../img/bgred.jpg");
   background-size: cover; }
-  .smaash-bg .accordion-list .accordion, .cricket-bg .accordion-list .accordion {
+  .smaash-bg .accordion-list .accordion .done, .cricket-bg .accordion-list .accordion .done {
     background-color: #29a8df; }
-    .smaash-bg .accordion-list .accordion .item-expand-footer, .cricket-bg .accordion-list .accordion .item-expand-footer {
-      right: 10px; }
-  .smaash-bg .accordion-list .accordion:nth-of-type(2), .cricket-bg .accordion-list .accordion:nth-of-type(2) {
+  .smaash-bg .accordion-list .accordion .item-expand-footer, .cricket-bg .accordion-list .accordion .item-expand-footer {
+    right: 10px; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(2) .done, .cricket-bg .accordion-list .accordion:nth-of-type(2) .done {
     background-color: #FFEF01; }
-    .smaash-bg .accordion-list .accordion:nth-of-type(2) h2, .cricket-bg .accordion-list .accordion:nth-of-type(2) h2 {
-      float: right !important; }
-    .smaash-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer {
-      left: 10px; }
-  .smaash-bg .accordion-list .accordion:nth-of-type(3), .cricket-bg .accordion-list .accordion:nth-of-type(3) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(2) h2, .cricket-bg .accordion-list .accordion:nth-of-type(2) h2 {
+    float: right !important; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer {
+    left: 10px; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(3) .done, .cricket-bg .accordion-list .accordion:nth-of-type(3) .done {
     background-color: #642c91; }
-    .smaash-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer {
-      right: 10px; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer {
+    right: 10px; }
   .smaash-bg .accordion-list .accordion:nth-of-type(4) .done, .cricket-bg .accordion-list .accordion:nth-of-type(4) .done {
     background-color: #01a69a; }
   .smaash-bg .accordion-list .accordion:nth-of-type(4) h2, .cricket-bg .accordion-list .accordion:nth-of-type(4) h2 {
@@ -11022,3 +11022,6 @@ img[alt="pay"] {
 
 .ion-ios-heart-outline:before {
   margin-right: 5px; }
+
+.ion-heart:before {
+  color: #ff1f1f; }

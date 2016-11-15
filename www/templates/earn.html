@@ -11,10 +11,10 @@
      <div class="accordion-list">
         
       <div class="list card">
-          <!--<div class="crickets text-center">
+          <div class="crickets text-center">
   <img src="img/party.png" alt="">
  
-    </div>-->
+    </div>
         <ion-list class="accordion ">
           <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
             <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
@@ -26,11 +26,7 @@
                   <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
                 </div>
               </ion-slide>
-              <!--<div class="custom-btn" ng-click="nextSlide('first');">
-                <img src="img/slider-button.png" alt="" class="img-responsive">
-              </div>-->
             </ion-slide-box>
-              <!--<p>{{ item.text }}</p>-->
             </div>
             <div ng-click="toggleItem(item)" class="item-expand-footer">
               <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
