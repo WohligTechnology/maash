@@ -858,13 +858,14 @@ label{
 .smaash-bg,.cricket-bg{
    background: url('../img/bgred.jpg');
   background-size: cover;
-    .done{
+  .accordion-list{
+    .accordion{
 background-color: #29a8df;
 .item-expand-footer{
 right:10px;
 }
   }
-    .done:nth-of-type(2){
+    .accordion:nth-of-type(2){
 background-color:  #FFEF01;
     h2{
       float: right !important;
@@ -876,15 +877,18 @@ background-color:  #FFEF01;
 
 
   }
-  .done:nth-of-type(3){
+  .accordion:nth-of-type(3){
 background-color: #642c91;
 .item-expand-footer{
   right:10px;
 }
 
   }
-    .done:nth-of-type(4){
+    .accordion:nth-of-type(4){
+      .done{
 background-color:   #01a69a;
+      }
+
  h2{
       float: right !important;
     }
@@ -893,13 +897,16 @@ background-color:   #01a69a;
 }
 
   }
-      .done:nth-of-type(5){
+      .accordion:nth-of-type(5){
+        .done{
 background-color:    #9c1d62;
+        }
+
 .item-expand-footer{
   right:10px;
 }
   }
-        .done:nth-of-type(6){
+        .accordion:nth-of-type(6){
 background-color:    #fc5626;
  h2{
       float: right !important;
@@ -909,6 +916,8 @@ background-color:    #fc5626;
 }
 
   }
+  }
+
 
 
 .crickets{
