@@ -467,13 +467,13 @@ angular.module('starter.controllers', ['ngCordova'])
   }
   var ionicpop = "";
   $scope.wishlistsignupFun = function() {
-    ionicpop = $ionicPopup.show({
+    $scope.ionicpop = $ionicPopup.show({
       templateUrl: 'templates/modal/wishlistsignup.html',
       scope: $scope
     });
   }
   $scope.closeModal = function() {
-    ionicpop.close();
+    scope.ionicpop.closePopup();
 
   };
 
@@ -524,6 +524,18 @@ angular.module('starter.controllers', ['ngCordova'])
       })
     };
     showWishList();
+  };
+  $scope.isInWishlist = function(id) {
+    // console.log('userwishlist',$sc);
+  var indexF = _.findIndex($scope.userwishlist, function(key) {
+          return key.exploresmash._id == id;
+      })
+    console.log(indexF);
+    if (indexF !== -1) {
+          return true;
+      } else {
+          return false;
+      }
   }
   $scope.addedToWishList = function(id) {
     console.log("id",id);
