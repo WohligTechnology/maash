@@ -1511,26 +1511,37 @@ img[alt="pay"] {
   }
 }
 
+.offers{
+  .bonus-img .bonus-text{
+ top: 55%;
+    left: 65%;
+  }
+ 
+}
+
+
 .ot{
-    font-size: 30px !important;
+    font-size: 22px !important;
     line-height: 1.2;  
 }
 .ofbut{
  
   a{
 display: inline-block;
-    height: 50px;
-    width: 70px;
+    // height: 50px;
+    // width: 70px;
     vertical-align: middle;
      position: relative;
-    img{
-      width: 100%;
-    }
+    // img{
+    //   width: 100%;
+    // }
   }
   .share,.review,.next{
   .cart-badge {
     top: -15px;
     right: -10px;
+    background-color: #ff1f1f;
+    color: #fff;
 }
   }
 
