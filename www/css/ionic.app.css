@@ -10436,13 +10436,21 @@ h3.ion-ios-bell-outline {
   background-size: cover; }
   .cricket-bg .accordion-list .card, .smaash-bg .accordion-list .card, .earn-bg .accordion-list .card {
     background-color: transparent; }
+    .cricket-bg .accordion-list .card .item:last-child, .smaash-bg .accordion-list .card .item:last-child, .earn-bg .accordion-list .card .item:last-child {
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom: 1px solid #fff; }
+    .cricket-bg .accordion-list .card .item:first-child, .smaash-bg .accordion-list .card .item:first-child, .earn-bg .accordion-list .card .item:first-child {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px; }
   .cricket-bg .accordion, .smaash-bg .accordion, .earn-bg .accordion {
     /* DEMO */ }
     .cricket-bg .accordion p, .smaash-bg .accordion p, .earn-bg .accordion p {
       color: #fff; }
     .cricket-bg .accordion .item, .smaash-bg .accordion .item, .earn-bg .accordion .item {
-      border: 2px solid #fff;
-      padding: 18px 12px; }
+      border: 1px solid #fff;
+      padding: 18px 12px;
+      border-bottom: none; }
     .cricket-bg .accordion .item-expand, .smaash-bg .accordion .item-expand, .earn-bg .accordion .item-expand {
       position: relative;
       width: 100%;

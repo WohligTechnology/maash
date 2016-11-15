@@ -768,6 +768,15 @@ label{
 .accordion-list{
   .card{
     background-color: transparent;
+    .item:last-child{
+      border-bottom-right-radius: 0px;
+       border-bottom-left-radius: 0px;
+       border-bottom:1px solid #fff;
+    }
+   .item:first-child{
+      border-top-right-radius: 0px;
+       border-top-left-radius: 0px;
+    } 
   }
 }
 
@@ -780,8 +789,9 @@ label{
     }
 
 .item{
-  border: 2px solid #fff;;
+  border: 1px solid #fff;;
   padding: 18px 12px;
+  border-bottom:none;
 }
 
     .item-expand {
