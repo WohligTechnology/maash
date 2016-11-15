@@ -196,11 +196,76 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('NewCtrl', function($scope, $stateParams, MyServices) {
+.controller('NewCtrl', function($scope, $stateParams, MyServices,$ionicPopup) {
     MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
       $scope.SingleExploreSmaaash = data.data;
         console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
       });
+      $scope.isInWishlist = function(id) {
+          var indexF = _.findIndex($scope.userwishlist, function(key) {
+              return key.exploresmash._id == id;
+          })
+          if (indexF !== -1) {
+              return true;
+          } else {
+              return false;
+          }
+      }
+      if ($.jStorage.get("loginDetail") != null) {
+          function showWishList() {
+              MyServices.showWishList(function(data) {
+                  $scope.userwishlist = data.data.wishList;
+                  console.log("$scope.userwishlist", $scope.userwishlist);
+              })
+          };
+          showWishList();
+      }
+
+      $scope.addedToWishList = function(id) {
+        console.log("id",id);
+          if ($.jStorage.get("loginDetail") == null) {
+              console.log("am in if");
+               $ionicPopup.show({
+                templateUrl: 'templates/modal/wishlistsignup.html',
+                scope: $scope
+              });
+          } else if ($.jStorage.get("loginDetail") != null) {
+              var findIndex = _.findIndex($scope.userwishlist, function(key) {
+                  console.log(id, '////////');
+                  return key.exploresmash._id === id;
+              });
+              console.log("findIndex", findIndex);
+              if (findIndex !== -1) {
+                  console.log("findIndex", findIndex);
+                  constraints = _.find($scope.userwishlist, function(key) {
+                      return key.exploresmash._id === id;
+                  });
+                  console.log(constraints);
+                  MyServices.removeFromWishList(constraints._id, function(data) {
+                      console.log(data, 'removed data');
+                      if (data.value) {
+                          showWishList();
+                          $ionicPopup.show({
+                           templateUrl: 'templates/modal/removeWishlist.html',
+                           scope: $scope
+                         });
+                      };
+
+                  });
+              } else {
+                  MyServices.addToWishList(id, function(data) {
+                      console.log("wishlist", data);
+                      if (data.value) {
+                        $ionicPopup.show({
+                         templateUrl: 'templates/modal/wishlist.html',
+                         scope: $scope
+                       });
+                      }
+                      showWishList();
+                  });
+              }
+          }
+      };
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{
@@ -475,13 +540,13 @@ angular.module('starter.controllers', ['ngCordova'])
   };
 
 
-  $scope.attractionId = "57bc4b2aeb9c91f1025a3b55";
+  // $scope.attractionId = "57bc4b2aeb9c91f1025a3b55";
 
   $scope.male = '';
   $scope.female = '';
   $scope.children = '';
   $scope.filter = {};
-  $scope.filter._id = $scope.attractionId;
+  $scope.filter._id = $stateParams.id;
   $scope.msg = false;
   $scope.goTOSearch = function(filter) {
     MyServices.searchExploreSmaaash($scope.filter, function(data) {

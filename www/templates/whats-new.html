@@ -31,8 +31,10 @@
             <button class="text-uppercase blue pull-right">read more </button>
 
           </div>
-          <div class="love" ui-sref="app.wishlist">
-            <button class="text-uppercase"><i class="fa fa-heart-o" aria-hidden="true"></i>would love to try</button>
+          <div class="love" >
+            <button class="text-uppercase" ng-click="addedToWishList(data._id)">
+              <span class="ion" ng-class="{'ion-ios-heart-outline':!isInWishlist(data._id),'ion-heart':isInWishlist(data._id)}"> would love to try</span>
+            </button>
           </div>
 
         </div>

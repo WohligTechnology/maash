@@ -156,7 +156,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 
 
     .state('app.attraction', {
-      url: '/attractions',
+      url: '/attractions/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/attractions.html',
