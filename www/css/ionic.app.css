@@ -10498,35 +10498,35 @@ h3.ion-ios-bell-outline {
 .smaash-bg, .cricket-bg {
   background: url("../img/bgred.jpg");
   background-size: cover; }
-  .smaash-bg .done, .cricket-bg .done {
+  .smaash-bg .accordion-list .accordion, .cricket-bg .accordion-list .accordion {
     background-color: #29a8df; }
-    .smaash-bg .done .item-expand-footer, .cricket-bg .done .item-expand-footer {
+    .smaash-bg .accordion-list .accordion .item-expand-footer, .cricket-bg .accordion-list .accordion .item-expand-footer {
       right: 10px; }
-  .smaash-bg .done:nth-of-type(2), .cricket-bg .done:nth-of-type(2) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(2), .cricket-bg .accordion-list .accordion:nth-of-type(2) {
     background-color: #FFEF01; }
-    .smaash-bg .done:nth-of-type(2) h2, .cricket-bg .done:nth-of-type(2) h2 {
+    .smaash-bg .accordion-list .accordion:nth-of-type(2) h2, .cricket-bg .accordion-list .accordion:nth-of-type(2) h2 {
       float: right !important; }
-    .smaash-bg .done:nth-of-type(2) .item-expand-footer, .cricket-bg .done:nth-of-type(2) .item-expand-footer {
+    .smaash-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(2) .item-expand-footer {
       left: 10px; }
-  .smaash-bg .done:nth-of-type(3), .cricket-bg .done:nth-of-type(3) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(3), .cricket-bg .accordion-list .accordion:nth-of-type(3) {
     background-color: #642c91; }
-    .smaash-bg .done:nth-of-type(3) .item-expand-footer, .cricket-bg .done:nth-of-type(3) .item-expand-footer {
+    .smaash-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(3) .item-expand-footer {
       right: 10px; }
-  .smaash-bg .done:nth-of-type(4), .cricket-bg .done:nth-of-type(4) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(4) .done, .cricket-bg .accordion-list .accordion:nth-of-type(4) .done {
     background-color: #01a69a; }
-    .smaash-bg .done:nth-of-type(4) h2, .cricket-bg .done:nth-of-type(4) h2 {
-      float: right !important; }
-    .smaash-bg .done:nth-of-type(4) .item-expand-footer, .cricket-bg .done:nth-of-type(4) .item-expand-footer {
-      left: 10px; }
-  .smaash-bg .done:nth-of-type(5), .cricket-bg .done:nth-of-type(5) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(4) h2, .cricket-bg .accordion-list .accordion:nth-of-type(4) h2 {
+    float: right !important; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(4) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(4) .item-expand-footer {
+    left: 10px; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(5) .done, .cricket-bg .accordion-list .accordion:nth-of-type(5) .done {
     background-color: #9c1d62; }
-    .smaash-bg .done:nth-of-type(5) .item-expand-footer, .cricket-bg .done:nth-of-type(5) .item-expand-footer {
-      right: 10px; }
-  .smaash-bg .done:nth-of-type(6), .cricket-bg .done:nth-of-type(6) {
+  .smaash-bg .accordion-list .accordion:nth-of-type(5) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(5) .item-expand-footer {
+    right: 10px; }
+  .smaash-bg .accordion-list .accordion:nth-of-type(6), .cricket-bg .accordion-list .accordion:nth-of-type(6) {
     background-color: #fc5626; }
-    .smaash-bg .done:nth-of-type(6) h2, .cricket-bg .done:nth-of-type(6) h2 {
+    .smaash-bg .accordion-list .accordion:nth-of-type(6) h2, .cricket-bg .accordion-list .accordion:nth-of-type(6) h2 {
       float: right !important; }
-    .smaash-bg .done:nth-of-type(6) .item-expand-footer, .cricket-bg .done:nth-of-type(6) .item-expand-footer {
+    .smaash-bg .accordion-list .accordion:nth-of-type(6) .item-expand-footer, .cricket-bg .accordion-list .accordion:nth-of-type(6) .item-expand-footer {
       left: 10px; }
   .smaash-bg .crickets, .cricket-bg .crickets {
     position: relative;
