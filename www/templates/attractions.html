@@ -23,8 +23,7 @@
       </div>
 <div class="button-set clearfix">
 <button class="text-uppercase blue pull-left">buy </button>
-  <div class="love  pull-right" ><button class="text-uppercase" ng-click="addedToWishList(data._id)"><span class="ion-ios-heart-outline">would love to try</span>
-  </button></div>
+  <div class="love pull-right" ><button class="text-uppercase" ng-click="addedToWishList(data._id)"><span class="ion" ng-class="{'ion-ios-heart-outline':!isInWishlist(data._id),'ion-heart':isInWishlist(data._id)}"> would love to try</span></button></div>
 
 </div>
 

@@ -776,7 +776,7 @@ label{
    .item:first-child{
       border-top-right-radius: 0px;
        border-top-left-radius: 0px;
-    } 
+    }
   }
 }
 
@@ -1535,16 +1535,16 @@ img[alt="pay"] {
  top: 55%;
     left: 65%;
   }
- 
+
 }
 
 
 .ot{
     font-size: 22px !important;
-    line-height: 1.2;  
+    line-height: 1.2;
 }
 .ofbut{
- 
+
   a{
 display: inline-block;
     // height: 50px;
@@ -1564,13 +1564,13 @@ display: inline-block;
 }
   }
 
-  
+
 }
 
 .ion-ios-heart-outline:before{
   margin-right: 5px;
 }
 
-// .ion-heart:before{
-//   color:#ff1f1f;
-// }
+.ion-heart:before{
+  color:#ff1f1f;
+}
