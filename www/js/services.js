@@ -31,6 +31,7 @@
          withCredentials: true
        }).success(callback);
      },
+     
      signUp: function(data, callback) {
        console.log("signup",data);
        $http({

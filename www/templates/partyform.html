@@ -9,7 +9,7 @@
           <div class="col-offset-10 col col-80">
             <form name="user" ng-submit="userSignup(userForm);">
               <label class="item item-input">
-                <input type="text" placeholder="Name" name="fullname" required ng-model="userForm.fullname">
+                <input type="text" placeholder="Name" name="fullname" required ng-model="userForm.name">
               </label>
               <p class="error-msg" ng-if="user.fullname.$error.required && user.fullname.$touched">Please Enter Your Name.</p>
               <!--<label class="item item-input">
@@ -21,7 +21,7 @@
                   <select class="city" required ng-model="userForm.city">
                     <option selected value="">City</option>
                     <option value="mumbai">mumbai</option>
-                    <option value="noida">noida</option>
+                    <!-- <option value="noida">noida</option> -->
                   </select>
                 </div>
               </label>
@@ -29,8 +29,10 @@
                 <div class="custom-select calendar">
                   <select class="people" required ng-model="userForm.people">
                     <option selected value="">Select no of people</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
+                    <option value="1-5">1-5</option>
+                    <option value="6-10">6-10</option>
+                    <option value="21-50">21-50</option>
+                    <option value="51-above">51-Above</option>
                   </select>
                 </div>
               </label>
@@ -52,7 +54,7 @@
                 <img src="img/go.png" alt="" class="img-responsive">
               </button>
               </div>
-              
+
               <!--<p class="text-center color-white font-galano">OR</p>
               <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>-->
             </form>

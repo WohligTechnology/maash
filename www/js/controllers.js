@@ -162,7 +162,7 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('PartyCtrl', function($scope, $stateParams, MyServices) {
-  
+
   MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
     $scope.SingleHostParty = data.data;
     // $scope.SingleHostParty = _.chunk(data.data, 3);
@@ -184,7 +184,11 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('PartyFormCtrl', function($scope, $stateParams) {
-
+$scope.userForm={};
+MyServices.getCity(function(data) {
+    $scope.getCities = data.data;
+  
+});
 })
 
 
