@@ -592,7 +592,7 @@ angular.module('starter.controllers', ['ngCordova'])
   var indexF = _.findIndex($scope.userwishlist, function(key) {
           return key.exploresmash._id == id;
       })
-    console.log(indexF);
+    
     if (indexF !== -1) {
           return true;
       } else {
