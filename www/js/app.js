@@ -97,7 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     })
 
           .state('app.party', {
-      url: '/party',
+      url: '/party/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/party.html',

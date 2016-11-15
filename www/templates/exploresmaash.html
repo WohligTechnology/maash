@@ -43,7 +43,7 @@
             <h4 class="text-uppercase text-in-shadow font-america">Host a party</h4>
             <ion-slide-box delegate-handle="third" >
               <ion-slide ng-repeat="party in hostParty track by $index">
-                <img ng-src="{{party.image|uploadpath}}" alt="" class="img-responsive" width="">
+                <img ui-sref="app.party({id:party.type._id})" ng-src="{{party.image|uploadpath}}" alt="" class="img-responsive" width="">
               </ion-slide>
               <div class="custom-btn" >
                 <!-- ng-click="nextSlide('third');" -->
@@ -52,6 +52,7 @@
             </ion-slide-box>
           </div>
         </ion-item>
+      
       </ion-list>
     </div>
   </ion-content>

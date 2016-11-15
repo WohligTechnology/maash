@@ -162,8 +162,8 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('PartyCtrl', function($scope, $stateParams, MyServices) {
-  $scope.hostpartyId = "57bc4b10eb9c91f1025a3b54";
-  MyServices.getSingleExploreSmaaash($scope.hostpartyId, function(data) {
+  
+  MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
     $scope.SingleHostParty = data.data;
     // $scope.SingleHostParty = _.chunk(data.data, 3);
     // $scope.content = _.groupBy($scope.SingleHostParty, 'hostAPartyType');
