@@ -1,6 +1,6 @@
 
 <ion-view>
-  <ion-content class="smaash-bg earn-bg">
+  <ion-content class=" smaash-bg earn-bg ">
     <div class="order-main text-center">
       <h3 class="text-center text-uppercase text-in-shadow font-america">earn</h3>
       <!--<p class="color-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos molestiae autem, ipsa pariatur, iure id itaque harum sed soluta ipsam minus debitis laborum dolorem vitae velit magni quasi architecto rerum?</p>-->
@@ -8,13 +8,9 @@
    <div class="logo text-center">
         <a href=""><img src="img/inside.png" width="140" alt="Smaash"></a> 
       </div>
-     <div class="accordion-list">
+     <!--<div class="accordion-list">
         
       <div class="list card">
-          <div class="crickets text-center">
-  <img src="img/party.png" alt="">
- 
-    </div>
         <ion-list class="accordion ">
           <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
             <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >
@@ -35,16 +31,111 @@
           </ion-item>
         </ion-list>
       </div>
-    </div>
+    </div>-->
+    <div class="accordion-list">
+      <div class="list card">
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(1) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">sign in bonus</h2>
+               <div class="clearfix"></div>
+               <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide ng-repeat="img in earn track by $index">
+                <div class="custom-slider">
+                  <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+            </div>
+            <div ng-click="toggleItem(1)" class="item-expand-footer">
+              <i ng-class="isItemShown(1) ? 'ion-minus' : 'ion-plus'"></i>
 
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(2) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">ratings</h2>
+               <div class="clearfix"></div>
+               <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide ng-repeat="img in earn track by $index">
+                <div class="custom-slider">
+                  <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+            </div>
+            <div ng-click="toggleItem(2)" class="item-expand-footer">
+              <i ng-class="isItemShown(2) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(3) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">social media interactions</h2>
+               <div class="clearfix"></div>
+               <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide ng-repeat="img in earn track by $index">
+                <div class="custom-slider">
+                  <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+            </div>
+            <div ng-click="toggleItem(3)" class="item-expand-footer">
+              <i ng-class="isItemShown(3) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(4) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">my offers</h2>
+               <div class="clearfix"></div>
+               <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide ng-repeat="img in earn track by $index">
+                <div class="custom-slider">
+                  <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+            </div>
+            <div ng-click="toggleItem(4)" class="item-expand-footer">
+              <i ng-class="isItemShown(4) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+         <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(5) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">refferals</h2>
+               <div class="clearfix"></div>
+               <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()">
+              <ion-slide ng-repeat="img in earn track by $index">
+                <div class="custom-slider">
+                  <img ng-src="{{img.img}}" alt="" class="img-responsive" width="">
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+            </div>
+            <div ng-click="toggleItem(5)" class="item-expand-footer">
+              <i ng-class="isItemShown(5) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
     
     <div class="accordion-list">
         
       <div class="list card">
-          <div class="crickets text-center">
-  <img src="img/party.png" alt="">
- 
-    </div>
+        
         <ion-list class="accordion ">
           <ion-item ng-repeat="item in items" class="item item-text-wrap done relate">
             <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'" >

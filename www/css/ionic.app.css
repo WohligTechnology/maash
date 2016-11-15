@@ -10457,7 +10457,7 @@ h3.ion-ios-bell-outline {
       max-height: 20px;
       transition: max-height 0.1s ease-out;
       overflow: hidden;
-      padding: 0 25px; }
+      padding: 0 10px; }
     .cricket-bg .accordion .item-expand.inactive:after, .smaash-bg .accordion .item-expand.inactive:after, .earn-bg .accordion .item-expand.inactive:after {
       content: "";
       position: absolute;
@@ -10543,6 +10543,9 @@ h3.ion-ios-bell-outline {
 .cricket-bg {
   background: url("../img/attractions.jpg");
   background-size: cover; }
+
+.earn-bg {
+  background: url("../img/orange1.jpg"); }
 
 .events-bg .accordion .item {
   padding: 10px 0 !important; }

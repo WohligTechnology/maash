@@ -800,7 +800,7 @@ label{
   max-height: 20px;
   transition: max-height 0.1s ease-out;
   overflow: hidden;
-  padding: 0 25px;
+  padding: 0 10px;
 }
 
 .item-expand.inactive:after {
@@ -855,6 +855,7 @@ label{
     }
   }
 }
+
 .smaash-bg,.cricket-bg{
    background: url('../img/bgred.jpg');
   background-size: cover;
@@ -951,7 +952,9 @@ background: url('../img/attractions.jpg');
   background-size: cover;
 
 }
-
+.earn-bg{
+     background: url('../img/orange1.jpg');
+}
 .events-bg{
  .accordion .item{
 padding: 10px 0 !important;
