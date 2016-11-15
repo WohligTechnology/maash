@@ -104,6 +104,17 @@
                data: data
            }).success(callback);
        },
+       logout: function(callback) {
+           // $.jStorage.flush();
+             $.jStorage.set("loginDetail",null);
+             $.jStorage.set("loginId",null);
+             $.jStorage.set("loggedInUser",null);
+             $.jStorage.set("customizeobj",null);
+           return $http({
+               url: adminurl + 'register/logout',
+               method: 'POST',
+           }).success(callback);
+       },
        removeFromWishList: function(id,callback) {
          console.log("inNav",id);
            var data = {

@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngCordova'])
 
-.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, $ionicScrollDelegate, $ionicSideMenuDelegate) {
+.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, $ionicScrollDelegate, $ionicSideMenuDelegate,MyServices) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,19 @@ angular.module('starter.controllers', ['ngCordova'])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+  $scope.logout = function() {
+    console.log("im in");
+      if ($.jStorage.get("loginDetail") != null) {
+          MyServices.logout(function(data) {
+              location.reload();
+              $state.go("home");
+          })
+      } else {
+
+      }
+
+  };
   $scope.getCross = "";
   $scope.whenClose = function() {
     console.log("clickabe");
@@ -592,7 +605,7 @@ angular.module('starter.controllers', ['ngCordova'])
   var indexF = _.findIndex($scope.userwishlist, function(key) {
           return key.exploresmash._id == id;
       })
-    
+
     if (indexF !== -1) {
           return true;
       } else {
