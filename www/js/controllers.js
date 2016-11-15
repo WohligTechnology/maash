@@ -172,6 +172,15 @@ angular.module('starter.controllers', ['ngCordova'])
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
+      $scope.pdf = function() {
+      $scope.pdfParty = $ionicPopup.show({
+        templateUrl: 'templates/modal/pdf.html',
+        scope: $scope
+      });
+    }
+    $scope.closePopup = function() {
+      $scope.pdfParty.close();
+    }
 })
 
 .controller('PartyFormCtrl', function($scope, $stateParams) {
