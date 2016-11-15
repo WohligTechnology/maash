@@ -808,6 +808,15 @@ angular.module('starter.controllers', ['ngCordova'])
   // $scope.disableSwipe = function() {
   //     $ionicSlideBoxDelegate.enableSlide(false);
   // };
+$scope.earn=[{
+img:'img/new.png'
+
+},
+{
+  img:'img/new.png'
+},{
+  img:'img/new.png'
+}]
 
 
   $scope.items = [{
