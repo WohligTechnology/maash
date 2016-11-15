@@ -11019,3 +11019,6 @@ img[alt="pay"] {
   right: -10px;
   background-color: #ff1f1f;
   color: #fff; }
+
+.ion-heart:before {
+  color: #ff1f1f; }
