@@ -237,7 +237,7 @@ angular.module('starter.controllers', ['ngCordova'])
     };
   })
 
-.controller('CricketCtrl', function($scope, $stateParams) {
+.controller('CricketCtrl', function($scope, $stateParams,MyServices) {
   //   $scope.groups = [];
   // for (var i=0; i<10; i++) {
   //   $scope.groups[i] = {
@@ -279,6 +279,11 @@ angular.module('starter.controllers', ['ngCordova'])
   $scope.isItemShown = function(item) {
     return $scope.shownItem === item;
   };
+
+  MyServices.getDetailExploreSmaaash($stateParams.id,function(data){
+    console.log("data",data);
+    $scope.cricket=data.data;
+  })
 
 })
 
@@ -589,26 +594,22 @@ angular.module('starter.controllers', ['ngCordova'])
     $scope.disableSwipe = function() {
       $ionicSlideBoxDelegate.enableSlide(false);
     };
-    $scope.smaaashAttract = [];
-    $scope.smaaashNew = [];
+    var attraction = [];
+    var whatsnew = [];
+    var hostParty = [];
 
-    $scope.smaaashParty = [];
 
     MyServices.getHomeContent(function(data) {
       if (data.value) {
-        $scope.homeContent = data.data;
-        $scope.content = _.groupBy($scope.homeContent, "type");
+          $scope.homeContent = data.data;
+          $scope.content = _.groupBy($scope.homeContent, "type.name");
+          $scope.attraction = $scope.content.Attraction;
+          $scope.whatsnew = $scope.content["What's new"];
+          $scope.hostParty = $scope.content["Host a party"];
 
-        $scope.smaaashAttract = $scope.content.Attraction;
 
-        $scope.smaaashNew = $scope.content["What's new"];
-        console.log(JSON.stringify($scope.content["What's new"]));
 
-        $scope.smaaashParty = $scope.content["Host a Party"];
-        console.log("$scope.smaaashParty", $scope.smaaashParty);
-        console.log("$scope.smaaashNew ", $scope.smaaashNew);
-        console.log("$scope.smaaashAttract", $scope.smaaashAttract);
-      }
+      } else {}
 
     });
 
@@ -763,6 +764,9 @@ angular.module('starter.controllers', ['ngCordova'])
     $scope.emailExist = false;
     $scope.userSignup = function(formData) {
       console.log("formData", formData);
+      if (formData) {
+        formData.city=$.jStorage.get("cityid");
+      }
       MyServices.signUp(formData, function(data) {
         console.log(data);
         if (data.value === true) {
@@ -783,7 +787,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
   .controller('LoginCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {})
 
-  
+
 .controller('LandingCtrl', function($scope, $stateParams, $ionicPopup, $state, MyServices, $timeout) {})
 
   .controller('BonusCtrl', function($scope, $stateParams, MyServices) {})

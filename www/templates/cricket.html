@@ -8,7 +8,7 @@
       <div class="row">
         <div class="col-50">
           <div class="item item-image brand-blue">
-            <img src="img/explore1.png">
+            <img ng-src="{{cricket.image | uploadpath}}">
           </div>
         </div>
         <div class="col-50">
@@ -23,7 +23,7 @@
     </div>
     <div class="accordion-list">
       <div class="list card">
-        <ion-list class="accordion ">
+        <!-- <ion-list class="accordion ">
           <ion-item ng-repeat="item in items" class="item item-text-wrap  done relate">
             <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class=" text-uppercase text-in-shadow font-america">{{ item.title }}</h2>
@@ -32,7 +32,43 @@
             </div>
             <div ng-click="toggleItem(item)" class="item-expand-footer">
               <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
-              <!-- {{ isGroupShown(item) ? 'Less' : 'More' }} -->
+
+            </div>
+          </ion-item>
+        </ion-list> -->
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(1) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">Game description</h2>
+              <p>{{ cricket.description | htmlToPlaintext }}</p>
+            </div>
+            <div ng-click="toggleItem(1)" class="item-expand-footer">
+              <i ng-class="isItemShown(1) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(2) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">timing and pricing</h2>
+              <p>{{ cricket.timingAndPricing | htmlToPlaintext }}</p>
+            </div>
+            <div ng-click="toggleItem(2)" class="item-expand-footer">
+              <i ng-class="isItemShown(2) ? 'ion-minus' : 'ion-plus'"></i>
+
+            </div>
+          </ion-item>
+        </ion-list>
+        <ion-list class="accordion ">
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(3) ? 'item-expand active' : 'item-expand inactive'">
+              <h2 class="text-left  text-uppercase text-in-shadow font-america ">technology</h2>
+              <p>{{cricket.technology |htmlToPlaintext }}</p>
+            </div>
+            <div ng-click="toggleItem(3)" class="item-expand-footer">
+              <i ng-class="isItemShown(3) ? 'ion-minus' : 'ion-plus'"></i>
+
             </div>
           </ion-item>
         </ion-list>

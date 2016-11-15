@@ -67,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     })
 
     .state('app.cricket', {
-      url: '/cricket',
+      url: '/cricket/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/cricket.html',

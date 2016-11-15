@@ -14,12 +14,15 @@
    return {
 
      getHomeContent: function(callback) {
-
-       return $http({
-         url: adminurl + 'exploresmash/getHomeContent',
-         method: "POST",
-         withCredentials: true
-       }).success(callback);
+         var data = {
+             city: $.jStorage.get("cityid")
+         };
+         $http({
+             url: adminurl + 'exploresmash/getHomeContent',
+             method: 'POST',
+             withCredentials: true,
+             data: data
+         }).success(callback);
      },
      getCity: function(callback) {
        $http({
@@ -112,6 +115,20 @@
                method: 'POST',
                withCredentials: true,
                data: data
+           }).success(callback);
+       },
+       getDetailExploreSmaaash: function(id, callback) {
+           var data = {
+               _id: id,
+               city: $.jStorage.get("cityid")
+           };
+
+           $http({
+               url: adminurl + 'exploresmash/getDetailExploreSmaaash',
+               method: 'POST',
+               withCredentials: true,
+               data: data
+
            }).success(callback);
        },
    };

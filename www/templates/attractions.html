@@ -19,7 +19,7 @@
          <p ng-hide="data.gameforarray==''">Game For: <span  class="bluey"><span ng-repeat="per in data.gameforarray track by $index">{{per}} <span ng-if="$index<data.gameforarray.length-2">|</span>
 <span ng-if="$index==data.gameforarray.length-2">&</span> </span></span></p>
 </div>
-<div class="views inline-block pull-right" ui-sref="app.cricket"><button class="text-uppercase bluey pull-right">view</button></div>
+<div class="views inline-block pull-right" ui-sref="app.cricket({id:data._id})"><button class="text-uppercase bluey pull-right">view</button></div>
       </div>
 <div class="button-set clearfix">
 <button class="text-uppercase blue pull-left">buy </button>

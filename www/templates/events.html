@@ -1,19 +1,18 @@
-
 <ion-view>
   <ion-content class="smaash-bg beverage-bg events-bg">
     <div class="order-main text-center">
       <h3 class="text-center text-uppercase text-in-shadow font-america">events</h3>
     </div>
-     <div class="accordion-list" ng-repeat="data in events">
+    <div class="accordion-list" ng-repeat="data in events">
 
       <div class="list card">
-          <div class="crickets text-center">
-  <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
+        <div class="crickets text-center">
+          <img ng-src="{{data.image | uploadpath}}" class="img-responsive" alt="">
 
-    </div>
+        </div>
         <ion-list class="accordion ">
-          <ion-item  class="item item-text-wrap done relate">
-            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'" >
+          <ion-item class="item item-text-wrap done relate">
+            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ data.hometext |htmlToPlaintext }}</h2>
               <p>{{ data.description | htmlToPlaintext }}</p>
             </div>

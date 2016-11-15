@@ -6,11 +6,11 @@
         <p class="color-white font-galano">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       </div>
       <ion-list>
-        <ion-item class="new" ng-if="smaaashNew.length>0">
+        <ion-item class="new" ng-if="whatsnew.length>0">
           <div class="explore-slider">
             <h4 class="text-uppercase text-in-shadow font-america">Whats New</h4>
-            <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()" ng-if="smaaashNew.length>0">
-              <ion-slide ng-repeat="new in smaaashNew track by new._id">
+            <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()" ng-if="whatsnew.length>0">
+              <ion-slide ng-repeat="new in whatsnew track by $index">
                 <div class="custom-slider">
                   <img ng-src="{{new.image|uploadpath}}" alt="" class="img-responsive" width="">
                   <!-- <img ng-src="{{new}}" alt="" class="img-responsive" width=""> -->
@@ -22,13 +22,13 @@
             </ion-slide-box>
           </div>
         </ion-item>
-        <ion-item class="attraction"  ng-if="smaaashAttract.length>0">
+        <ion-item class="attraction"  ng-if="attraction.length>0">
           <div class="explore-slider">
             <h4 class="text-uppercase text-in-shadow font-america">Attractions</h4>
             <!-- {{smaaashAttract[1]}} -->
             <ion-slide-box delegate-handle="sec" ng-init="disableSwipe()">
               <!-- <ion-slide > -->
-              <ion-slide ng-repeat="attract in smaaashAttract track by $index">
+              <ion-slide ng-repeat="attract in attraction track by $index">
                 <img ng-src="{{attract.image|uploadpath}}" alt="" class="img-responsive" width="">
               <!-- </ion-slide> -->
               </ion-slide>
@@ -38,14 +38,15 @@
             </ion-slide-box>
           </div>
         </ion-item>
-        <ion-item class="party"  ng-if="smaaashParty.length>0">
+        <ion-item class="party"  ng-if="hostParty.length>0">
           <div class="explore-slider">
             <h4 class="text-uppercase text-in-shadow font-america">Host a party</h4>
             <ion-slide-box delegate-handle="third" ng-init="disableSwipe()">
-              <ion-slide ng-repeat="party in smaaashParty track by $index">
+              <ion-slide ng-repeat="party in hostParty track by $index">
                 <img ng-src="{{party.image|uploadpath}}" alt="" class="img-responsive" width="">
               </ion-slide>
-              <div class="custom-btn" ng-click="nextSlide('third');">
+              <div class="custom-btn" >
+                <!-- ng-click="nextSlide('third');" -->
                 <img src="img/slider-button.png" alt="" class="img-responsive">
               </div>
             </ion-slide-box>
