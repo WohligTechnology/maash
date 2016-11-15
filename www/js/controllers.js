@@ -197,13 +197,10 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('NewCtrl', function($scope, $stateParams, MyServices) {
-    var id = "57bc4af6eb9c91f1025a3b4f";
-    MyServices.getSingleExploreSmaaash(id, function(data) {
+    MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
       $scope.SingleExploreSmaaash = data.data;
-
-      console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
-
-    });
+        console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
+      });
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{

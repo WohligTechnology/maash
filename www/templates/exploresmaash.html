@@ -12,7 +12,7 @@
             <ion-slide-box auto-play="false" delegate-handle="first" ng-init="disableSwipe()" ng-if="whatsnew.length>0">
               <ion-slide ng-repeat="new in whatsnew track by $index">
                 <div class="custom-slider">
-                  <img ng-src="{{new.image|uploadpath}}" alt="" class="img-responsive" width="">
+                  <img ng-src="{{new.image|uploadpath}}" alt="" class="img-responsive" width="" ui-sref="app.whatsnew({id:new.type._id})">
                   <!-- <img ng-src="{{new}}" alt="" class="img-responsive" width=""> -->
                 </div>
               </ion-slide>
