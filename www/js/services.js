@@ -31,7 +31,7 @@
          withCredentials: true
        }).success(callback);
      },
-     
+
      signUp: function(data, callback) {
        console.log("signup",data);
        $http({
@@ -40,6 +40,16 @@
          withCredentials: true,
          data: data
        }).success(callback);
+     },
+     assistanceLoginSignup: function(formdata, callback) {
+
+         $http({
+             url: adminurl + 'assistance/save',
+             method: 'POST',
+
+             data: formdata
+
+         }).success(callback);
      },
      getSlider: function(callback) {
          var data = {
