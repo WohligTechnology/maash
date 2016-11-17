@@ -11024,3 +11024,11 @@ img[alt="pay"] {
 
 .ion-heart:before {
   color: #ff1f1f; }
+
+.photos {
+  height: 80px;
+  width: 90px;
+  padding-top: 25px;
+  background-color: #9c1d62;
+  box-shadow: 3px 1px 2px #000;
+  border-radius: 5px; }

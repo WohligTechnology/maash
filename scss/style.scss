@@ -1558,14 +1558,9 @@ img[alt="pay"] {
 .ofbut{
 
   a{
-display: inline-block;
-    // height: 50px;
-    // width: 70px;
+   display: inline-block;
     vertical-align: middle;
      position: relative;
-    // img{
-    //   width: 100%;
-    // }
   }
   .share,.review,.next{
   .cart-badge {
@@ -1585,4 +1580,13 @@ display: inline-block;
 
 .ion-heart:before{
   color:#ff1f1f;
+}
+
+.photos{
+   height: 80px;
+    width: 90px;
+    padding-top: 25px;
+    background-color: #9c1d62;
+   box-shadow: 3px 1px 2px #000;
+    border-radius: 5px;
 }
