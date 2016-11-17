@@ -213,6 +213,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+     .state('app.game', {
+      url: '/game-purchase',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/game.html',
+          controller: 'GpurchaseCtrl'
+        }
+      }
+    })
+
+         .state('app.merchandise', {
+      url: '/merchandise-exclusive',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/merchandise.html',
+          controller: 'MerchandiseCtrl'
+        }
+      }
+    })
+
     .state('app.about', {
       url: '/about',
       views: {
