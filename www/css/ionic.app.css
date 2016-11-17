@@ -10069,9 +10069,6 @@ h3.ion-ios-bell-outline {
   .choose-avatar span {
     font-size: 16px; }
 
-.avatar-holder img {
-  border: 2px solid #fff; }
-
 .popup-container .popup {
   width: 100%;
   background-color: transparent; }
@@ -11025,6 +11022,9 @@ img[alt="pay"] {
 .ion-heart:before {
   color: #ff1f1f; }
 
+.ion-camera, .ion-plus {
+  font-size: 20px; }
+
 .photos {
   height: 80px;
   width: 90px;
@@ -11032,3 +11032,18 @@ img[alt="pay"] {
   background-color: #9c1d62;
   box-shadow: 3px 1px 2px #000;
   border-radius: 5px; }
+
+.avatars, .avatarss {
+  background-image: url("../img/avatar/lady.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 135px;
+  height: 105px;
+  background-color: #01a69a;
+  border: 1px solid #fff;
+  box-sizing: border-box; }
+
+.avatarss {
+  background-image: url("../img/avatar/lady.png");
+  margin-left: -2px; }
