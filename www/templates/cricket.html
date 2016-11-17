@@ -1,4 +1,3 @@
-
 <ion-view>
   <ion-content class="cricket-bg">
     <div class="order-main text-center">
@@ -15,32 +14,23 @@
           <div class="button-set">
             <button class="text-uppercase blue">buy now</button>
           </div>
-          <div class="love" ><button class="text-uppercase"><i class="fa fa-heart-o" aria-hidden="true"></i>would love to try</button></div>
+          <div class="love">
+            <button class="text-uppercase" ng-click="addedToWishList(cricket._id)"><span class="ion" ng-class="{'ion-ios-heart-outline':!isInWishlist(cricket._id),'ion-heart':isInWishlist(cricket._id)}"> would love to try</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div class="accordion-list">
       <div class="list card">
-        <!-- <ion-list class="accordion ">
-          <ion-item ng-repeat="item in items" class="item item-text-wrap  done relate">
-            <div ng-class="isItemShown(item) ? 'item-expand active' : 'item-expand inactive'">
-              <h2 class=" text-uppercase text-in-shadow font-america">{{ item.title }}</h2>
-              <div class="clearfix"></div>
-              <p>{{ item.text }}</p>
-            </div>
-            <div ng-click="toggleItem(item)" class="item-expand-footer">
-              <i ng-class="isItemShown(item) ? 'ion-minus' : 'ion-plus'"></i>
-
-            </div>
-          </ion-item>
-        </ion-list> -->
-        <ion-list class="accordion ">
+      <ion-list class="accordion ">
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(1) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">Game description</h2>
-               <div class="clearfix"></div>
+              <div class="clearfix"></div>
               <p ng-bind-html="cricket.description | htmlToPlaintext"></p>
+                <p ng-if="cricket.description ===''" class="text-center">Nothing to show.</p>
             </div>
             <div ng-click="toggleItem(1)" class="item-expand-footer">
               <i ng-class="isItemShown(1) ? 'ion-minus' : 'ion-plus'"></i>
@@ -52,8 +42,9 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(2) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">timing and pricing</h2>
-               <div class="clearfix"></div>
+              <div class="clearfix"></div>
               <p ng-bind-html="cricket.timingAndPricing | htmlToPlaintext"></p>
+              <p ng-if="cricket.timingAndPricing===''" class="text-center">Nothing to show.</p>
             </div>
             <div ng-click="toggleItem(2)" class="item-expand-footer">
               <i ng-class="isItemShown(2) ? 'ion-minus' : 'ion-plus'"></i>
@@ -65,8 +56,9 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(3) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">technology</h2>
-               <div class="clearfix"></div>
+              <div class="clearfix"></div>
               <p ng-bind-html="cricket.technology |htmlToPlaintext"></p>
+              <p ng-if="cricket.technology===''" class="text-center">Nothing to show.</p>
             </div>
             <div ng-click="toggleItem(3)" class="item-expand-footer">
               <i ng-class="isItemShown(3) ? 'ion-minus' : 'ion-plus'"></i>
@@ -78,8 +70,9 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(4) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">promotions</h2>
-               <div class="clearfix"></div>
-              <p ng-repeat ="data in cricket.multipleattraction" ng-bind-html="data.text |htmlToPlaintext"></p>
+              <div class="clearfix"></div>
+              <p ng-repeat="data in cricket.multipleattraction" ng-bind-html="data.text |htmlToPlaintext"></p>
+              <p ng-if="cricket.multipleattraction.length === 0 " class="text-center">Nothing to show.</p>
             </div>
             <div ng-click="toggleItem(4)" class="item-expand-footer">
               <i ng-class="isItemShown(4) ? 'ion-minus' : 'ion-plus'"></i>

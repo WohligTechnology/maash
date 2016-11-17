@@ -183,12 +183,29 @@ angular.module('starter.controllers', ['ngCordova'])
     }
 })
 
-.controller('PartyFormCtrl', function($scope, $stateParams) {
+.controller('PartyFormCtrl', function($scope, $stateParams,MyServices,$timeout) {
 $scope.userForm={};
+$scope.formComplete = false;
 MyServices.getCity(function(data) {
     $scope.getCities = data.data;
-  
+    console.log("  $scope.getCities ",  $scope.getCities );
+
 });
+$scope.userSignup=function(userForm){
+  if (userForm) {
+    console.log("userForm",userForm);
+    MyServices.assistanceLoginSignup(userForm,function(data){
+      console.log("data",data);
+      if (data.value === true) {
+        $scope.formComplete=true;
+        $timeout(function() {
+            $scope.formComplete = false;
+            $scope.userForm = {};
+        }, 2000);
+      }
+    })
+  }
+}
 })
 
 
@@ -251,7 +268,7 @@ MyServices.getCity(function(data) {
         console.log("id",id);
           if ($.jStorage.get("loginDetail") == null) {
               console.log("am in if");
-               $ionicPopup.show({
+            $scope.myPopup = $ionicPopup.show({
                 templateUrl: 'templates/modal/wishlistsignup.html',
                 scope: $scope
               });
@@ -271,7 +288,7 @@ MyServices.getCity(function(data) {
                       console.log(data, 'removed data');
                       if (data.value) {
                           showWishList();
-                          $ionicPopup.show({
+                        $scope.myPopup = $ionicPopup.show({
                            templateUrl: 'templates/modal/removeWishlist.html',
                            scope: $scope
                          });
@@ -282,7 +299,7 @@ MyServices.getCity(function(data) {
                   MyServices.addToWishList(id, function(data) {
                       console.log("wishlist", data);
                       if (data.value) {
-                        $ionicPopup.show({
+                      $scope.myPopup = $ionicPopup.show({
                          templateUrl: 'templates/modal/wishlist.html',
                          scope: $scope
                        });
@@ -292,6 +309,9 @@ MyServices.getCity(function(data) {
               }
           }
       };
+      $scope.closeModals=function(){
+        $scope.myPopup.close();
+      }
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{
@@ -325,38 +345,7 @@ MyServices.getCity(function(data) {
     };
   })
 
-.controller('CricketCtrl', function($scope, $stateParams,MyServices) {
-  //   $scope.groups = [];
-  // for (var i=0; i<10; i++) {
-  //   $scope.groups[i] = {
-  //     name: i,
-  //     items: []
-  //   };
-  //   for (var j=0; j<3; j++) {
-  //     $scope.groups[i].items.push(i + '-' + j);
-  //   }
-  // }
-
-  /*
-   * if given group is the selected group, deselect it
-   * else, select the given group
-   */
-  $scope.items = [{
-    title: 'game description',
-    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-  }, {
-    title: 'timing and pricing',
-    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-  }, {
-    title: 'technology',
-    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-  }, {
-    title: 'game description',
-    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-  }, {
-    title: 'promotions',
-    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-  }];
+.controller('CricketCtrl', function($scope, $stateParams,MyServices,$ionicPopup) {
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
       $scope.shownItem = null;
@@ -371,8 +360,76 @@ MyServices.getCity(function(data) {
   MyServices.getDetailExploreSmaaash($stateParams.id,function(data){
     console.log("data",data);
     $scope.cricket=data.data;
-  })
+  });
+  $scope.isInWishlist = function(id) {
+      var indexF = _.findIndex($scope.userwishlist, function(key) {
+          return key.exploresmash._id == id;
+      })
+      if (indexF !== -1) {
+          return true;
+      } else {
+          return false;
+      }
+  }
+  if ($.jStorage.get("loginDetail") != null) {
+      function showWishList() {
+          MyServices.showWishList(function(data) {
+              $scope.userwishlist = data.data.wishList;
+              console.log("$scope.userwishlist", $scope.userwishlist);
+          })
+      };
+      showWishList();
+  }
 
+
+  $scope.addedToWishList = function(id) {
+    console.log("id",id);
+      if ($.jStorage.get("loginDetail") == null) {
+          console.log("am in if");
+        $scope.myPopup = $ionicPopup.show({
+            templateUrl: 'templates/modal/wishlistsignup.html',
+            scope: $scope
+          });
+      } else if ($.jStorage.get("loginDetail") != null) {
+          var findIndex = _.findIndex($scope.userwishlist, function(key) {
+              console.log(id, '////////');
+              return key.exploresmash._id === id;
+          });
+          console.log("findIndex", findIndex);
+          if (findIndex !== -1) {
+              console.log("findIndex", findIndex);
+              constraints = _.find($scope.userwishlist, function(key) {
+                  return key.exploresmash._id === id;
+              });
+              console.log(constraints);
+              MyServices.removeFromWishList(constraints._id, function(data) {
+                  console.log(data, 'removed data');
+                  if (data.value) {
+                      showWishList();
+                    $scope.myPopup = $ionicPopup.show({
+                       templateUrl: 'templates/modal/removeWishlist.html',
+                       scope: $scope
+                     });
+                  };
+
+              });
+          } else {
+              MyServices.addToWishList(id, function(data) {
+                  console.log("wishlist", data);
+                  if (data.value) {
+                  $scope.myPopup = $ionicPopup.show({
+                     templateUrl: 'templates/modal/wishlist.html',
+                     scope: $scope
+                   });
+                  }
+                  showWishList();
+              });
+          }
+      }
+  };
+  $scope.closeModals=function(){
+    $scope.myPopup.close();
+  }
 })
 
 

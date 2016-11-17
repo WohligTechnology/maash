@@ -29,7 +29,7 @@
             <ion-slide-box delegate-handle="sec" >
               <!-- <ion-slide > -->
               <ion-slide ng-repeat="attract in attraction track by $index">
-                <img ng-src="{{attract.image|uploadpath}}" alt="" class="img-responsive" width="" ui-sref="app.attraction({id:attract.type._id})">
+                <img ng-src="{{attract.image|uploadpath}}" alt="" class="img-responsive" width="" ui-sref="app.cricket({id:attract._id})">
               <!-- </ion-slide> -->
               </ion-slide>
               <div class="custom-btn" ng-click="nextSlide('sec');">
@@ -52,7 +52,7 @@
             </ion-slide-box>
           </div>
         </ion-item>
-      
+
       </ion-list>
     </div>
   </ion-content>

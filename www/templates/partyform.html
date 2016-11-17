@@ -7,7 +7,7 @@
       <ion-list>
         <div class="row">
           <div class="col-offset-10 col col-80">
-            <form name="user" ng-submit="userSignup(userForm);">
+            <form name="user" ng-submit="userSignup(userForm);" ng-if="!formComplete">
               <label class="item item-input">
                 <input type="text" placeholder="Name" name="fullname" required ng-model="userForm.name">
               </label>
@@ -19,15 +19,15 @@
               <label class="item item-input ">
                 <div class="custom-select calendar">
                   <select class="city" required ng-model="userForm.city">
-                    <option selected value="">City</option>
-                    <option value="mumbai">mumbai</option>
+                    <option ng-selected="true" value="">select city</option>
+                    <option value="{{data._id}}" ng-repeat="data in getCities">{{data.name}}</option>
                     <!-- <option value="noida">noida</option> -->
                   </select>
                 </div>
               </label>
-                            <label class="item item-input ">
+              <label class="item item-input ">
                 <div class="custom-select calendar">
-                  <select class="people" required ng-model="userForm.people">
+                  <select class="people" required ng-model="userForm.noofpeople">
                     <option selected value="">Select no of people</option>
                     <option value="1-5">1-5</option>
                     <option value="6-10">6-10</option>
@@ -37,7 +37,7 @@
                 </div>
               </label>
               <label class="item item-input">
-                <input type="tel" placeholder="Mobile Number" name="mobileno" ng-model="userForm.mobileno" required>
+                <input type="tel" placeholder="Mobile Number" name="mobileno" ng-model="userForm.mobile" required>
               </label>
               <p class="error-msg" ng-show="user.mobileno.$error.required && user.mobileno.$touched">Please Enter Your Mobile Number.</p>
               <label class="item item-input">
@@ -49,15 +49,16 @@
               </label>
               <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>-->
               <div class="final-decision text-center">
-                  <a href="" class="color-white">Cancel</a>
-              <button type="submit" name="button" class="go " ng-click="oneTimepswd();">
-                <img src="img/go.png" alt="" class="img-responsive">
-              </button>
+                <a href="" class="color-white">Cancel</a>
+                <button type="submit" name="button" class="go " >
+                  <img src="img/go.png" alt="" class="img-responsive">
+                </button>
               </div>
 
               <!--<p class="text-center color-white font-galano">OR</p>
               <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>-->
             </form>
+            <h4 ng-if="formComplete" class="text-center">Thank You .</h4>
           </div>
         </div>
       </ion-list>
