@@ -11038,7 +11038,7 @@ img[alt="pay"] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 135px;
+  width: auto;
   height: 105px;
   background-color: #01a69a;
   border: 1px solid #fff;

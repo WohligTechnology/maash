@@ -161,7 +161,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('PartyCtrl', function($scope, $stateParams, MyServices) {
+.controller('PartyCtrl', function($scope, $stateParams, MyServices,$ionicPopup,$cordovaFileOpener2) {
 
   MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
     $scope.SingleHostParty = data.data;
@@ -172,6 +172,14 @@ angular.module('starter.controllers', ['ngCordova'])
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
+  $cordovaFileOpener2.open(
+   '/img/pdf.pdf',
+   'application/pdf'
+ ).then(function() {
+     // file opened successfully
+ }, function(err) {
+     // An error occurred. Show a message to the user
+ });
       $scope.pdf = function() {
       $scope.pdfParty = $ionicPopup.show({
         templateUrl: 'templates/modal/pdf.html',
@@ -820,7 +828,11 @@ $scope.userSignup=function(userForm){
 
   })
   .controller('DirectionCtrl', function($scope, $stateParams) {
-
+    $scope.Mumbai=true;
+$scope.gotofun=function(city){
+  console.log(city);
+  $scope.Mumbai= false;
+}
   })
 
     .controller('WishlistCtrl', function($scope, $stateParams,MyServices) {

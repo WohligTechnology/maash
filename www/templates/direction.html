@@ -8,34 +8,113 @@
     <!-- <div class="input-label">
       Lightsaber
     </div> -->
-    <select>
-      <option>Mumbai</option>
-      <option selected>Gurgoan</option>
-      <option>Hydreabad</option>
-      <option>Bengluru</option>
-      <option>Noida</option>
+    <select ng-model="city" id="city" ng-change=gotofun(city)>
+      <option ng-option value="Mumbai" ng-selected="true">Mumbai</option>
+      <option ng-option value="Gurgoan">Gurgoan</option>
+      <option ng-option value="Hydreabad">Hydreabad</option>
+      <option ng-option value="Bengluru">Bengluru</option>
+      <option ng-option value="Noida">Noida</option>
     </select>
   <!-- </label> -->
-
 </div>
 
+
+
       <!-- <p class=" text-center color-white font-galano">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> -->
-      <div class="map">
-        <div class="see-map">
-          <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
-        </div>
-      </div>
-      <ion-list class="direction-list">
-        <ion-item >
-          <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Mumbai,<br>Maharashtra 400013 </p>
-          <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
-        </ion-item>
-        <ion-item  class="border">
-          <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
-          <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
-          <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
-        </ion-item>
-      </ion-list>
+
+<div ng-if="city == 'Mumbai' || Mumbai" >
+  <div class="map">
+    <div class="see-map">
+      <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+  <ion-list class="direction-list">
+    <ion-item >
+      <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Mumbai,<br>Maharashtra 400013 </p>
+      <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
+    </ion-item>
+    <ion-item  class="border">
+      <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
+      <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
+      <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div ng-if="city == 'Gurgoan'">
+  <div class="map">
+    <div class="see-map">
+      <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+  <ion-list class="direction-list">
+    <ion-item >
+      <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Gurgoan,<br>Maharashtra 400013 </p>
+      <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
+    </ion-item>
+    <ion-item  class="border">
+      <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
+      <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
+      <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
+    </ion-item>
+  </ion-list>
+</div>
+<div ng-if="city == 'Hydreabad'">
+  <div class="map">
+    <div class="see-map">
+      <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+  <ion-list class="direction-list">
+    <ion-item >
+      <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Hydreabad,<br>Maharashtra 400013 </p>
+      <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
+    </ion-item>
+    <ion-item  class="border">
+      <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
+      <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
+      <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
+    </ion-item>
+  </ion-list>
+</div>
+<div ng-if="city == 'Bengluru'">
+  <div class="map">
+    <div class="see-map">
+      <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+  <ion-list class="direction-list">
+    <ion-item >
+      <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Bengluru,<br>Maharashtra 400013 </p>
+      <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
+    </ion-item>
+    <ion-item  class="border">
+      <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
+      <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
+      <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
+    </ion-item>
+  </ion-list>
+</div>
+<div ng-if="city == 'Noida'">
+  <div class="map">
+    <div class="see-map">
+      <a href="https://www.google.co.in/maps/dir//Smaaash,+Lower+Parel,+Mumbai,+Maharashtra/@19.0046012,72.7560316,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce936967b06f:0x632065952895a84c!2m2!1d72.8260721!2d19.0046144" target="_blank"><img src="img/map.png" alt="" class="img-responsive"></a>
+    </div>
+  </div>
+  <ion-list class="direction-list">
+    <ion-item >
+      <p class="no-ellipsis font-galano">Kamala No. 4, Mumbai, Sun Mills Compound <br>Rd,Lower Parel, Noida,<br>Maharashtra 400013 </p>
+      <!-- <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span> -->
+    </ion-item>
+    <ion-item  class="border">
+      <span class="no-ellipsis font-galano">Toll Free: 1800-200-1020</span>
+      <span><img src="img/next.png" alt="" width="80" class="img-responsive"></span>
+      <p class="no-ellipsis font-galano">Mumbai: 022 4914 3143</p>
+    </ion-item>
+  </ion-list>
+</div>
+
+
     </div>
   </ion-content>
 </ion-view>
