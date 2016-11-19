@@ -172,14 +172,22 @@ angular.module('starter.controllers', ['ngCordova'])
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
-  $cordovaFileOpener2.open(
-   '/img/pdf.pdf',
-   'application/pdf'
- ).then(function() {
-     // file opened successfully
- }, function(err) {
-     // An error occurred. Show a message to the user
- });
+ //  $cordovaFileOpener2.open(
+ //   '/img/pdf.pdf',
+ //   'application/pdf'
+ // ).then(function() {
+ //     // file opened successfully
+ // }, function(err) {
+ //     // An error occurred. Show a message to the user
+ // });
+ var options = "location=no,toolbar=yes";
+ var target = "_blank";
+ var url = "";
+
+ $scope.openPDF = function(link) {
+   url = link;
+   var ref = cordova.InAppBrowser.open(url, target, options);
+ };
       $scope.pdf = function() {
       $scope.pdfParty = $ionicPopup.show({
         templateUrl: 'templates/modal/pdf.html',
