@@ -172,14 +172,6 @@ angular.module('starter.controllers', ['ngCordova'])
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
- //  $cordovaFileOpener2.open(
- //   '/img/pdf.pdf',
- //   'application/pdf'
- // ).then(function() {
- //     // file opened successfully
- // }, function(err) {
- //     // An error occurred. Show a message to the user
- // });
  var options = "location=no,toolbar=yes";
  var target = "_blank";
  var url = "";
