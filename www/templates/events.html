@@ -14,7 +14,7 @@
           <ion-item class="item item-text-wrap done relate">
             <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'">
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">{{ data.hometext |htmlToPlaintext }}</h2>
-              <p>{{ data.description | htmlToPlaintext }}</p>
+              <p ng-bind-html="data.description | htmlToPlaintext"></p>
             </div>
             <div ng-click="toggleItem(data)" class="item-expand-footer">
               <i ng-class="isItemShown(data) ? 'ion-minus' : 'ion-plus'"></i>

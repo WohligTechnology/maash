@@ -12,8 +12,8 @@
 <div class="row">
   <div class="col">
     <div class="item item-image">
-      <img ng-src="{{data.exploresmash.image|uploadpath}}" alt="karting" class="img-responsive" ng-if="data.exploresmash.image">
-      <img ng-if="data.exploresmash.homeimage" ng-src="{{data.exploresmash.homeimage|uploadpath}}" alt="karting" class="img-responsive">
+      <img ng-src="{{data.exploresmash.image|uploadpath}}" alt="karting" class="img-responsive" ng-if="data.exploresmash.image && !data.exploresmash.homeimage">
+      <img ng-if="data.exploresmash.homeimage && !data.exploresmash.image" ng-src="{{data.exploresmash.homeimage|uploadpath}}" alt="karting" class="img-responsive">
       <img ng-if="data.exploresmash.homeimage && data.exploresmash.image" ng-src="{{data.exploresmash.homeimage|uploadpath}}" alt="karting" class="img-responsive">
         <p class="mt10 uppercase" ng-bind-html="data.exploresmash.hometext"></p>
   </div>
