@@ -1,0 +1,30 @@
+<div class="gallery">
+  <i class="ion ion-close " ng-click="closePopup();"></i>
+  <!-- <div class="main-img">
+    <img src="img/sm.png" alt="" />
+  </div> -->
+  <div class="img-div">
+    <ion-slide-box class="main-img">
+      <ion-slide ng-repeat="new in whatsnew track by $index">
+        <div class="custom-slider">
+          <img ng-src="{{new.image|uploadpath}}" alt="" class="img-responsive full-image" width="" ui-sref="app.whatsnew({id:new.type._id})">
+          <!-- <img ng-src="{{new}}" alt="" class="img-responsive" width=""> -->
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+      <ion-scroll direction="x" class="tsb-hscroll scroll-view ionic-scroll scroll-hide"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+        <div class="row" >
+
+        <div class="col-33" ng-repeat="new in whatsnew track by $index">
+          <img ng-src="{{new.image|uploadpath}}" class="img-responsive thumb"  alt="" />
+
+        </div>
+      </div>
+
+  <div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleX(1); width: 428px; transform-origin: left center 0px;"></div></div></ion-scroll>
+
+  </div>
+
+
+</div>

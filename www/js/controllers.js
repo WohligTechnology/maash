@@ -152,7 +152,36 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('BeverageCtrl', function($scope, $stateParams, MyServices) {
+.controller('BeverageCtrl', function($scope, $stateParams, MyServices ,$ionicPopup) {
+  $scope.getPlan = function() {
+    $scope.checkPlan = $ionicPopup.show({
+      templateUrl: 'templates/modal/gallery.html',
+      scope: $scope
+    });
+  };
+  var attraction = [];
+  var whatsnew = [];
+  var hostParty = [];
+
+
+  MyServices.getHomeContent(function(data) {
+    if (data.value) {
+        $scope.homeContent = data.data;
+        $scope.content = _.groupBy($scope.homeContent, "type.name");
+        $scope.attraction = $scope.content.Attraction;
+        $scope.whatsnew = $scope.content["What's new"];
+        $scope.hostParty = $scope.content["Host a party"];
+
+
+
+    } else {}
+
+  });
+
+
+  $scope.closePopup = function() {
+    $scope.checkPlan.close();
+  }
   $scope.foodBeveragesId = "57bc4b48eb9c91f1025a3b57";
   MyServices.getSingleExploreSmaaash($scope.foodBeveragesId, function(data) {
     $scope.drinkParty = data.data;
@@ -759,24 +788,7 @@ $scope.userSignup=function(userForm){
     $scope.disableSwipe = function() {
       $ionicSlideBoxDelegate.enableSlide(false);
     };
-    var attraction = [];
-    var whatsnew = [];
-    var hostParty = [];
 
-
-    MyServices.getHomeContent(function(data) {
-      if (data.value) {
-          $scope.homeContent = data.data;
-          $scope.content = _.groupBy($scope.homeContent, "type.name");
-          $scope.attraction = $scope.content.Attraction;
-          $scope.whatsnew = $scope.content["What's new"];
-          $scope.hostParty = $scope.content["Host a party"];
-
-
-
-      } else {}
-
-    });
 
     // $scope.smaaashNew = [
     //   'img/new.png',

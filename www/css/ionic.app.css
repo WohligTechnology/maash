@@ -11047,3 +11047,18 @@ img[alt="pay"] {
 .avatarss {
   background-image: url("../img/avatar/lady.png");
   margin-left: -2px; }
+
+.gallery {
+  background: white;
+  padding: 5px; }
+  .gallery i {
+    margin: 5px; }
+  .gallery .img-div {
+    margin-top: 10px; }
+
+.main-img {
+  height: auto;
+  width: auto;
+  margin: 7px; }
+  .main-img img {
+    width: 100%; }

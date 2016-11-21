@@ -1606,9 +1606,24 @@ img[alt="pay"] {
     background-image: url("../img/avatar/lady.png");
     margin-left: -2px;
 }
-
-
-
+.gallery{
+  background: white;
+  padding: 5px;
+  i{
+    margin: 5px;
+  }
+  .img-div{
+    margin-top: 10px;
+  }
+}
+.main-img{
+  height: auto;
+  width: auto;
+  margin: 7px;
+  img{
+    width: 100%;
+  }
+}
 // .avatars{
 //   position: relative;
 //   .avatar1,.avatar2{
