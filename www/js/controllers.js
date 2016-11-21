@@ -188,6 +188,17 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log("  $scope.drinkParty", $scope.drinkParty);
   });
 
+
+var options = "location=no,toolbar=yes";
+ var target = "_blank";
+ var url = "";
+
+ $scope.openPDF = function() {
+   url = "http://tingdom.in/smaaash/img/brand.pdf";
+   var ref = cordova.InAppBrowser.open(url, target, options);
+ };
+
+
 })
 
 .controller('PartyCtrl', function($scope, $stateParams, MyServices) {
