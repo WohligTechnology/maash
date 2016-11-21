@@ -773,8 +773,23 @@ $scope.userSignup=function(userForm){
 })
 
 .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
+  var attraction = [];
+  var whatsnew = [];
+  var hostParty = [];
 
+
+  MyServices.getHomeContent(function(data) {
+    if (data.value) {
+        $scope.homeContent = data.data;
+        $scope.content = _.groupBy($scope.homeContent, "type.name");
+        $scope.attraction = $scope.content.Attraction;
+        $scope.whatsnew = $scope.content["What's new"];
+        $scope.hostParty = $scope.content["Host a party"];
+    } else {}
+
+  });
     $scope.nextSlide = function(val) {
+      console.log("hi");
       console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount());
       console.log($ionicSlideBoxDelegate.$getByHandle(val).currentIndex());
       if ($ionicSlideBoxDelegate.$getByHandle(val).slidesCount() - 2 <= $ionicSlideBoxDelegate.$getByHandle(val).currentIndex()) {
