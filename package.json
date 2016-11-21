@@ -30,7 +30,8 @@
     "cordova-plugin-x-socialsharing",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-image-picker",
-    "cordova-plugin-camera"
+    "cordova-plugin-camera",
+    "cordova-plugin-file-opener2"
   ],
   "cordovaPlatforms": [
     "android",

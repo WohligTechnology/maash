@@ -190,7 +190,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('PartyCtrl', function($scope, $stateParams, MyServices,$ionicPopup) {
+.controller('PartyCtrl', function($scope, $stateParams, MyServices) {
 
   MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
     $scope.SingleHostParty = data.data;
@@ -201,23 +201,24 @@ angular.module('starter.controllers', ['ngCordova'])
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
-//  var options = "location=no,toolbar=yes";
-//  var target = "_blank";
-//  var url = "";
+ var options = "location=no,toolbar=yes";
+ var target = "_blank";
+ var url = "";
 
-//  $scope.openPDF = function(link) {
-//    url = link;
-//    var ref = cordova.InAppBrowser.open(url, target, options);
-//  };
-      $scope.pdf = function() {
-      $scope.pdfParty = $ionicPopup.show({
-        templateUrl: 'templates/modal/pdf.html',
-        scope: $scope
-      });
-    }
-    $scope.closePopup = function() {
-      $scope.pdfParty.close();
-    }
+ $scope.openPDF = function() {
+   url = "http://tingdom.in/smaaash/img/brand.pdf";
+   var ref = cordova.InAppBrowser.open(url, target, options);
+ };
+
+    //   $scope.pdf = function() {
+    //   $scope.pdfParty = $ionicPopup.show({
+    //     templateUrl: 'templates/modal/pdf.html',
+    //     scope: $scope
+    //   });
+    // }
+    // $scope.closePopup = function() {
+    //   $scope.pdfParty.close();
+    // }
 })
 
 .controller('PartyFormCtrl', function($scope, $stateParams,MyServices,$timeout) {
