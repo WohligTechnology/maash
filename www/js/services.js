@@ -31,6 +31,27 @@
          withCredentials: true
        }).success(callback);
      },
+     getEvents: function(callback) {
+       $http({
+         url: adminurl + 'exploresmash/getAllEventsForApp',
+         method: 'POST',
+         withCredentials: true
+       }).success(callback);
+     },
+     getTournaments: function(callback) {
+       $http({
+         url: adminurl + 'exploresmash/getAllTournaments',
+         method: 'POST',
+         withCredentials: true
+       }).success(callback);
+     },
+     getChallenges: function(callback) {
+       $http({
+         url: adminurl + 'exploresmash/getAllChallenges',
+         method: 'POST',
+         withCredentials: true
+       }).success(callback);
+     },
 
      signUp: function(data, callback) {
        console.log("signup",data);

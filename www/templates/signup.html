@@ -9,7 +9,7 @@
           <div class="col-offset-10 col col-80">
             <form name="user" ng-submit="userSignup(userForm);" ng-if="!formComplete">
               <label class="item item-input">
-                <input type="text" placeholder="Name" name="name" required ng-model="userForm.name">
+                <input type="text" placeholder="Name" name="name" required ng-model="userForm.CustomerName">
               </label>
               <p class="error-msg" ng-if="user.name.$error.required && user.name.$touched">Please Enter Your Name.</p>
               <label class="item item-input">
@@ -29,11 +29,11 @@
                 </div>
               </label>
               <label class="item item-input">
-                <input type="tel" placeholder="Mobile Number" name="mobile" ng-model="userForm.mobile" required only-Digits maxlength="10" minlength="8">
+                <input type="tel" placeholder="Mobile Number" name="mobile" ng-model="userForm.CustomerMobile" required only-Digits maxlength="10" minlength="8">
               </label>
               <p class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please Enter Your Mobile Number.</p>
               <label class="item item-input">
-                <input type="email" placeholder="Email id" required ng-model="userForm.email" name="email">
+                <input type="email" placeholder="Email id" required ng-model="userForm.CustomerEmail" name="email">
               </label>
               <p class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email.</p>
               <p ng-if="emailExist">Email Id Already Exist.</p>

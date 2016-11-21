@@ -263,12 +263,16 @@ $scope.userSignup=function(userForm){
     return $scope.shownItem === item;
   };
 
-  $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
-  MyServices.getSingleExploreSmaaash($scope.eventId, function(data) {
+  // $scope.eventId = "57bd4e71a86ee9fa6770d4b2";
+  // MyServices.getSingleExploreSmaaash($scope.eventId, function(data) {
+  //   $scope.events = data.data;
+  //
+  //   console.log("$scope.events", $scope.events);
+  //
+  // });
+  MyServices.getEvents(function(data) {
     $scope.events = data.data;
-
     console.log("$scope.events", $scope.events);
-
   });
 
 })
@@ -907,7 +911,7 @@ var i=0;
   })
 
 
-    .controller('TournamentCtrl', function($scope, $stateParams) {
+    .controller('TournamentCtrl', function($scope, $stateParams,MyServices) {
 
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
@@ -919,10 +923,15 @@ var i=0;
   $scope.isItemShown = function(item) {
     return $scope.shownItem === item;
   };
+  MyServices.getTournaments(function(data) {
+    $scope.tour = data.data;
+    console.log("$scope.tour", $scope.tour);
+  });
+
   })
 
 
-   .controller('ChallengesCtrl', function($scope, $stateParams) {
+   .controller('ChallengesCtrl', function($scope, $stateParams,MyServices) {
 
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
@@ -934,6 +943,10 @@ var i=0;
   $scope.isItemShown = function(item) {
     return $scope.shownItem === item;
   };
+  MyServices.getChallenges(function(data) {
+    $scope.challenges = data.data;
+    console.log("$scope.challenges", $scope.challenges);
+  });
   })
 
 
