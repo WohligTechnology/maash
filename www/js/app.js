@@ -214,7 +214,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     })
 
      .state('app.game', {
-      url: '/game-purchase',
+      url: '/game',
       views: {
         'menuContent': {
           templateUrl: 'templates/game.html',
@@ -224,7 +224,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
     })
 
          .state('app.merchandise', {
-      url: '/merchandise-exclusive',
+      url: '/merchandise',
       views: {
         'menuContent': {
           templateUrl: 'templates/merchandise.html',

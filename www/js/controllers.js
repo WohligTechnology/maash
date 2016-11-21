@@ -13,7 +13,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log("im in");
       if ($.jStorage.get("loginDetail") != null) {
           MyServices.logout(function(data) {
-              location.reload();
+              // location.reload();
               $state.go("home");
           })
       } else {
