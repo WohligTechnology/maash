@@ -34,18 +34,20 @@
     </div>
         <ion-list class="accordion ">
           <ion-item  class="item item-text-wrap done relate">
-            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'" >
+            <div ng-class="isItemShown(1) ? 'item-expand active' : 'item-expand inactive'" >
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">live screening</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, error architecto placeat sint consequatur ex obcaecati maxime necessitatibus, enim, similique aut non vel rerum assumenda ducimus, cumque ipsa eos reiciendis!</p>
             </div>
-            <div ng-click="toggleItem(data)" class="item-expand-footer">
-              <i ng-class="isItemShown(data) ? 'ion-minus' : 'ion-plus'"></i>
+            <div ng-click="toggleItem(1)" class="item-expand-footer">
+              <i ng-class="isItemShown(1) ? 'ion-minus' : 'ion-plus'"></i>
 
             </div>
           </ion-item>
         </ion-list>
       </div>
     </div>
+
+       <div class="accordion-list">
 
       <div class="list card">
           <div class="crickets text-center">
@@ -54,12 +56,12 @@
     </div>
         <ion-list class="accordion ">
           <ion-item  class="item item-text-wrap done relate">
-            <div ng-class="isItemShown(data) ? 'item-expand active' : 'item-expand inactive'" >
+            <div ng-class="isItemShown(2) ? 'item-expand active' : 'item-expand inactive'" >
               <h2 class="text-left  text-uppercase text-in-shadow font-america ">live screening</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, error architecto placeat sint consequatur ex obcaecati maxime necessitatibus, enim, similique aut non vel rerum assumenda ducimus, cumque ipsa eos reiciendis!</p>
             </div>
-            <div ng-click="toggleItem(data)" class="item-expand-footer">
-              <i ng-class="isItemShown(data) ? 'ion-minus' : 'ion-plus'"></i>
+            <div ng-click="toggleItem(2)" class="item-expand-footer">
+              <i ng-class="isItemShown(2) ? 'ion-minus' : 'ion-plus'"></i>
 
             </div>
           </ion-item>
@@ -88,5 +90,7 @@
         </ion-list>
       </div>
     </div> -->
+    </div>
+
   </ion-content>
 </ion-view>

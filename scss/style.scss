@@ -1624,6 +1624,21 @@ img[alt="pay"] {
     width: 100%;
   }
 }
+.pick-img{
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+    // margin-left: 20px;
+}
+.pick-img+.pick-img{
+  margin-left: 20px;
+}
+
+
+// .thank{
+//   background-image: url("../img/box-pop.png");
+//   background-size: cover;
+// }
 // .avatars{
 //   position: relative;
 //   .avatar1,.avatar2{

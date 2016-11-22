@@ -11062,3 +11062,11 @@ img[alt="pay"] {
   margin: 7px; }
   .main-img img {
     width: 100%; }
+
+.pick-img {
+  height: 100px;
+  width: 100px;
+  overflow: hidden; }
+
+.pick-img + .pick-img {
+  margin-left: 20px; }
