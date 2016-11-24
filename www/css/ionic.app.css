@@ -11099,3 +11099,7 @@ img[alt="pay"] {
 
 .accordion-list .custom-slider {
   padding: 0 20px; }
+
+.leader {
+  background: url("../img/usa/leader.jpg");
+  background-size: cover; }
