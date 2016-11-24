@@ -1634,21 +1634,42 @@ img[alt="pay"] {
   margin-left: 20px;
 }
 
+.avatars,.avatarss,.avatars1,.avatarss1,.avatars2,.avatarss2{
+      background-image: url("../img/usa/usvirat.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 105px;
+    background-color: #01a69a;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
 
-// .thank{
-//   background-image: url("../img/box-pop.png");
-//   background-size: cover;
+.avatars1{
+    background-image: url("../img/usa/flyman.png");
+}
+
+.avatars2{
+    background-image: url("../img/usa/smaillady.png");
+}
+
+.avatarss{
+    background-image: url("../img/usa/sach.png");
+}
+.avatarss1{
+ background-image: url("../img/usa/flylady.png");
+}
+
+.avatarss2{
+ background-image: url("../img/usa/smileman.png");
+}
+
+.accordion-list{
+  .custom-slider{
+    padding: 0 20px;
+  }
+//   .slider-pager{
+//   display: none;
 // }
-// .avatars{
-//   position: relative;
-//   .avatar1,.avatar2{
-//   position: absolute;
-//     top: 0;
-// }
-// .avatar1{
-//   left: -15px;
-// }
-// .avatar2{
-//   right: -10px;
-// }
-// }
+}
