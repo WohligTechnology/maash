@@ -5,20 +5,19 @@
   <div class="otp-content text-center resgistration full-width">
     <div class="row">
       <div class="col-offset-20 col col-60">
-        <span class="color-white">please enter otp within 5 mins</span>
+        <span class="color-white text-uppercase">please enter otp within 5 mins</span>
         <ion-list>
-          <label class="item item-input">
-            <input type="text" placeholder="Please Enter OTP here" ng-model="userForm.OTP" only-Digits>
+          <label class="item item-input otpss">
+            <input type="text" placeholder="Please Enter OTP here" ng-model="userForm.OTP" only-Digits maxlength="5" minlength="4">
           </label>
         </ion-list>
         <div class="clearfix">
-          <p class="color-white pull-left m-clear"><span class="pointer" ng-click="closePopup();">Back</span> or <span class="pointer" ng-click="resendOtp(userForm)">Resend</span></p>
-          <button type="button" ng-click="CustomerRegistration(userForm);" class="pull-right"><img src="img/go.png" width="72" alt="Go" class="img-responsive"></button>
+          <p class="color-white pull-left m-clear"><span class="pointer" ng-click="closePopupfor();">Back</span> OR <span class="pointer" ng-click="resendOtp(userForm)">Resend</span></p>
+          <button type="submit" ng-click="VerifyCustomerLogin(userForm);" class="pull-right"><img src="img/go.png" width="72" alt="Go" class="img-responsive"></button>
         </div>
-<span class="color-white ">
-<p ng-if="errormsg">something went wrong</p>
+        <span class="color-white ">
+          {{error}}
         </span>
-
         <!-- <div class="row">
           <div class="col col-50">
             <p class="color-white pull-left"><span class="pointer">Back</span> or <span class="pointer">Resend</span></p>

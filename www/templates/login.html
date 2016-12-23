@@ -41,14 +41,14 @@
 
 
   </div>
-  <p class="text-uppercase text-center color-white" ui-sref="">skip > </p>
+  <p class="text-uppercase text-center color-white" ui-sref="app.home">skip > </p>
 </div>
   </ion-content>
   <ion-footer-bar class="foot">
   <ion-tabs class="tabs-icon-only">
-  <ion-tab title="signups" icon-on="foot-tab signups" icon-off="foot-tab signups" >
+  <ion-tab title="signups" icon-on="foot-tab signups" icon-off="foot-tab signups" ng-click="closeAll('noheader.signup')">
     </ion-tab>
-    <ion-tab title="login" icon-on="foot-tab login" icon-off="foot-tab login" >
+    <ion-tab title="login" icon-on="foot-tab login" icon-off="foot-tab login" ng-click="closeAll('noheader.landing')">
     </ion-tab>
   </ion-tabs>
 </ion-footer-bar>

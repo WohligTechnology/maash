@@ -10,6 +10,13 @@
  angular.module('starter.services', [])
 
  .factory('MyServices', function($http) {
+   var loginDetail = $.jStorage.get("loginDetail");
+   var city= $.jStorage.get("cityid");
+
+
+if (!loginDetail) {
+  loginDetail = {};
+}
 
    return {
 
@@ -23,6 +30,68 @@
              withCredentials: true,
              data: data
          }).success(callback);
+     },
+     setUser: function (data) {
+    _.assignIn(loginDetail, data);
+    $.jStorage.set("loginDetail", loginDetail);
+    console.log("setuser 656", loginDetail);
+  },
+
+  getUser: function () {
+    return loginDetail;
+  },
+     generateOtp: function (getotp, callback) {
+    $http({
+      url: adminurl + 'signup/generateOtp',
+      method: 'POST',
+      withCredentials: true,
+      data: getotp
+
+    }).success(callback);
+  },
+  CustomerRegistration: function (otp, callback) {
+  //  var data = {
+  //      _id: id,
+  //      city: $.jStorage.get("cityid")
+  //  };
+  $http({
+    url: adminurl + 'signup/CustomerRegistration',
+    method: 'POST',
+    withCredentials: true,
+    data: otp
+
+  }).success(callback);
+},
+VerifyCustomerLogin: function (otp, callback) {
+
+      $http({
+        url: adminurl + 'signup/VerifyCustomerLogin',
+        method: 'POST',
+        withCredentials: true,
+        data: otp
+
+      }).success(callback);
+    },
+        updateProfile: function (update, callback) {
+        $http({
+        url: adminurl + 'signup/updateProfile',
+        method: 'POST',
+        withCredentials: true,
+        data: update
+        }).success(callback);
+        },
+
+    getProfile: function (_id, callback) {
+       if (_id) {
+         $http({
+           url: adminurl + 'signup/profile',
+           method: 'POST',
+           withCredentials: true,
+           data: {
+             _id: _id
+           }
+         }).success(callback);
+       }
      },
      getCity: function(callback) {
        $http({
@@ -72,7 +141,7 @@
 
          }).success(callback);
      },
-     getSlider: function(callback) {
+     getSlider: function( callback) {
          var data = {
              city: $.jStorage.get("cityid")
          };
@@ -83,6 +152,7 @@
              data: data
          }).success(callback);
      },
+
      getSingleExploreSmaaash: function(id, callback) {
          var data = {
              _id: id,
@@ -127,7 +197,7 @@
        showWishList: function(callback) {
            // console.log("nAV", id);
            var data = {
-               user: $.jStorage.get("loginDetail").data._id,
+               user: $.jStorage.get("loginDetail")._id,
            };
            $http({
                url: adminurl + 'signup/showWishList',

@@ -47,6 +47,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     }
   })
+  .state('app.camscan', {
+    url: '/camscan',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/camscan.html',
+        controller: 'camscanCtrl'
+      }
+    }
+  })
 
   .state('app.browse', {
       url: '/browse',

@@ -14,7 +14,9 @@
         <div class="col col-25">
           <div class="relate">
             <div class="profile-img">
-              <img src="img/profile-img.jpg" alt="" class="img-responsive">
+              <img src="img/profile-img.jpg" alt="" class=" img-responsive" ng-if="!userForm.profilePic">
+              <img ng-src="{{userForm.profilePic|uploadpath}}" alt="" class=" img-responsive" ng-if="userForm.profilePic">
+
             </div>
             <div class="plan" ng-click="getPlan();">
               <img src="img/silver.png" alt="silver" class="img-responsive">
@@ -24,8 +26,9 @@
         <div class="col col-75">
           <div class="clearfix relate">
             <div class="name pull-left">
-              <h4 class="m-clear text-in-shadow color-white font-america">Amrit Bhamrah</h4>
-              <span class="text-in-shadow color-white font-america">Cricketer</span>
+              <h4 class="m-clear text-in-shadow color-white font-america" ng-if="!userForm.CustomerName">Name</h4>
+              <h4 class="m-clear text-in-shadow color-white font-america" ng-if="userForm.CustomerName">{{userForm.CustomerName}}</h4>
+              <!-- <span class="text-in-shadow color-white font-america">Cricketer</span> -->
             </div>
             <div class="slash">
               <span class="text-in-shadow color-white font-galano">&#47;</span>
@@ -48,15 +51,15 @@
           <div class="account-info">
             <div class="row">
               <div class="col col-50">
-                <div class="img-holder history"> 
+                <div class="img-holder history">
                     <img src="img/wishlist.jpg" alt="" class="img-responsive" ui-sref="app.wishlist">
-                    
+
                 </div>
               </div>
               <div class="col col-50">
                 <div class="img-holder order">
               <img src="img/account-order.jpg" alt="" class="img-responsive" ui-sref="app.order">
-                  
+
                 </div>
               </div>
             </div>

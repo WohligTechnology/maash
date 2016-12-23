@@ -12,18 +12,23 @@
         <div class="profile-strip">
           <div class="row">
             <div class="col col-25">
-              <div class="profile-img">
+              <!-- <div class="profile-img">
                 <img src="img/profile-img.jpg" alt="" class="img-responsive">
+              </div> -->
+              <div class="profile-img">
+                <img src="img/profile-img.jpg" alt="" class="max-h img-responsive" ng-if="!userForm.profilePic">
+                <img ng-src="{{userForm.profilePic|uploadpath}}" alt="" class=" max-h img-responsive" ng-if="userForm.profilePic">
+
               </div>
             </div>
             <div class="col col-75">
               <div class="clearfix relate">
                 <div class="name pull-left">
-                  <div class="" ng-if="!showSignUp">
-                    <h4 class="m-clear text-in-shadow color-white font-america">{{user.name}}</h4>
+                  <div class="" ng-if="userForm.CustomerName">
+                    <h4 class="m-clear text-in-shadow color-white font-america">{{userForm.CustomerName}}</h4>
                     <!-- <span class="text-in-shadow color-white font-america">Cricketer</span> -->
                   </div>
-                  <div class="" ng-if="showSignUp">
+                  <div class="" ng-if="!userForm.CustomerName">
                     <h4 class="mt10 text-in-shadow color-white font-america" ui-sref="noheader.signup">SIGN UP</h4>
                   </div>
                 </div>

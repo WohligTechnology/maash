@@ -8,7 +8,8 @@
             <div class="col col-33 col-offset-10">
               <div class="relate">
                 <div class="profile-img">
-                  <img src="img/profile-img.jpg" alt="profile-image" class="img-responsive" ng-click="uploadProfilePic();">
+                  <img ng-src="{{userForm.profilePic|uploadpath}}" ng-if="userForm.profilePic != null"  alt="profile-image" class="max-h img-responsive" ng-click="uploadProfilePic();">
+                  <img  ng-if="userForm.profilePic == null" src="img/profile-img.jpg" alt="profile-image" class="max-h img-responsive" ng-click="uploadProfilePic();">
                 </div>
                 <div class="plan" ui-sref="noheader.avatar">
                   <img src="img/pens.png" alt="edit" class="img-responsive">
@@ -18,8 +19,10 @@
             <div class="col col-50">
               <div class="clearfix relate">
                 <div class="name pull-left">
-                  <h4 class="m-clear text-in-shadow color-white font-america">Amrit Bhamrah</h4>
-                  <span class="text-in-shadow color-white font-america">Cricketer</span>
+                  <h4 class="m-clear text-in-shadow color-white font-america" ng-if="!userForm.CustomerName">Name</h4>
+                  <h4 class="m-clear text-in-shadow color-white font-america" ng-if="userForm.CustomerName" >{{userForm.CustomerName}}</h4>
+
+                  <!-- <span class="text-in-shadow color-white font-america">Cricketer</span> -->
                 </div>
               </div>
             </div>
@@ -30,26 +33,39 @@
         <div class="col col-offset-10 col-80">
           <form>
             <label class="item item-input">
-              <input type="text" placeholder="Amrit Bamrah" class="editing">
+              <input type="text" placeholder="Name" ng-model="userForm.CustomerName" readonly>
             </label>
             <label class="item item-input">
-              <input type="text" placeholder="1-01-94" class="arrows">
+              <input type="date" placeholder="Date of Birth"  ng-model="userForm.dob" class="arrows">
+            </label>
+            <label class="item item-input ">
+        <div class="custom-select">
+          <select class="gender editing" required ng-model="userForm.gender" >
+            <option selected value="">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </label>
+            <label class="item item-input">
+              <input type="tel" placeholder="Mobile Number" ng-model="userForm.CustomerMobile" readonly>
             </label>
             <label class="item item-input">
-              <input type="text" placeholder="Female"  class="editing">
+              <input type="email" placeholder="Email Id" ng-model="userForm.CustomerEmail" readonly>
             </label>
             <label class="item item-input">
-              <input type="tel" placeholder="+91 98200 98200" class="editing">
+              <input type="text" placeholder="Pin code" ng-model="userForm.pincode" class="editing" maxlength="6">
             </label>
-            <label class="item item-input">
-              <input type="email" placeholder="amrit_bhamrah@gmail.com" class="editing">
-            </label>
-            <label class="item item-input">
-              <input type="text" placeholder="400009" class="editing">
-            </label>
-            <button type="submit" name="button" class="go full-width" >
+            <button type="submit" name="button" class="go full-width" ng-click="updateProfile(userForm)" >
               <img src="img/update.png" alt="" class="img-responsive">
             </button>
+            <p class="color-white text-center" ng-if="popupmsg">
+              profile updated successfully
+            </p>
+
+            <p class="color-white text-center" ng-click="reset();">
+              Reset password?
+            </p>
           </form>
         </div>
       </div>

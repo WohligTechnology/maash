@@ -1,60 +1,73 @@
 <ion-view>
-  <ion-content class="signup">
-    <div class="resgistration">
-      <div class="logo text-center">
-        <a href=""><img src="img/big-logo.png" width="140" class="img-responsive" alt="Smaash"></a>
+   <ion-content class="signup">
+      <div class="resgistration">
+         <div class="logo text-center">
+            <a href=""><img src="img/big-logo.png" width="140" class="img-responsive" alt="Smaash"></a>
+
+         </div>
+         <ion-list>
+            <div class="row">
+               <div class="col-offset-10 col col-80">
+                  <form name="user" ng-if="!formComplete" ng-submit="generateOtp(userForm)">
+                     <label class="item item-input">
+                        <input type="text" placeholder="Name" name="name" ng-model="userForm.CustomerName" required>
+                     </label>
+                     <p class="error-msg" ng-if="user.name.$error.required && user.name.$touched">Please Enter Your Name.</p>
+                     <label class="item item-input">
+                        <input type="date" name="dob" placeholder="DOB" max="{{maxDate}}" class="calendar" required ng-model="userForm.dob">
+                     </label>
+                     <p class="error-msg" ng-if="user.dob.$error.required && user.dob.$touched">Please Enter Your DOB.</p>
+
+                     <label class="item item-input ">
+                        <div class="custom-select">
+                           <select class="gender" required ng-model="userForm.gender">
+                              <option ng-selected="true" disabled value="">Gender</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <!-- <option value="Others">Others</option> -->
+                           </select>
+                        </div>
+                     </label>
+                     <label class="item item-input">
+                        <input type="tel" placeholder="Mobile Number" name="mobile" ng-model="userForm.CustomerMobile" required only-Digits maxlength="10" minlength="8">
+                     </label>
+                     <p class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please Enter Your Mobile Number.</p>
+                     <label class="item item-input">
+                        <input type="email" placeholder="Email id" required ng-model="userForm.CustomerEmail" name="email">
+                        <!-- <input type="email" placeholder="Email id" required ng-model="userForm.CustomerEmail" name="email"  ng-pattern="validEmail" > -->
+                     </label>
+                     <p class="error-msg" ng-show="user.email.$invalid && user.email.$touched">Please Enter valid Email.</p>
+
+                     <label class="item item-input">
+                        <input type="text" placeholder="Enter Zip Code" required ng-model="userForm.pincode" name="pin" only-Digits maxlength="6">
+                     </label>
+                     <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Zip Code.</p>
+
+                     <label class="item item-input">
+
+                        <input type="password" placeholder="Password" required ng-model="userForm.CustomerPassword" name="password" ng-maxlength="14" ng-minlength="8">
+                     </label>
+                      <p class="error-msg" ng-show="user.password.$invalid  && (user.password.$dirty || user.password.$touched)">Please enter a 8-14 character password.</p>
+                     <label class="item item-input">
+                        <input type="password" no-paste placeholder="Re-Enter Password" required ng-model="userForm.confirmPassword" name="confirmpassword" >
+                     </label>
+
+                     <p class="error-msg" ng-if="userForm.CustomerPassword != userForm.confirmPassword">Password does not match </p>
+                     <p class="error-msg" ng-show="user.password.$error.required  && user.password.$touched">Please Enter Your Password.</p>
+                     <p class="error-msg text-center assertive exsisting" ng-if="errortext">Customer Already Exist.</p>
+
+                     <button name="button" class="go full-width" type="submit">
+                        <img src="img/go.png" alt="" class="img-responsive">
+                     </button>
+
+
+                     <p class="text-center color-white font-galano">OR</p>
+                     <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>
+                  </form>
+                  <div ng-if="formComplete" class="text-center">Thank You.</div>
+               </div>
+            </div>
+         </ion-list>
       </div>
-      <ion-list>
-        <div class="row">
-          <div class="col-offset-10 col col-80">
-            <form name="user" ng-submit="userSignup(userForm);" ng-if="!formComplete">
-              <label class="item item-input">
-                <input type="text" placeholder="Name" name="name" required ng-model="userForm.CustomerName">
-              </label>
-              <p class="error-msg" ng-if="user.name.$error.required && user.name.$touched">Please Enter Your Name.</p>
-              <label class="item item-input">
-                <input type="text" onfocus="this.type='date'" name="dob" onblur="this.type='text'" placeholder="DOB" class="calendar" required ng-model="userForm.dob">
-              </label>
-              <p class="error-msg" ng-if="user.dob.$error.required && user.dob.$touched">Please Enter Your DOB.</p>
-              <!-- <label class="item item-input">
-                <input type="text" placeholder="Gender">
-              </label> -->
-              <label class="item item-input ">
-                <div class="custom-select">
-                  <select class="gender" required ng-model="userForm.gender">
-                    <option selected value="">Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                  </select>
-                </div>
-              </label>
-              <label class="item item-input">
-                <input type="tel" placeholder="Mobile Number" name="mobile" ng-model="userForm.CustomerMobile" required only-Digits maxlength="10" minlength="8">
-              </label>
-              <p class="error-msg" ng-show="user.mobile.$error.required && user.mobile.$touched">Please Enter Your Mobile Number.</p>
-              <label class="item item-input">
-                <input type="email" placeholder="Email id" required ng-model="userForm.CustomerEmail" name="email">
-              </label>
-              <p class="error-msg" ng-show="user.email.$error.required && user.email.$touched">Please Enter Your Email.</p>
-              <p ng-if="emailExist">Email Id Already Exist.</p>
-              <label class="item item-input">
-                <input type="text" placeholder="Enter Pin Code" required ng-model="userForm.pincode" name="pin" only-Digits maxlength="6" minlength="6">
-              </label>
-              <p class="error-msg" ng-show="user.pin.$error.required && user.pin.$touched">Please Enter Your Pin Code.</p>
-              <!-- <button type="submit" name="button" class="go full-width">
-                <img src="img/go.png" alt="" class="img-responsive">
-              </button> -->
-              <!-- <button type="submit" name="button" class="go full-width" > -->
-              <button type="submit" name="button" class="go full-width" ng-click="oneTimepswd();">
-                <img src="img/go.png" alt="" class="img-responsive">
-              </button>
-              <p class="text-center color-white font-galano">OR</p>
-              <p class="text-center color-white font-galano" ui-sref="app.home">Continue without Signing in</p>
-            </form>
-            <div ng-if="formComplete" class="text-center">Thank You.</div>
-          </div>
-        </div>
-      </ion-list>
-    </div>
-  </ion-content>
+   </ion-content>
 </ion-view>
