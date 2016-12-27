@@ -11071,6 +11071,7 @@ img[alt="pay"] {
 .pick-img + .pick-img {
   margin-left: 20px; }
 
+<<<<<<< HEAD
 #right-panel {
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
@@ -11107,3 +11108,37 @@ html {
 
 .a-call {
   right: 4% !important; }
+=======
+.avatars, .avatarss, .avatars1, .avatarss1, .avatars2, .avatarss2 {
+  background-image: url("../img/usa/usvirat.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 105px;
+  background-color: #01a69a;
+  border: 1px solid #fff;
+  box-sizing: border-box; }
+
+.avatars1 {
+  background-image: url("../img/usa/flyman.png"); }
+
+.avatars2 {
+  background-image: url("../img/usa/smaillady.png"); }
+
+.avatarss {
+  background-image: url("../img/usa/sach.png"); }
+
+.avatarss1 {
+  background-image: url("../img/usa/flylady.png"); }
+
+.avatarss2 {
+  background-image: url("../img/usa/smileman.png"); }
+
+.accordion-list .custom-slider {
+  padding: 0 20px; }
+
+.leader {
+  background: url("../img/usa/leader.jpg");
+  background-size: cover; }
+>>>>>>> 57f9dab4bd1fda284eb428c2ab625f1f154b50b3

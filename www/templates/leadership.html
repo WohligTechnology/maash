@@ -1,0 +1,24 @@
+
+<ion-view>
+  <ion-content class="about-bg about-text leader">
+    <div class="order-main text-center">
+        <h3 class="text-center text-uppercase text-in-shadow font-america">leadership team</h3>
+      </div>
+
+<div class="list card" ng-repeat="data in leader track by $index">
+
+  <div class="item heading">
+    <h3 class="text-center text-in-shadow font-america">{{data.title}}</h3>
+    <h3 class="text-center font-america f20">{{data.text}}</h3>
+  </div>
+
+  <div class="item item-image">
+    <img src="{{data.img}}" alt="smaaash" class="img-responsive">
+  </div>
+
+    <p>{{data.para}}</p>
+
+</div>
+
+  </ion-content>
+</ion-view>

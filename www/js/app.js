@@ -232,6 +232,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
       }
     })
 
+        .state('app.leader', {
+   url: '/leadership-team',
+   views: {
+     'menuContent': {
+       templateUrl: 'templates/leadership.html',
+       controller: 'LeaderCtrl'
+     }
+   }
+ })
+
          .state('app.merchandise', {
       url: '/merchandise',
       views: {

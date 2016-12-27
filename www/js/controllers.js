@@ -890,12 +890,45 @@ $scope.userSignup=function(userForm){
 .controller('EventCtrl', function($scope, $stateParams) {
 
 })
+.controller('LeaderCtrl', function($scope, $stateParams) {
+
+$scope.leader=[{
+img:'img/usa/flylady.png',
+title:'vishwanathan kothian',
+text:'chief financial officer',
+para:'As CFO ......'
+},
+{
+  img:'img/usa/flyman.png',
+  title:'vishwanathan kothian',
+text:'chief financial officer',
+para:'As CMO ......'
+},{
+  img:'img/usa/sach.png',
+  title:'vishwanathan kothian',
+text:'chief financial officer',
+para:'Brain child of the multi-faceted Mr. Shripal Morakhia, Smaaash offers a lot more than your run-of-the-mill banquet hall and gaming center. It presents an unmatched range of games that offer a superlative virtual-reality experience, and combines the best of sports, music and dining into a highly immersive, interactive, innovative and involved entertainment experience. Smaaash has not only redefined sports entertainment, but also raised the bar for customer engagement. This innovative entertainment and active engagement is what defines Smaaash.'
+}]
+
+})
 
 .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
   var attraction = [];
   var whatsnew = [];
   var hostParty = [];
 
+  $scope.food = [
+      {
+     img: 'img/new.png',
+      },
+      {
+       img: 'img/new.png',
+      },
+     {
+       img: 'img/new.png',
+      }
+
+    ];
 
   MyServices.getHomeContent(function(data) {
     if (data.value) {
