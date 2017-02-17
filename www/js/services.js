@@ -1,6 +1,8 @@
  // var adminurl = "http://192.168.100.111:1337/"; //local
 
- var adminurl = "http://104.155.129.33:82/";  //server
+ // var adminurl = "http://104.155.129.33:82/";  // Old server
+ var adminurl = "http://104.154.79.188:82/";  //new India server
+
  // var imgpath = adminurl + "uploadfile/getupload?file=";
  var imgurl = adminurl + "upload/";
  var imgpath = imgurl + "readFile";
