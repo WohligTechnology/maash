@@ -23,6 +23,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','n
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.maxCache(0);
+  
   $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
 

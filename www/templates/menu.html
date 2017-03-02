@@ -9,8 +9,8 @@
         <h1 class="text-center" ui-sref="app.home"><img src="img/logo.png" class="logo"></h1>
       </ion-nav-title>
       <!-- <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button> -->
-      <ion-nav-buttons side="right"  >
-        <h3 class="ion-ios-bell-outline color-white {{getCross}}" ng-click="whenClose();" menu-toggle="right">
+      <ion-nav-buttons side="right">
+        <h3 class="ion-ios-bell-outline color-white {{getCross}}" ng-click="whenClose(); notificationButton();" menu-toggle="right">
         </h3>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -102,14 +102,22 @@
     </ion-header-bar>
     <ion-content>
       <ion-list class="noti-list" ng-click="whenClose();">
-        <ion-item menu-close>
-          <p class="no-ellipsis">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+        <ion-item menu-close ng-repeat="note in notification">
+          <p class="no-ellipsis">{{note.text}} </p>
+          <!-- <p class="no-ellipsis">Lorem Ipsum is simply dummy text of the printing and typesetting industry.asas </p> -->
           <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span>
         </ion-item>
-        <ion-item menu-close>
+        <div ng-if="notification.length === 0 || note ">
+          <h3>
+            <b>
+              <center class="color-white">No Notifications</center>
+            </b>
+          </h3>
+        </div>
+        <!-- <ion-item menu-close>
           <p class="no-ellipsis">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
           <span><img src="img/go.png" alt="" width="50" class="img-responsive"></span>
-        </ion-item>
+        </ion-item> -->
       </ion-list>
     </ion-content>
   </ion-side-menu>
@@ -126,7 +134,7 @@
     </ion-tab>
     <ion-tab title="Check in" icon-on="foot-tab check" icon-off="foot-tab check" ng-click="closeAll('app.home');" menu-close>
     </ion-tab>
-    <ion-tab title="Contact us" icon-on="foot-tab contact" icon-off="foot-tab contact"  ng-click="closeAll('app.contact');" menu-close>
+    <ion-tab title="Contact us" icon-on="foot-tab contact" icon-off="foot-tab contact" ng-click="closeAll('app.contact');" menu-close>
     </ion-tab>
   </ion-tabs>
 </ion-footer-bar>

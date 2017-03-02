@@ -33,6 +33,7 @@ if (!loginDetail) {
              data: data
          }).success(callback);
      },
+     
      setUser: function (data) {
     _.assignIn(loginDetail, data);
     $.jStorage.set("loginDetail", loginDetail);
@@ -95,6 +96,7 @@ VerifyCustomerLogin: function (otp, callback) {
          }).success(callback);
        }
      },
+
      getCity: function(callback) {
        $http({
          url: adminurl + 'city/getAllCityByOrder',
@@ -245,6 +247,17 @@ VerifyCustomerLogin: function (otp, callback) {
                data: data
 
            }).success(callback);
+       },
+       getUserNotification: function (userid,callback) {
+         var data = {
+           userid: userid,
+         };
+         $http({
+           url: adminurl + 'signup/getUserNotification',
+           method: 'POST',
+           withCredentials: true,
+           data: data
+         }).success(callback);
        },
    };
  });

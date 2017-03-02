@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngCordova'])
 
-.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, $ionicScrollDelegate, $ionicSideMenuDelegate,MyServices) {
+.controller('AppCtrl', function($scope, $state, $ionicModal, $timeout, $ionicScrollDelegate, $ionicSideMenuDelegate, MyServices) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,17 +8,33 @@ angular.module('starter.controllers', ['ngCordova'])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+      if ($.jStorage.get("loginDetail")!=null) {
+          $scope.userid=$.jStorage.get("loginDetail")._id;
+      }
+
+  $scope.notificationButton = function() {
+    console.log("im in notification");
+    MyServices.getUserNotification($scope.userid, function(data) {
+      console.log($scope.userid);
+      if (data.value) {
+        $scope.notification = data.data.notification;
+        console.log("$scope.notification", $scope.notification);
+      } else {
+        $scope.note = true;
+      }
+    });
+  };
 
   $scope.logout = function() {
     console.log("im in");
-      if ($.jStorage.get("loginDetail") != null) {
-          MyServices.logout(function(data) {
-              // location.reload();
-              $state.go("home");
-          })
-      } else {
+    if ($.jStorage.get("loginDetail") != null) {
+      MyServices.logout(function(data) {
+        // location.reload();
+        $state.go("home");
+      })
+    } else {
 
-      }
+    }
 
   };
   $scope.getCross = "";
@@ -122,31 +138,31 @@ angular.module('starter.controllers', ['ngCordova'])
   var jstoreage = $.jStorage.get("loginDetail");
   console.log(jstoreage);
 
-if (jstoreage) {
-  var _id = jstoreage._id;
-  console.log("iddd", _id);
-  // $scope.startloading() ;
-  MyServices.getProfile(_id, function (data) {
-    // $scope.startloading();
-    if (data.value) {
-      // $ionicLoading.hide();
-      console.log("data0", data);
-      $scope.userForm = data.data;
-      console.log("userForm", $scope.userForm );
+  if (jstoreage) {
+    var _id = jstoreage._id;
+    console.log("iddd", _id);
+    // $scope.startloading() ;
+    MyServices.getProfile(_id, function(data) {
+      // $scope.startloading();
+      if (data.value) {
+        // $ionicLoading.hide();
+        console.log("data0", data);
+        $scope.userForm = data.data;
+        console.log("userForm", $scope.userForm);
 
-      $scope.userForm.dob = new Date(data.data.dob);
-    } else {}
-  });
-}
+        $scope.userForm.dob = new Date(data.data.dob);
+      } else {}
+    });
+  }
   $scope.homeslider = [
     'img/banners/banner.jpg',
     'img/banners/banner.jpg',
     'img/banners/banner.jpg',
     'img/banners/banner.jpg'
   ];
-  $scope.city= $.jStorage.get("cityid");
+  $scope.city = $.jStorage.get("cityid");
   console.log($scope.city);
-  $scope.loginDetail= $.jStorage.get("loginDetail");
+  $scope.loginDetail = $.jStorage.get("loginDetail");
   $scope.showSignUp = false;
   if ($.jStorage.get("loginDetail") || _.isEmpty($.jStorage.get("loginDetail"))) {
     $scope.showSignUp = true;
@@ -167,96 +183,96 @@ if (jstoreage) {
 
 
 
-.controller('ProfileCtrl', function ($scope, $stateParams, $ionicPopup, MyServices, $ionicLoading,$state) {
-  $scope.popupmsg = false;
-
-  $scope.startloading = function () {
-    console.log("hi in loader");
-    $ionicLoading.show({
-      template: '<ion-spinner class="spinner-light"></ion-spinner>'
-    });
-  };
-  var jstoreage = $.jStorage.get("loginDetail");
-  var _id = jstoreage._id;
-  console.log("iddd", _id);
-  // $scope.startloading() ;
-
-
-  MyServices.getProfile(_id, function (data) {
-    $scope.startloading();
-    if (data.value) {
-      $ionicLoading.hide();
-      console.log("data0", data);
-      $scope.userForm = data.data;
-      $scope.userForm.dob = new Date(data.data.dob);
-    } else {}
-  });
-  $scope.credentials = {};
-  $scope.incorrect=false;
-  $scope.popupmsg=false;
-
-  $scope.credentials.CustomerID = $.jStorage.get("loginDetail").CustomerID;
-  $scope.CustomerResetPassword = function (credentials) {
-    console.log("credentials",credentials);
-
-    MyServices.CustomerResetPassword(credentials, function (data) {
-      console.log(data);
-      if (data.value === true){
-        $scope.popupmsg = true;
-      }else if (data.value === false) {
-        $scope.incorrect=true;
-      }
-
-    })
-  }
-
-
-
-  $scope.reset = function () {
-    console.log("in reset");
+.controller('ProfileCtrl', function($scope, $stateParams, $ionicPopup, MyServices, $ionicLoading, $state) {
     $scope.popupmsg = false;
-    $scope.resets = $ionicPopup.show({
-      templateUrl: 'templates/modal/reset.html',
-      scope: $scope
+
+    $scope.startloading = function() {
+      console.log("hi in loader");
+      $ionicLoading.show({
+        template: '<ion-spinner class="spinner-light"></ion-spinner>'
+      });
+    };
+    var jstoreage = $.jStorage.get("loginDetail");
+    var _id = jstoreage._id;
+    console.log("iddd", _id);
+    // $scope.startloading() ;
+
+
+    MyServices.getProfile(_id, function(data) {
+      $scope.startloading();
+      if (data.value) {
+        $ionicLoading.hide();
+        console.log("data0", data);
+        $scope.userForm = data.data;
+        $scope.userForm.dob = new Date(data.data.dob);
+      } else {}
     });
-  };
-  $scope.closePopup = function () {
-    $scope.resets.close();
-  }
-  $scope.updateProfile = function (userForm) {
-    MyServices.updateProfile(userForm, function (data) {
-      console.log(data);
-      if (data.value === true) {
-        $scope.popupmsg = true;
-        MyServices.setUser(data.data);
-      }
-    })
-  }
+    $scope.credentials = {};
+    $scope.incorrect = false;
+    $scope.popupmsg = false;
+
+    $scope.credentials.CustomerID = $.jStorage.get("loginDetail").CustomerID;
+    $scope.CustomerResetPassword = function(credentials) {
+      console.log("credentials", credentials);
+
+      MyServices.CustomerResetPassword(credentials, function(data) {
+        console.log(data);
+        if (data.value === true) {
+          $scope.popupmsg = true;
+        } else if (data.value === false) {
+          $scope.incorrect = true;
+        }
+
+      })
+    }
 
 
 
-})
-.controller("camscanCtrl", function($scope, $cordovaBarcodeScanner) {
+    $scope.reset = function() {
+      console.log("in reset");
+      $scope.popupmsg = false;
+      $scope.resets = $ionicPopup.show({
+        templateUrl: 'templates/modal/reset.html',
+        scope: $scope
+      });
+    };
+    $scope.closePopup = function() {
+      $scope.resets.close();
+    }
+    $scope.updateProfile = function(userForm) {
+      MyServices.updateProfile(userForm, function(data) {
+        console.log(data);
+        if (data.value === true) {
+          $scope.popupmsg = true;
+          MyServices.setUser(data.data);
+        }
+      })
+    }
+
+
+
+  })
+  .controller("camscanCtrl", function($scope, $cordovaBarcodeScanner) {
 
     $scope.scanBarcode = function() {
-        $cordovaBarcodeScanner
+      $cordovaBarcodeScanner
         .scan()
         .then(function(imageData) {
-            alert(imageData.text);
-            console.log("Barcode Format -> " + imageData.format);
-            console.log("Cancelled -> " + imageData.cancelled);
+          alert(imageData.text);
+          console.log("Barcode Format -> " + imageData.format);
+          console.log("Cancelled -> " + imageData.cancelled);
         }, function(error) {
-            console.log("An error happened -> " + error);
+          console.log("An error happened -> " + error);
         });
     };
 
-})
+  })
 
 .controller('OffersCtrl', function($scope, $stateParams) {
 
 })
 
-.controller('BeverageCtrl', function($scope, $stateParams, MyServices ,$ionicPopup) {
+.controller('BeverageCtrl', function($scope, $stateParams, MyServices, $ionicPopup) {
   $scope.getPlan = function() {
     $scope.checkPlan = $ionicPopup.show({
       templateUrl: 'templates/modal/gallery.html',
@@ -270,11 +286,11 @@ if (jstoreage) {
 
   MyServices.getHomeContent(function(data) {
     if (data.value) {
-        $scope.homeContent = data.data;
-        $scope.content = _.groupBy($scope.homeContent, "type.name");
-        $scope.attraction = $scope.content.Attraction;
-        $scope.whatsnew = $scope.content["What's new"];
-        $scope.hostParty = $scope.content["Host a party"];
+      $scope.homeContent = data.data;
+      $scope.content = _.groupBy($scope.homeContent, "type.name");
+      $scope.attraction = $scope.content.Attraction;
+      $scope.whatsnew = $scope.content["What's new"];
+      $scope.hostParty = $scope.content["Host a party"];
 
 
 
@@ -293,14 +309,14 @@ if (jstoreage) {
   });
 
 
-var options = "location=no,toolbar=yes";
- var target = "_blank";
- var url = "";
+  var options = "location=no,toolbar=yes";
+  var target = "_blank";
+  var url = "";
 
- $scope.openPDF = function() {
-   url = "http://tingdom.in/smaaash/img/brand.pdf";
-   var ref = cordova.InAppBrowser.open(url, target, options);
- };
+  $scope.openPDF = function() {
+    url = "http://tingdom.in/smaaash/img/brand.pdf";
+    var ref = cordova.InAppBrowser.open(url, target, options);
+  };
 
 
 })
@@ -316,57 +332,57 @@ var options = "location=no,toolbar=yes";
     // $scope.wedding = $scope.content['57d6a027bd5eb9846074b418'];
     // $scope.corporate = $scope.content['57e142483da62fae1dfc55f2'];
   });
- var options = "location=no,toolbar=yes";
- var target = "_blank";
- var url = "";
+  var options = "location=no,toolbar=yes";
+  var target = "_blank";
+  var url = "";
 
- $scope.openPDF = function() {
-   url = "http://tingdom.in/smaaash/img/brand.pdf";
-   var ref = cordova.InAppBrowser.open(url, target, options);
- };
+  $scope.openPDF = function() {
+    url = "http://tingdom.in/smaaash/img/brand.pdf";
+    var ref = cordova.InAppBrowser.open(url, target, options);
+  };
 
-    //   $scope.pdf = function() {
-    //   $scope.pdfParty = $ionicPopup.show({
-    //     templateUrl: 'templates/modal/pdf.html',
-    //     scope: $scope
-    //   });
-    // }
-    // $scope.closePopup = function() {
-    //   $scope.pdfParty.close();
-    // }
+  //   $scope.pdf = function() {
+  //   $scope.pdfParty = $ionicPopup.show({
+  //     templateUrl: 'templates/modal/pdf.html',
+  //     scope: $scope
+  //   });
+  // }
+  // $scope.closePopup = function() {
+  //   $scope.pdfParty.close();
+  // }
 })
 
-.controller('PartyFormCtrl', function($scope, $stateParams,MyServices,$timeout) {
-$scope.userForm={};
-$scope.formComplete = false;
-MyServices.getCity(function(data) {
+.controller('PartyFormCtrl', function($scope, $stateParams, MyServices, $timeout) {
+  $scope.userForm = {};
+  $scope.formComplete = false;
+  MyServices.getCity(function(data) {
     $scope.getCities = data.data;
-    console.log("  $scope.getCities ",  $scope.getCities );
+    console.log("  $scope.getCities ", $scope.getCities);
 
-});
-$scope.userSignup=function(userForm){
-  if (userForm) {
-    console.log("userForm",userForm);
-    MyServices.assistanceLoginSignup(userForm,function(data){
-      console.log("data",data);
-      if (data.value === true) {
-        $scope.formComplete=true;
-        $timeout(function() {
+  });
+  $scope.userSignup = function(userForm) {
+    if (userForm) {
+      console.log("userForm", userForm);
+      MyServices.assistanceLoginSignup(userForm, function(data) {
+        console.log("data", data);
+        if (data.value === true) {
+          $scope.formComplete = true;
+          $timeout(function() {
             $scope.formComplete = false;
             $scope.userForm = {};
-        }, 2000);
-      }
-    })
+          }, 2000);
+        }
+      })
+    }
   }
-}
 })
 
 
-.controller('EventsCtrl', function($scope, $stateParams,MyServices) {
+.controller('EventsCtrl', function($scope, $stateParams, MyServices) {
   $scope.items = [{
-      title: 'live screening !',
-      text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
-    }];
+    title: 'live screening !',
+    text: 'take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...take guard against the greatest...'
+  }];
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
       $scope.shownItem = null;
@@ -396,79 +412,79 @@ $scope.userSignup=function(userForm){
 
 })
 
-.controller('NewCtrl', function($scope, $stateParams, MyServices,$ionicPopup) {
+.controller('NewCtrl', function($scope, $stateParams, MyServices, $ionicPopup) {
     MyServices.getSingleExploreSmaaash($stateParams.id, function(data) {
       $scope.SingleExploreSmaaash = data.data;
-        console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
-      });
-      $scope.isInWishlist = function(id) {
-          var indexF = _.findIndex($scope.userwishlist, function(key) {
-              return key.exploresmash._id == id;
-          })
-          if (indexF !== -1) {
-              return true;
-          } else {
-              return false;
-          }
+      console.log("$scope.SingleExploreSmaaash", $scope.SingleExploreSmaaash);
+    });
+    $scope.isInWishlist = function(id) {
+      var indexF = _.findIndex($scope.userwishlist, function(key) {
+        return key.exploresmash._id == id;
+      })
+      if (indexF !== -1) {
+        return true;
+      } else {
+        return false;
       }
-      if ($.jStorage.get("loginDetail") != null) {
-          function showWishList() {
-              MyServices.showWishList(function(data) {
-                  $scope.userwishlist = data.data.wishList;
-                  console.log("$scope.userwishlist", $scope.userwishlist);
-              })
-          };
-          showWishList();
-      }
+    }
+    if ($.jStorage.get("loginDetail") != null) {
+      function showWishList() {
+        MyServices.showWishList(function(data) {
+          $scope.userwishlist = data.data.wishList;
+          console.log("$scope.userwishlist", $scope.userwishlist);
+        })
+      };
+      showWishList();
+    }
 
-      $scope.addedToWishList = function(id) {
-        console.log("id",id);
-          if ($.jStorage.get("loginDetail") == null) {
-              console.log("am in if");
-            $scope.myPopup = $ionicPopup.show({
-                templateUrl: 'templates/modal/wishlistsignup.html',
+    $scope.addedToWishList = function(id) {
+      console.log("id", id);
+      if ($.jStorage.get("loginDetail") == null) {
+        console.log("am in if");
+        $scope.myPopup = $ionicPopup.show({
+          templateUrl: 'templates/modal/wishlistsignup.html',
+          scope: $scope
+        });
+      } else if ($.jStorage.get("loginDetail") != null) {
+        var findIndex = _.findIndex($scope.userwishlist, function(key) {
+          console.log(id, '////////');
+          return key.exploresmash._id === id;
+        });
+        console.log("findIndex", findIndex);
+        if (findIndex !== -1) {
+          console.log("findIndex", findIndex);
+          constraints = _.find($scope.userwishlist, function(key) {
+            return key.exploresmash._id === id;
+          });
+          console.log(constraints);
+          MyServices.removeFromWishList(constraints._id, function(data) {
+            console.log(data, 'removed data');
+            if (data.value) {
+              showWishList();
+              $scope.myPopup = $ionicPopup.show({
+                templateUrl: 'templates/modal/removeWishlist.html',
                 scope: $scope
               });
-          } else if ($.jStorage.get("loginDetail") != null) {
-              var findIndex = _.findIndex($scope.userwishlist, function(key) {
-                  console.log(id, '////////');
-                  return key.exploresmash._id === id;
-              });
-              console.log("findIndex", findIndex);
-              if (findIndex !== -1) {
-                  console.log("findIndex", findIndex);
-                  constraints = _.find($scope.userwishlist, function(key) {
-                      return key.exploresmash._id === id;
-                  });
-                  console.log(constraints);
-                  MyServices.removeFromWishList(constraints._id, function(data) {
-                      console.log(data, 'removed data');
-                      if (data.value) {
-                          showWishList();
-                        $scope.myPopup = $ionicPopup.show({
-                           templateUrl: 'templates/modal/removeWishlist.html',
-                           scope: $scope
-                         });
-                      };
+            };
 
-                  });
-              } else {
-                  MyServices.addToWishList(id, function(data) {
-                      console.log("wishlist", data);
-                      if (data.value) {
-                      $scope.myPopup = $ionicPopup.show({
-                         templateUrl: 'templates/modal/wishlist.html',
-                         scope: $scope
-                       });
-                      }
-                      showWishList();
-                  });
-              }
-          }
-      };
-      $scope.closeModals=function(){
-        $scope.myPopup.close();
+          });
+        } else {
+          MyServices.addToWishList(id, function(data) {
+            console.log("wishlist", data);
+            if (data.value) {
+              $scope.myPopup = $ionicPopup.show({
+                templateUrl: 'templates/modal/wishlist.html',
+                scope: $scope
+              });
+            }
+            showWishList();
+          });
+        }
       }
+    };
+    $scope.closeModals = function() {
+      $scope.myPopup.close();
+    }
   })
   .controller('SCricketCtrl', function($scope, $stateParams) {
     $scope.items = [{
@@ -502,7 +518,7 @@ $scope.userSignup=function(userForm){
     };
   })
 
-.controller('CricketCtrl', function($scope, $stateParams,MyServices,$ionicPopup) {
+.controller('CricketCtrl', function($scope, $stateParams, MyServices, $ionicPopup) {
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
       $scope.shownItem = null;
@@ -514,77 +530,77 @@ $scope.userSignup=function(userForm){
     return $scope.shownItem === item;
   };
 
-  MyServices.getDetailExploreSmaaash($stateParams.id,function(data){
-    console.log("data",data);
-    $scope.cricket=data.data;
+  MyServices.getDetailExploreSmaaash($stateParams.id, function(data) {
+    console.log("data", data);
+    $scope.cricket = data.data;
   });
   $scope.isInWishlist = function(id) {
-      var indexF = _.findIndex($scope.userwishlist, function(key) {
-          return key.exploresmash._id == id;
-      })
-      if (indexF !== -1) {
-          return true;
-      } else {
-          return false;
-      }
+    var indexF = _.findIndex($scope.userwishlist, function(key) {
+      return key.exploresmash._id == id;
+    })
+    if (indexF !== -1) {
+      return true;
+    } else {
+      return false;
+    }
   }
   if ($.jStorage.get("loginDetail") != null) {
-      function showWishList() {
-          MyServices.showWishList(function(data) {
-              $scope.userwishlist = data.data.wishList;
-              console.log("$scope.userwishlist", $scope.userwishlist);
-          })
-      };
-      showWishList();
+    function showWishList() {
+      MyServices.showWishList(function(data) {
+        $scope.userwishlist = data.data.wishList;
+        console.log("$scope.userwishlist", $scope.userwishlist);
+      })
+    };
+    showWishList();
   }
 
 
   $scope.addedToWishList = function(id) {
-    console.log("id",id);
-      if ($.jStorage.get("loginDetail") == null) {
-          console.log("am in if");
-        $scope.myPopup = $ionicPopup.show({
-            templateUrl: 'templates/modal/wishlistsignup.html',
-            scope: $scope
-          });
-      } else if ($.jStorage.get("loginDetail") != null) {
-          var findIndex = _.findIndex($scope.userwishlist, function(key) {
-              console.log(id, '////////');
-              return key.exploresmash._id === id;
-          });
-          console.log("findIndex", findIndex);
-          if (findIndex !== -1) {
-              console.log("findIndex", findIndex);
-              constraints = _.find($scope.userwishlist, function(key) {
-                  return key.exploresmash._id === id;
-              });
-              console.log(constraints);
-              MyServices.removeFromWishList(constraints._id, function(data) {
-                  console.log(data, 'removed data');
-                  if (data.value) {
-                      showWishList();
-                    $scope.myPopup = $ionicPopup.show({
-                       templateUrl: 'templates/modal/removeWishlist.html',
-                       scope: $scope
-                     });
-                  };
+    console.log("id", id);
+    if ($.jStorage.get("loginDetail") == null) {
+      console.log("am in if");
+      $scope.myPopup = $ionicPopup.show({
+        templateUrl: 'templates/modal/wishlistsignup.html',
+        scope: $scope
+      });
+    } else if ($.jStorage.get("loginDetail") != null) {
+      var findIndex = _.findIndex($scope.userwishlist, function(key) {
+        console.log(id, '////////');
+        return key.exploresmash._id === id;
+      });
+      console.log("findIndex", findIndex);
+      if (findIndex !== -1) {
+        console.log("findIndex", findIndex);
+        constraints = _.find($scope.userwishlist, function(key) {
+          return key.exploresmash._id === id;
+        });
+        console.log(constraints);
+        MyServices.removeFromWishList(constraints._id, function(data) {
+          console.log(data, 'removed data');
+          if (data.value) {
+            showWishList();
+            $scope.myPopup = $ionicPopup.show({
+              templateUrl: 'templates/modal/removeWishlist.html',
+              scope: $scope
+            });
+          };
 
-              });
-          } else {
-              MyServices.addToWishList(id, function(data) {
-                  console.log("wishlist", data);
-                  if (data.value) {
-                  $scope.myPopup = $ionicPopup.show({
-                     templateUrl: 'templates/modal/wishlist.html',
-                     scope: $scope
-                   });
-                  }
-                  showWishList();
-              });
+        });
+      } else {
+        MyServices.addToWishList(id, function(data) {
+          console.log("wishlist", data);
+          if (data.value) {
+            $scope.myPopup = $ionicPopup.show({
+              templateUrl: 'templates/modal/wishlist.html',
+              scope: $scope
+            });
           }
+          showWishList();
+        });
       }
+    }
   };
-  $scope.closeModals=function(){
+  $scope.closeModals = function() {
     $scope.myPopup.close();
   }
 })
@@ -749,8 +765,25 @@ $scope.userSignup=function(userForm){
 
 })
 
-.controller('BuyCtrl', function($scope, $stateParams) {
+.controller('BuyCtrl', function($scope, $stateParams,$state) {
+  $scope.getPlan = function () {
+    $scope.checkPlan = $ionicPopup.show({
+      templateUrl: 'templates/modal/alert.html',
+      scope: $scope
+    });
+  };
+  $scope.closePopup = function () {
+    $scope.checkPlan.close();
+  }
 
+  $scope.Rechargeopen = function () {
+    if ($.jStorage.get("loginDetail") != null) {
+      console.log("hellooo", $.jStorage.get("loginDetail"));
+      $state.go('app.recharge');
+    } else {
+      $scope.getPlan();
+    }
+  }
 })
 
 .controller('ContactCtrl', function($scope, $stateParams) {
@@ -829,117 +862,113 @@ $scope.userSignup=function(userForm){
   };
   $scope.isInWishlist = function(id) {
     // console.log('userwishlist',$sc);
-  var indexF = _.findIndex($scope.userwishlist, function(key) {
-          return key.exploresmash._id == id;
-      })
+    var indexF = _.findIndex($scope.userwishlist, function(key) {
+      return key.exploresmash._id == id;
+    })
 
     if (indexF !== -1) {
-          return true;
-      } else {
-          return false;
-      }
+      return true;
+    } else {
+      return false;
+    }
   }
   $scope.addedToWishList = function(id) {
-    console.log("id",id);
-      if ($.jStorage.get("loginDetail") == null) {
-          console.log("am in if");
-           $ionicPopup.show({
-            templateUrl: 'templates/modal/wishlistsignup.html',
-            scope: $scope
-          });
-      } else if ($.jStorage.get("loginDetail") != null) {
-          var findIndex = _.findIndex($scope.userwishlist, function(key) {
-              console.log(id, '////////');
-              return key.exploresmash._id === id;
-          });
-          console.log("findIndex", findIndex);
-          if (findIndex !== -1) {
-              console.log("findIndex", findIndex);
-              constraints = _.find($scope.userwishlist, function(key) {
-                  return key.exploresmash._id === id;
-              });
-              console.log(constraints);
-              MyServices.removeFromWishList(constraints._id, function(data) {
-                  console.log(data, 'removed data');
-                  if (data.value) {
-                      showWishList();
-                      $ionicPopup.show({
-                       templateUrl: 'templates/modal/removeWishlist.html',
-                       scope: $scope
-                     });
-                  };
+    console.log("id", id);
+    if ($.jStorage.get("loginDetail") == null) {
+      console.log("am in if");
+      $ionicPopup.show({
+        templateUrl: 'templates/modal/wishlistsignup.html',
+        scope: $scope
+      });
+    } else if ($.jStorage.get("loginDetail") != null) {
+      var findIndex = _.findIndex($scope.userwishlist, function(key) {
+        console.log(id, '////////');
+        return key.exploresmash._id === id;
+      });
+      console.log("findIndex", findIndex);
+      if (findIndex !== -1) {
+        console.log("findIndex", findIndex);
+        constraints = _.find($scope.userwishlist, function(key) {
+          return key.exploresmash._id === id;
+        });
+        console.log(constraints);
+        MyServices.removeFromWishList(constraints._id, function(data) {
+          console.log(data, 'removed data');
+          if (data.value) {
+            showWishList();
+            $ionicPopup.show({
+              templateUrl: 'templates/modal/removeWishlist.html',
+              scope: $scope
+            });
+          };
 
-              });
-          } else {
-              MyServices.addToWishList(id, function(data) {
-                  console.log("wishlist", data);
-                  if (data.value) {
-                    $ionicPopup.show({
-                     templateUrl: 'templates/modal/wishlist.html',
-                     scope: $scope
-                   });
-                  }
-                  showWishList();
-              });
+        });
+      } else {
+        MyServices.addToWishList(id, function(data) {
+          console.log("wishlist", data);
+          if (data.value) {
+            $ionicPopup.show({
+              templateUrl: 'templates/modal/wishlist.html',
+              scope: $scope
+            });
           }
+          showWishList();
+        });
       }
+    }
   };
 
 })
 
 .controller('EventCtrl', function($scope, $stateParams) {
 
-})
-.controller('LeaderCtrl', function($scope, $stateParams) {
+  })
+  .controller('LeaderCtrl', function($scope, $stateParams) {
 
-$scope.leader=[{
-img:'img/usa/flylady.png',
-title:'vishwanathan kothian',
-text:'chief financial officer',
-para:'As CFO ......'
-},
-{
-  img:'img/usa/flyman.png',
-  title:'vishwanathan kothian',
-text:'chief financial officer',
-para:'As CMO ......'
-},{
-  img:'img/usa/sach.png',
-  title:'vishwanathan kothian',
-text:'chief financial officer',
-para:'Brain child of the multi-faceted Mr. Shripal Morakhia, Smaaash offers a lot more than your run-of-the-mill banquet hall and gaming center. It presents an unmatched range of games that offer a superlative virtual-reality experience, and combines the best of sports, music and dining into a highly immersive, interactive, innovative and involved entertainment experience. Smaaash has not only redefined sports entertainment, but also raised the bar for customer engagement. This innovative entertainment and active engagement is what defines Smaaash.'
-}]
+    $scope.leader = [{
+      img: 'img/usa/flylady.png',
+      title: 'vishwanathan kothian',
+      text: 'chief financial officer',
+      para: 'As CFO ......'
+    }, {
+      img: 'img/usa/flyman.png',
+      title: 'vishwanathan kothian',
+      text: 'chief financial officer',
+      para: 'As CMO ......'
+    }, {
+      img: 'img/usa/sach.png',
+      title: 'vishwanathan kothian',
+      text: 'chief financial officer',
+      para: 'Brain child of the multi-faceted Mr. Shripal Morakhia, Smaaash offers a lot more than your run-of-the-mill banquet hall and gaming center. It presents an unmatched range of games that offer a superlative virtual-reality experience, and combines the best of sports, music and dining into a highly immersive, interactive, innovative and involved entertainment experience. Smaaash has not only redefined sports entertainment, but also raised the bar for customer engagement. This innovative entertainment and active engagement is what defines Smaaash.'
+    }]
 
-})
+  })
 
 .controller('ExploreSmaaashCtrl', function($scope, $stateParams, $ionicSlideBoxDelegate, MyServices) {
-  var attraction = [];
-  var whatsnew = [];
-  var hostParty = [];
+    var attraction = [];
+    var whatsnew = [];
+    var hostParty = [];
 
-  $scope.food = [
-      {
-     img: 'img/new.png',
-      },
-      {
-       img: 'img/new.png',
-      },
-     {
-       img: 'img/new.png',
+    $scope.food = [{
+        img: 'img/new.png',
+      }, {
+        img: 'img/new.png',
+      }, {
+        img: 'img/new.png',
       }
 
     ];
 
-  MyServices.getHomeContent(function(data) {
-    if (data.value) {
+    MyServices.getHomeContent(function(data) {
+      if (data.value) {
         $scope.homeContent = data.data;
         $scope.content = _.groupBy($scope.homeContent, "type.name");
         $scope.attraction = $scope.content.Attraction;
         $scope.whatsnew = $scope.content["What's new"];
         $scope.hostParty = $scope.content["Host a party"];
-    } else {}
+      } else {}
 
-  });
+    });
     $scope.nextSlide = function(val) {
       console.log("hi");
       console.log($ionicSlideBoxDelegate.$getByHandle(val).slidesCount());
@@ -981,7 +1010,7 @@ para:'Brain child of the multi-faceted Mr. Shripal Morakhia, Smaaash offers a lo
     // ];
 
   })
-  .controller('PaymentCtrl', function($scope, $stateParams,MyServices) {
+  .controller('PaymentCtrl', function($scope, $stateParams, MyServices) {
     $scope.accordion = function(val) {
       console.log($scope.showAccordion);
       console.log(val);
@@ -1008,183 +1037,181 @@ para:'Brain child of the multi-faceted Mr. Shripal Morakhia, Smaaash offers a lo
 
   })
 
-  .controller('DirectionCtrl', function ($scope, $stateParams, $cordovaGeolocation, MyServices, $window, $ionicPopup) {
-    $scope.Mumbai = true;
-    $scope.gotofun = function (city) {
-      if(city== "mumbai"){
-        $scope.lat = "19.004947";
-        $scope.long = "72.826160";
-      }
-      console.log(city);
-      $scope.Mumbai = false;
+.controller('DirectionCtrl', function($scope, $stateParams, $cordovaGeolocation, MyServices, $window, $ionicPopup) {
+  $scope.Mumbai = true;
+  $scope.gotofun = function(city) {
+    if (city == "mumbai") {
+      $scope.lat = "19.004947";
+      $scope.long = "72.826160";
     }
+    console.log(city);
+    $scope.Mumbai = false;
+  }
+  $scope.lat = "";
+  $scope.long = "";
+  var posOptions = {
+    timeout: 10000,
+    enableHighAccuracy: false
+  };
+
+  $scope.initMap = function(city) {
+    $scope.cityname = city;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: {
+        lat: 19.004947,
+        lng: 72.826160
+      } // Australia.
+    });
+
+
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+      draggable: true,
+      map: map,
+      panel: document.getElementById('right-panel')
+    });
+
+    directionsDisplay.addListener('directions_changed', function() {
+      computeTotalDistance(directionsDisplay.getDirections());
+    });
     $scope.lat = "";
     $scope.long = "";
-    var posOptions = {
-      timeout: 10000,
-      enableHighAccuracy: false
-    };
+    $cordovaGeolocation
+      .getCurrentPosition(posOptions)
+      .then(function(position) {
+        console.log($scope.cityname);
+        //  console.log("position", position);
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+        $scope.lat = lat;
+        $scope.long = long;
+        $scope.position = position;
+        console.log("latlong1", lat, long);
+        console.log("latlong scope", $scope.lat, $scope.long);
+        var geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng($scope.lat, $scope.lng);
+        var request = {
+          latLng: latlng
+        };
 
-    $scope.initMap = function (city) {
-      $scope.cityname=city;
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {
-          lat: 19.004947,
-          lng: 72.826160
-        } // Australia.
+        console.log("position", $scope.position.coords.latitude, $scope.position.coords.longitude);
+        console.log($scope.cityname);
+
+        if ($scope.cityname == "Mumbai") {
+          $scope.latm = "19.004947";
+          $scope.longm = "72.826160";
+        } else if ($scope.cityname == "Gurgoan") {
+          $scope.latm = "28.494983";
+          $scope.longm = "77.088745";
+        } else if ($scope.cityname == "Hyderabad") {
+          $scope.latm = "17.434170";
+          $scope.longm = "78.386341";
+        } else if ($scope.cityname == "Bengluru") {
+          $scope.latm = "12.973723";
+          $scope.longm = "77.620399";
+        } else if ($scope.cityname == "Noida") {
+          $scope.latm = "28.567600";
+          $scope.longm = "77.320887";
+        }
+        console.log("positionda", $scope.latm + "," + $scope.longm);
+
+
+
+        $scope.displayRoute($scope.position.coords.latitude + "," + $scope.position.coords.longitude, $scope.latm + "," + $scope.longm, directionsService,
+          directionsDisplay);
+      }, function(err) {
+        // error
+        console.log("err", err);
+        $scope.getPlan();
+        console.log("hello", err);
       });
 
-
-      var directionsService = new google.maps.DirectionsService;
-      var directionsDisplay = new google.maps.DirectionsRenderer({
-        draggable: true,
-        map: map,
-        panel: document.getElementById('right-panel')
-      });
-
-      directionsDisplay.addListener('directions_changed', function () {
-        computeTotalDistance(directionsDisplay.getDirections());
-      });
-      $scope.lat = "";
-      $scope.long = "";
-      $cordovaGeolocation
-        .getCurrentPosition(posOptions)
-        .then(function (position) {
-          console.log($scope.cityname);
-          //  console.log("position", position);
-          var lat = position.coords.latitude
-          var long = position.coords.longitude
-          $scope.lat = lat;
-          $scope.long = long;
-          $scope.position = position;
-          console.log("latlong1", lat, long);
-          console.log("latlong scope", $scope.lat, $scope.long);
-          var geocoder = new google.maps.Geocoder();
-          var latlng = new google.maps.LatLng($scope.lat, $scope.lng);
-          var request = {
-            latLng: latlng
-          };
-
-          console.log("position", $scope.position.coords.latitude, $scope.position.coords.longitude);
-          console.log($scope.cityname);
-
-          if($scope.cityname== "Mumbai"){
-            $scope.latm = "19.004947";
-            $scope.longm = "72.826160";
-          }else if($scope.cityname== "Gurgoan"){
-            $scope.latm = "28.494983";
-            $scope.longm = "77.088745";
-          }
-          else if($scope.cityname== "Hyderabad"){
-            $scope.latm = "17.434170";
-            $scope.longm = "78.386341";
-          }
-          else if($scope.cityname== "Bengluru"){
-            $scope.latm = "12.973723";
-            $scope.longm = "77.620399";
-          }
-          else if($scope.cityname== "Noida"){
-            $scope.latm = "28.567600";
-            $scope.longm = "77.320887";
-          }
-          console.log("positionda", $scope.latm+","+$scope.longm);
+  }
+  $scope.getPlan = function() {
+    $scope.checkPlan = $ionicPopup.show({
+      templateUrl: 'templates/modal/map.html',
+      scope: $scope
+    });
+  };
+  $scope.closePopup = function() {
+    $scope.checkPlan.close();
+  }
+  $scope.displayRoute = function(origin, destination, service, display) {
+    console.log("origin", origin);
+    service.route({
+      origin: origin,
+      destination: destination,
+      travelMode: 'DRIVING',
+      avoidTolls: true
+    }, function(response, status) {
+      if (status === 'OK') {
+        display.setDirections(response);
+      } else {
+        alert('Could not display directions due to: ' + status);
+      }
+    });
+  }
 
 
+  $scope.computeTotalDistance = function(result) {
+    var total = 0;
+    var myroute = result.routes[0];
+    for (var i = 0; i < myroute.legs.length; i++) {
+      total += myroute.legs[i].distance.value;
+    }
+    total = total / 1000;
+    document.getElementById('total').innerHTML = total + ' km';
+  }
 
-          $scope.displayRoute($scope.position.coords.latitude + "," + $scope.position.coords.longitude,$scope.latm+","+$scope.longm, directionsService,
-            directionsDisplay);
-        }, function (err) {
-          // error
-          console.log("err", err);
-          $scope.getPlan();
-          console.log("hello", err);
+})
+
+.controller('WishlistCtrl', function($scope, $stateParams, MyServices) {
+
+
+  $scope.attraction = '';
+  $scope.whatsnew = '';
+  var i = 0;
+
+  function getuserWishList() {
+    if ($.jStorage.get("loginDetail") != null) {
+      MyServices.showWishList(function(data) {
+        $scope.showWishList = data.data;
+        var i = 1;
+        _.each($scope.showWishList.wishList, function(data) {
+          data.pageName = [];
+          data.ordering = i;
+          i++;
+          _.each(data.exploresmash, function(n) {
+            switch (n) {
+              case '57bc4b2aeb9c91f1025a3b55':
+                data.pageName.push("Attraction")
+                break;
+              case '57bc4af6eb9c91f1025a3b4f':
+                data.pageName.push("What's new")
+                break;
+              default:
+            }
+          });
         });
 
-    }
-    $scope.getPlan = function () {
-      $scope.checkPlan = $ionicPopup.show({
-        templateUrl: 'templates/modal/map.html',
-        scope: $scope
-      });
-    };
-    $scope.closePopup = function () {
-      $scope.checkPlan.close();
-    }
-    $scope.displayRoute = function (origin, destination, service, display) {
-      console.log("origin", origin);
-      service.route({
-        origin: origin,
-        destination: destination,
-        travelMode: 'DRIVING',
-        avoidTolls: true
-      }, function (response, status) {
-        if (status === 'OK') {
-          display.setDirections(response);
-        } else {
-          alert('Could not display directions due to: ' + status);
-        }
+
       });
     }
+  };
+  getuserWishList();
 
 
-    $scope.computeTotalDistance = function (result) {
-      var total = 0;
-      var myroute = result.routes[0];
-      for (var i = 0; i < myroute.legs.length; i++) {
-        total += myroute.legs[i].distance.value;
-      }
-      total = total / 1000;
-      document.getElementById('total').innerHTML = total + ' km';
-    }
-
-  })
-
-    .controller('WishlistCtrl', function($scope, $stateParams,MyServices) {
-
-
-      $scope.attraction = '';
-      $scope.whatsnew = '';
-var i=0;
-      function getuserWishList() {
-          if ($.jStorage.get("loginDetail") != null) {
-              MyServices.showWishList(function(data) {
-                  $scope.showWishList = data.data;
-                  var i = 1;
-                  _.each($scope.showWishList.wishList, function(data) {
-                      data.pageName = [];
-                      data.ordering = i;
-                      i++;
-                      _.each(data.exploresmash, function(n) {
-                          switch (n) {
-                              case '57bc4b2aeb9c91f1025a3b55':
-                                  data.pageName.push("Attraction")
-                                  break;
-                              case '57bc4af6eb9c91f1025a3b4f':
-                                  data.pageName.push("What's new")
-                                  break;
-                              default:
-                          }
-                      });
-                  });
-
-
-              });
-          }
-      };
+  $scope.removeFromWishList = function(id) {
+    MyServices.removeFromWishList(id, function(data) {
       getuserWishList();
+    });
+  };
+
+})
 
 
-      $scope.removeFromWishList = function(id) {
-          MyServices.removeFromWishList(id, function(data) {
-              getuserWishList();
-          });
-      };
-
-  })
-
-
-    .controller('TournamentCtrl', function($scope, $stateParams,MyServices) {
+.controller('TournamentCtrl', function($scope, $stateParams, MyServices) {
 
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
@@ -1201,10 +1228,10 @@ var i=0;
     console.log("$scope.tour", $scope.tour);
   });
 
-  })
+})
 
 
-   .controller('ChallengesCtrl', function($scope, $stateParams,MyServices) {
+.controller('ChallengesCtrl', function($scope, $stateParams, MyServices) {
 
   $scope.toggleItem = function(item) {
     if ($scope.isItemShown(item)) {
@@ -1220,7 +1247,7 @@ var i=0;
     $scope.challenges = data.data;
     console.log("$scope.challenges", $scope.challenges);
   });
-  })
+})
 
 .controller('OrderCtrl', function($scope, $stateParams) {
 
@@ -1246,8 +1273,8 @@ var i=0;
 
 })
 
-.controller('AccountCtrl', function($scope, $stateParams, $ionicPopup,MyServices) {
-  if ($.jStorage.get("loginDetail") != null) {
+.controller('AccountCtrl', function($scope, $stateParams, $ionicPopup, MyServices) {
+    if ($.jStorage.get("loginDetail") != null) {
 
       var jstoreage = $.jStorage.get("loginDetail");
       console.log("jstoreage", jstoreage);
@@ -1255,7 +1282,7 @@ var i=0;
       var _id = jstoreage._id;
       $scope.userForm = {};
       // $state.go("app.account");
-      MyServices.getProfile(_id, function (data) {
+      MyServices.getProfile(_id, function(data) {
         // $scope.startloading();
         if (data.value) {
           // $ionicLoading.hide();
@@ -1278,13 +1305,13 @@ var i=0;
     //     template: '<ion-spinner class="spinner-light"></ion-spinner>'
     //   });
     // };
-    $scope.getPlan = function () {
+    $scope.getPlan = function() {
       $scope.checkPlan = $ionicPopup.show({
         templateUrl: 'templates/modal/headline.html',
         scope: $scope
       });
     };
-    $scope.closePopup = function () {
+    $scope.closePopup = function() {
       $scope.checkPlan.close();
     }
   })
@@ -1303,20 +1330,20 @@ var i=0;
     }
   })
 
-.controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state, $filter,MyServices, $timeout) {
+.controller('SignupCtrl', function($scope, $stateParams, $ionicPopup, $state, $filter, MyServices, $timeout) {
   $scope.ionicpop = "";
   // $.jStorage.set("cityid", "17");
   // $.jStorage.set("city", "usa");
-  $scope.oneTimepswd = function () {
+  $scope.oneTimepswd = function() {
     $scope.ionicpop = $ionicPopup.show({
       templateUrl: 'templates/modal/otp.html',
       scope: $scope
     });
   }
-    $scope.validEmail = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+  $scope.validEmail = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
 
   $scope.maxDate = $filter('date')(new Date(), 'yyyy-MM-dd');
-  $scope.closePopup = function () {
+  $scope.closePopup = function() {
     $scope.ionicpop.close();
   }
   $scope.variables = {};
@@ -1331,41 +1358,42 @@ var i=0;
   // $scope.getotp.BranchID = "17";
   $scope.variables.letIn = true;
 
-    $scope.generateOtp = function (phone) {
-      console.log("in fun",phone);
-      if($scope.variables.letIn){
-        $scope.variables.letIn = false;
-      if(phone.CustomerPassword === phone.confirmPassword){
-        $scope.invalPass =false;
+  $scope.generateOtp = function(phone) {
+    console.log("in fun", phone);
+    if ($scope.variables.letIn) {
+      console.log("in letin");
+      $scope.variables.letIn = false;
+      if (phone.CustomerPassword === phone.confirmPassword) {
+        $scope.invalPass = false;
         $scope.getotp.CustomerMobileNo = phone.CustomerMobile;
-        MyServices.generateOtp($scope.getotp, function (data) {
-            $scope.variables.letIn = true;
-          console.log("generateOtp",data);
+        MyServices.generateOtp($scope.getotp, function(data) {
+          $scope.variables.letIn = true;
+          console.log("generateOtp", data);
           if (data.value === true) {
             $scope.oneTimepswd();
           } else {
-            console.log("data in false",data);
+            console.log("data in false", data);
             $scope.errormsg = true;
             $scope.errortext = true;
           }
         })
-      }else{
+      } else {
         $scope.invalPass = true;
       }
     }
   }
 
-  $scope.CustomerRegistration = function (formData) {
-      console.log("formData", formData);
+  $scope.CustomerRegistration = function(formData) {
+    console.log("formData", formData);
     if (formData) {
-      formData.city=$.jStorage.get("cityid");
+      formData.city = $.jStorage.get("cityid");
 
-      MyServices.CustomerRegistration(formData, function (data) {
+      MyServices.CustomerRegistration(formData, function(data) {
         console.log(data);
         if (data.value === true) {
           MyServices.setUser(data.data);
           $scope.formComplete = true;
-            $timeout(function () {
+          $timeout(function() {
             $scope.formComplete = false;
             // $scope.emailExist = false;
             $scope.userForm = {};
@@ -1373,10 +1401,10 @@ var i=0;
             $state.go("noheader.avatar");
           }, 2000);
         } else {
-          console.log("datain false",data);
+          console.log("datain false", data);
           // $scope.emailExist = true;
-        $scope.errormsg = true;;
-  $state.go('noheader.signup');
+          $scope.errormsg = true;;
+          $state.go('noheader.signup');
         }
 
       })
@@ -1385,226 +1413,225 @@ var i=0;
   }
 
 
-    $scope.resendOtp =function(phone){
-      console.log(phone,"****");
-      if (phone) {
-        $scope.closePopup();
-        $scope.errormsg=false;
-        phone.OTP="";
-      }
-      $scope.getotp.CustomerMobileNo =phone.CustomerMobile;
-      MyServices.generateOtp($scope.getotp, function(data) {
-        console.log(data);
-        // $scope.errormsg= "false";
-        $scope.error="";
-
-        if(data.value === true){
-          $scope.oneTimepswd();
-        }
-        else{
-          $scope.errormsg= "true";
-          $scope.errortext=data.data.GenerateOTPTable[0].Message;
-        }
-      })
+  $scope.resendOtp = function(phone) {
+    console.log(phone, "****");
+    if (phone) {
+      $scope.closePopup();
+      $scope.errormsg = false;
+      phone.OTP = "";
     }
-$scope.errormsg=false;
-
-    // var ionicpop = "";
-    // $scope.oneTimepswd = function() {
-    //   ionicpop = $ionicPopup.show({
-    //     templateUrl: 'templates/modal/otp.html',
-    //     scope: $scope
-    //   });
-    // }
-    // $scope.toAvatar = function() {
-    //   ionicpop.close();
-    //   $state.go("noheader.avatar")
-    // };
-    //
-    // $scope.userForm = {};
-    // $scope.formComplete = false;
-    // $scope.emailExist = false;
-    // $scope.userSignup = function(formData) {
-    //   console.log("formData", formData);
-    //   if (formData) {
-    //     formData.city=$.jStorage.get("cityid");
-    //   }
-    //   MyServices.signUp(formData, function(data) {
-    //     console.log(data);
-    //     if (data.value === true) {
-    //         $.jStorage.set("loginDetail", data);
-    //       $scope.formComplete = true;
-    //       $timeout(function() {
-    //         $scope.formComplete = false;
-    //         $scope.emailExist = false;
-    //         $scope.userForm = {};
-    //       }, 2000);
-    //     } else  {
-    //       $scope.emailExist = true;
-    //     }
-    //
-    //   })
-    // }
-  })
-
-  .controller('LoginCtrl', function($scope, $stateParams, $ionicPopup, $state, $ionicSideMenuDelegate,MyServices, $timeout) {
-    $scope.closeAll = function (val) {
-  $state.go(val);
-  if ($ionicSideMenuDelegate.isOpenLeft()) {
-    $ionicSideMenuDelegate.toggleLeft();
-    // $scope.whenClose();
-  }
-  if ($ionicSideMenuDelegate.isOpenRight()) {
-    $ionicSideMenuDelegate.toggleRight();
-    $scope.whenClose();
-  }
-};
-  })
-
-
-
-  .controller('LandingCtrl', function ($scope, $stateParams, $ionicLoading, $state, $ionicPopup, MyServices, $timeout) {
-    $scope.ionicpop = "";
-    $scope.oneTimepswd = function () {
-      $scope.popupmsg = false;
-      $scope.ionicpop = $ionicPopup.show({
-        templateUrl: 'templates/modal/otp1.html',
-        scope: $scope
-      });
-    }
-    $scope.closePopupfor = function () {
-      $scope.ionicpop.close();
-    }
-    $scope.password = function () {
-      console.log('inside modal');
-      $scope.popupmsg = false;
+    $scope.getotp.CustomerMobileNo = phone.CustomerMobile;
+    MyServices.generateOtp($scope.getotp, function(data) {
+      console.log(data);
+      // $scope.errormsg= "false";
       $scope.error = "";
-      $scope.password10 = $ionicPopup.show({
-        templateUrl: 'templates/modal/password.html',
-        scope: $scope
-      });
-    }
-    $scope.closePopup = function () {
-      $scope.password10.close();
-    }
-    $scope.CustomerForgetPassword = function (password) {
-      console.log(password.CustomerEmail);
-      if (password.CustomerEmail != null && password.CustomerMobileNo != null) {
-        MyServices.CustomerForgetPassword(password, function (data) {
-          console.log(data);
-          if (data.value === true) {
-            $scope.popupmsg = true;
-            password.CustomerEmail = "";
-            password.CustomerMobileNo = "";
-          } else {
-            $scope.error = "enter correct details";
-          }
-        })
+
+      if (data.value === true) {
+        $scope.oneTimepswd();
       } else {
-        $scope.error = "enter correct details";
+        $scope.errormsg = "true";
+        $scope.errortext = data.data.GenerateOTPTable[0].Message;
       }
+    })
+  }
+  $scope.errormsg = false;
+
+  // var ionicpop = "";
+  // $scope.oneTimepswd = function() {
+  //   ionicpop = $ionicPopup.show({
+  //     templateUrl: 'templates/modal/otp.html',
+  //     scope: $scope
+  //   });
+  // }
+  // $scope.toAvatar = function() {
+  //   ionicpop.close();
+  //   $state.go("noheader.avatar")
+  // };
+  //
+  // $scope.userForm = {};
+  // $scope.formComplete = false;
+  // $scope.emailExist = false;
+  // $scope.userSignup = function(formData) {
+  //   console.log("formData", formData);
+  //   if (formData) {
+  //     formData.city=$.jStorage.get("cityid");
+  //   }
+  //   MyServices.signUp(formData, function(data) {
+  //     console.log(data);
+  //     if (data.value === true) {
+  //         $.jStorage.set("loginDetail", data);
+  //       $scope.formComplete = true;
+  //       $timeout(function() {
+  //         $scope.formComplete = false;
+  //         $scope.emailExist = false;
+  //         $scope.userForm = {};
+  //       }, 2000);
+  //     } else  {
+  //       $scope.emailExist = true;
+  //     }
+  //
+  //   })
+  // }
+})
+
+.controller('LoginCtrl', function($scope, $stateParams, $ionicPopup, $state, $ionicSideMenuDelegate, MyServices, $timeout) {
+  $scope.closeAll = function(val) {
+    $state.go(val);
+    if ($ionicSideMenuDelegate.isOpenLeft()) {
+      $ionicSideMenuDelegate.toggleLeft();
+      // $scope.whenClose();
     }
-    $scope.toAvatar = function () {
-      ionicpop.close();
-      $state.go("app.account")
-    };
-    $scope.getotp = {};
-    $scope.getotp.CustomerMobileNo = "";
-    $scope.getotp.OTPFor = "2";
-    $scope.getotp.BranchID = "20";
-    $scope.userForm = {};
-    $scope.generateOtp = function (userForm) {
-      console.log(userForm, "****");
-      $scope.getotp.CustomerMobileNo = userForm.UserName;
-      MyServices.generateOtp($scope.getotp, function (data) {
-        console.log("$scope.getotp", $scope.getotp);
+    if ($ionicSideMenuDelegate.isOpenRight()) {
+      $ionicSideMenuDelegate.toggleRight();
+      $scope.whenClose();
+    }
+  };
+})
+
+
+
+.controller('LandingCtrl', function($scope, $stateParams, $ionicLoading, $state, $ionicPopup, MyServices, $timeout) {
+  $scope.ionicpop = "";
+  $scope.oneTimepswd = function() {
+    $scope.popupmsg = false;
+    $scope.ionicpop = $ionicPopup.show({
+      templateUrl: 'templates/modal/otp1.html',
+      scope: $scope
+    });
+  }
+  $scope.closePopupfor = function() {
+    $scope.ionicpop.close();
+  }
+  $scope.password = function() {
+    console.log('inside modal');
+    $scope.popupmsg = false;
+    $scope.error = "";
+    $scope.password10 = $ionicPopup.show({
+      templateUrl: 'templates/modal/password.html',
+      scope: $scope
+    });
+  }
+  $scope.closePopup = function() {
+    $scope.password10.close();
+  }
+  $scope.CustomerForgetPassword = function(password) {
+    console.log(password.CustomerEmail);
+    if (password.CustomerEmail != null && password.CustomerMobileNo != null) {
+      MyServices.CustomerForgetPassword(password, function(data) {
         console.log(data);
-
-        $scope.errormsg = "false";
-
         if (data.value === true) {
-          $scope.oneTimepswd();
+          $scope.popupmsg = true;
+          password.CustomerEmail = "";
+          password.CustomerMobileNo = "";
         } else {
-          $scope.errormsg = "true";
-          $scope.errortext = data.data.GenerateOTPTable[0].Message;
+          $scope.error = "enter correct details";
         }
       })
+    } else {
+      $scope.error = "enter correct details";
     }
-    $scope.resendOtp = function (userForm) {
-      console.log(userForm, "****");
-      if (userForm) {
-        $scope.closePopupfor();
-        userForm.OTP = "";
+  }
+  $scope.toAvatar = function() {
+    ionicpop.close();
+    $state.go("app.account")
+  };
+  $scope.getotp = {};
+  $scope.getotp.CustomerMobileNo = "";
+  $scope.getotp.OTPFor = "2";
+  $scope.getotp.BranchID = "20";
+  $scope.userForm = {};
+  $scope.generateOtp = function(userForm) {
+    console.log(userForm, "****");
+    $scope.getotp.CustomerMobileNo = userForm.UserName;
+    MyServices.generateOtp($scope.getotp, function(data) {
+      console.log("$scope.getotp", $scope.getotp);
+      console.log(data);
+
+      $scope.errormsg = "false";
+
+      if (data.value === true) {
+        $scope.oneTimepswd();
+      } else {
+        $scope.errormsg = "true";
+        $scope.errortext = data.data.GenerateOTPTable[0].Message;
       }
-      $scope.getotp.CustomerMobileNo = userForm.UserName;
-      MyServices.generateOtp($scope.getotp, function (data) {
-        console.log("$scope.getotp", $scope.getotp);
-        console.log(data);
-
-        $scope.error = "";
-
-
-        if (data.value === true) {
-          $scope.oneTimepswd();
-        } else {
-          $scope.errormsg = "true";
-          $scope.errortext = data.data.GenerateOTPTable[0].Message;
-        }
-      })
+    })
+  }
+  $scope.resendOtp = function(userForm) {
+    console.log(userForm, "****");
+    if (userForm) {
+      $scope.closePopupfor();
+      userForm.OTP = "";
     }
+    $scope.getotp.CustomerMobileNo = userForm.UserName;
+    MyServices.generateOtp($scope.getotp, function(data) {
+      console.log("$scope.getotp", $scope.getotp);
+      console.log(data);
 
-    $scope.showLoading = function (value, time) {
-      $ionicLoading.show({
-        template: value,
-        duration: time
-      });
-    };
-    $scope.hideLoading = function () {
-      $ionicLoading.hide();
-    };
-    $scope.login = {};
-    $scope.VerifyCustomerLogin = function (formData) {
-      console.log("formData", formData);
-      $scope.login = formData;
-      $scope.login.IsOTPValidation = "1";
-      console.log("formData", $scope.login);
-
-      // if (formData) {
-      //   formData.city=$.jStorage.get("cityid");
-      // }
-      MyServices.VerifyCustomerLogin(formData, function (data) {
-        console.log(data);
-        if (data.value === true) {
-
-          // MyServices.setUser(data.data);
-          // $scope.$broadcast('scroll.refreshComplete');
-
-          $.jStorage.set("loginDetail", data.data);
-          console.log("hi",$.jStorage.get("loginDetail"));
+      $scope.error = "";
 
 
-          $scope.formComplete = true;
+      if (data.value === true) {
+        $scope.oneTimepswd();
+      } else {
+        $scope.errormsg = "true";
+        $scope.errortext = data.data.GenerateOTPTable[0].Message;
+      }
+    })
+  }
 
-          $timeout(function () {
-            $scope.formComplete = false;
-            $scope.error = "";
-            $scope.userForm = {};
-            $scope.ionicpop.close();
-            $state.go("app.account")
+  $scope.showLoading = function(value, time) {
+    $ionicLoading.show({
+      template: value,
+      duration: time
+    });
+  };
+  $scope.hideLoading = function() {
+    $ionicLoading.hide();
+  };
+  $scope.login = {};
+  $scope.VerifyCustomerLogin = function(formData) {
+    console.log("formData", formData);
+    $scope.login = formData;
+    $scope.login.IsOTPValidation = "1";
+    console.log("formData", $scope.login);
 
-          }, 8000);
-        } else {
-          $scope.error = data.data;
-          // $scope.$broadcast('scroll.refreshComplete');
-          // $scope.showLoading('Error Updating Profile!', 1000);
-        }
+    // if (formData) {
+    //   formData.city=$.jStorage.get("cityid");
+    // }
+    MyServices.VerifyCustomerLogin(formData, function(data) {
+      console.log(data);
+      if (data.value === true) {
 
-      })
-    }
-  })
+        // MyServices.setUser(data.data);
+        // $scope.$broadcast('scroll.refreshComplete');
+
+        $.jStorage.set("loginDetail", data.data);
+        console.log("hi", $.jStorage.get("loginDetail"));
 
 
-  .controller('BonusCtrl', function($scope, $stateParams, MyServices) {})
+        $scope.formComplete = true;
+
+        $timeout(function() {
+          $scope.formComplete = false;
+          $scope.error = "";
+          $scope.userForm = {};
+          $scope.ionicpop.close();
+          $state.go("app.account")
+
+        }, 8000);
+      } else {
+        $scope.error = data.data;
+        // $scope.$broadcast('scroll.refreshComplete');
+        // $scope.showLoading('Error Updating Profile!', 1000);
+      }
+
+    })
+  }
+})
+
+
+.controller('BonusCtrl', function($scope, $stateParams, MyServices) {})
 
 .controller('EarnCtrl', function($scope, $stateParams, MyServices) {
   //  $scope.nextSlide = function(val) {
@@ -1622,15 +1649,14 @@ $scope.errormsg=false;
   // $scope.disableSwipe = function() {
   //     $ionicSlideBoxDelegate.enableSlide(false);
   // };
-$scope.earn=[{
-img:'img/new.png'
+  $scope.earn = [{
+    img: 'img/new.png'
 
-},
-{
-  img:'img/new.png'
-},{
-  img:'img/new.png'
-}]
+  }, {
+    img: 'img/new.png'
+  }, {
+    img: 'img/new.png'
+  }]
 
 
   $scope.items = [{
